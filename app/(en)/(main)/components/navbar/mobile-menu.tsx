@@ -34,7 +34,7 @@ export function NavbarMobileMenu() {
       >
 
         {/* Logo */}
-        <div className="flex items-center gap-3 mb-10">
+        <div className="flex items-center justify-center gap-3 mb-10">
           <Image
             src="/logo.svg"
             alt="AxeDz Logo"
@@ -42,10 +42,6 @@ export function NavbarMobileMenu() {
             height={45}
             className="rounded-full"
           />
-
-          <span className="text-2xl font-bold tracking-tight">
-            AxeDz
-          </span>
         </div>
 
         {/* Nav */}
