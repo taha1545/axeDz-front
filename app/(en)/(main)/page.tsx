@@ -1,9 +1,13 @@
-
+import { Navbar } from "./components/navbar/navbar";
+import { Hero } from "./components/hero/Hero";
+import TrailSection from "./components/trail/trail-section";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      home
-    </main>
+    <>
+      <Navbar />
+      <Hero />
+      <TrailSection />
+    </>
   );
 }
