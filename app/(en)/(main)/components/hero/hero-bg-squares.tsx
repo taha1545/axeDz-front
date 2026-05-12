@@ -15,6 +15,7 @@ export function HeroBgSquares() {
         { size: 12, top: "68%", left: "55%", opacity: 0.45 },
         { size: 14, top: "72%", left: "90%", opacity: 0.5 },
         { size: 11, top: "38%", left: "93%", opacity: 0.55 },
+        { size: 11, top: "38%", left: "84%", opacity: 0.55 },
     ];
 
     return (
