@@ -1,10 +1,10 @@
 export default function LoginAside() {
   return (<aside className="w-full lg:w-1/2 px-6 sm:px-10 lg:px-20 py-10 flex flex-col justify-arround gap-7">
-        <h2 className="text-sky-500 font-bold text-2xl">AxeDz</h2>
+        <h2 className="text-primary font-bold text-2xl">AxeDz</h2>
 
         <h2 className="text-3xl font-bold">Create an account</h2>
 
-        <ul className="list-disc list-inside text-gray-500 py-4 space-y-3">
+        <ul className="list-disc list-inside text-muted-foreground py-4 space-y-3">
           <li>
             Start building with AxeDz in minutes. Create your account to access
             a unified platform for SMS, Email, and Cloud Storage APIs — all in
@@ -28,7 +28,7 @@ export default function LoginAside() {
         </ul>
 
         <button
-          className="bg-gray-800 text-white rounded-4xl px-4 py-2"
+          className="bg-foreground text-muted rounded-4xl px-4 py-2"
           type="button"
         >
           Create Account
