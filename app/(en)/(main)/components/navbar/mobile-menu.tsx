@@ -11,9 +11,10 @@ import { NavbarNavLinks } from "./navbar-nav-links";
 import { useNavbar } from "../../hooks/use-navbar";
 
 export function NavbarMobileMenu() {
+  //
   const [open, setOpen] = useState(false);
   const { navLinks, isActive } = useNavbar();
-
+  //
   return (
     <Sheet open={open} onOpenChange={setOpen}>
 
@@ -24,7 +25,7 @@ export function NavbarMobileMenu() {
           className="md:hidden flex items-center justify-center size-10 rounded-full hover:bg-muted transition"
           aria-label="Open menu"
         >
-          <Image src="/menu.svg" alt="Menu" width={24} height={24} />
+          <Image src="/menu.svg" alt="Menu" width={35} height={35} />
         </button>
       </SheetTrigger>
 

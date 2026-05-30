@@ -40,23 +40,23 @@ export function Hero() {
                                     using a single API
                                 </span>{" "}
                                 billed locally in{" "}
-                                <span className="text-foreground/80 font-semibold">
+                                <span className="text-foreground/80 font-semibold ">
                                     Algerian Dinars (DZD).
                                 </span>
                             </p>
 
-                            <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start w-full sm:w-auto">
+                            <div className="mt-10 sm:mt-16 flex flex-col  sm:flex-row gap-4 sm:gap-6 items-center sm:items-start w-full sm:w-auto">
 
                                 <Link
                                     href="/start"
-                                    className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-full font-semibold bg-primary text-primary-foreground shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-3 rounded-full font-semibold bg-primary text-primary-foreground shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
                                 >
                                     Try for free
                                 </Link>
 
                                 <Link
                                     href="/discover"
-                                    className="w-full sm:w-auto inline-flex items-center justify-center py-3 gap-2 text-foreground/80 font-semibold hover:text-primary transition-colors duration-200"
+                                    className="w-full sm:w-auto inline-flex items-center px-3 justify-center py-3 gap-2 text-foreground font-extrabold hover:text-primary transition-colors duration-200"
                                 >
                                     Discover
                                     <span className="transition-transform duration-200 group-hover:translate-x-1">
@@ -70,7 +70,7 @@ export function Hero() {
                     </div>
 
                     {/* RIGHT */}
-                    <div className="flex justify-center md:justify-end">
+                    <div className=" hidden md:flex md:justify-end">
                         <div className="relative w-full max-w-md md:max-w-lg aspect-square">
                             <Image
                                 src="/hero-image.svg"
