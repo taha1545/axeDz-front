@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -8,8 +8,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Sun, Moon } from "lucide-react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const LANGUAGES = [
   { label: "English", code: "en" },
@@ -20,41 +21,87 @@ const LANGUAGES = [
 export function NavbarTopBar() {
   //
   const [selectedLang, setSelectedLang] = useState(LANGUAGES[0]);
-  //
-  return (
-    <div className="flex mx-auto items-center justify-end gap-6 py-3 text-[20px] max-w-xl md:max-w-7xl md:mt-2 pr-2">
-      <Button
-        variant="ghost"
-        size="sm"
-        className="font-bold text-foreground h-auto p-0 hover:text-primary transition-colors text-base"
-        asChild
-      >
-        <Link href="/login">Login</Link>
-      </Button>
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-auto p-0 gap-1 text-foreground font-medium hover:text-primary transition-colors text-base"
-          >
-            {selectedLang.label}
-            <ChevronDown className="size-3.5 opacity-60" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="min-w-30 z-99">
-          {LANGUAGES.map((lang) => (
-            <DropdownMenuItem
-              key={lang.code}
-              onClick={() => setSelectedLang(lang)}
-              className="cursor-pointer"
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentTheme = resolvedTheme || theme;
+
+  return (
+    <div className="w-full border-b border-border/40 bg-background/40 backdrop-blur-md transition-colors duration-300">
+      <div className="max-w-7xl mx-auto flex items-center justify-end gap-4 py-2 px-4 sm:px-6 lg:px-8 text-sm">
+        {/* Docs Link */}
+        <Link
+          href="/docs"
+          className="text-muted-foreground hover:text-foreground font-medium transition-colors text-sm py-1.5"
+        >
+          Docs
+        </Link>
+
+        {/* Separator */}
+        <span className="h-4 w-px bg-border/40" />
+
+        {/* Login Link */}
+        <Link
+          href="/login"
+          className="text-muted-foreground hover:text-foreground font-medium transition-colors text-sm py-1.5"
+        >
+          Login
+        </Link>
+
+        {/* Separator */}
+        <span className="h-4 w-px bg-border/40" />
+
+        {/* Language Dropdown */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-auto py-1.5 px-0 gap-1 text-muted-foreground font-medium hover:text-foreground hover:bg-transparent transition-colors text-sm"
             >
-              {lang.label}
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
+              {selectedLang.label}
+              <ChevronDown className="size-3.5 opacity-60" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="min-w-30 z-100">
+            {LANGUAGES.map((lang) => (
+              <DropdownMenuItem
+                key={lang.code}
+                onClick={() => setSelectedLang(lang)}
+                className="cursor-pointer"
+              >
+                {lang.label}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        {/* Separator */}
+        <span className="h-4 w-px bg-border/40" />
+
+        {/* Theme Toggle */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="size-8 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
+          onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
+          aria-label="Toggle theme"
+        >
+          {mounted ? (
+            currentTheme === "dark" ? (
+              <Sun className="size-4 animate-in fade-in zoom-in duration-300" />
+            ) : (
+              <Moon className="size-4 animate-in fade-in zoom-in duration-300" />
+            )
+          ) : (
+            <div className="size-4 rounded-full bg-muted-foreground/20 animate-pulse" />
+          )}
+        </Button>
+      </div>
     </div>
   );
 }

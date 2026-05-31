@@ -49,6 +49,8 @@
 }
 
 :root {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
   --background: #ffffff;
   --foreground: #292524;
 
@@ -84,14 +86,14 @@
 }
 
 .dark {
-  --background: #292524;
-  --foreground: #FAFAF9;
+  --background: #33393D;
+  --foreground: #FBFBFF;
 
-  --card: #292524;
-  --card-foreground: #FAFAF9;
+  --card: #33393D;
+  --card-foreground: #FBFBFF;
 
-  --popover: #292524;
-  --popover-foreground: #FAFAF9;
+  --popover: #33393D;
+  --popover-foreground: #FBFBFF;
 
   --primary: #2D8CFF;
   --primary-foreground: #ffffff;
@@ -99,16 +101,16 @@
   --secondary: #0073FF;
   --secondary-foreground: #ffffff;
 
-  --muted: #3f3a37;
-  --muted-foreground: #c2bcb6;
+  --muted: #3d4449;
+  --muted-foreground: #a0a8b0;
 
   --accent: #2D8CFF;
   --accent-foreground: #ffffff;
 
   --destructive: #F43F5E;
 
-  --border: #3f3a37;
-  --input: #3f3a37;
+  --border: #4a5157;
+  --input: #4a5157;
 
   --ring: #2D8CFF;
 

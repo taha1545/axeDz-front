@@ -22,6 +22,7 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@solaceui": "https://www.solaceui.com/r/{name}.json"
+    "@solaceui": "https://www.solaceui.com/r/{name}.json",
+    "@efferd": "https://efferd.com/r/{name}.json"
   }
 }

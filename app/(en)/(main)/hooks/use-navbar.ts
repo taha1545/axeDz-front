@@ -1,25 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useActiveSection } from "./use-active-section";
 
 export type NavLink = {
   label: string;
   href: string;
-  active?: boolean;
 };
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "About us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Use Cases", href: "/use-cases", active: true },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Docs", href: "/docs" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Use Cases", href: "#use-cases" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function useNavbar() {
-  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const activeSection = useActiveSection(["about", "services", "use-cases", "pricing", "contact"]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 8);
@@ -29,8 +28,7 @@ export function useNavbar() {
   }, []);
 
   const isActive = (href: string) => {
-    const link = NAV_LINKS.find((l) => l.href === href);
-    return link?.active || pathname === href || pathname.startsWith(href + "/");
+    return href === `#${activeSection}`;
   };
 
   return { navLinks: NAV_LINKS, isScrolled, isActive };
