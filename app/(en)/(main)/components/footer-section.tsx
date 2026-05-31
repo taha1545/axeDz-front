@@ -173,11 +173,14 @@ export function FooterSection() {
                             © 2026 AxeDz. All rights reserved.
                         </p>
 
-                        <div className="flex items-center gap-6">
-                            <a href="#" className="text-xs text-background/60 transition-colors hover:text-background">
+                        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+                            <a href="/help" className="text-xs text-background/60 transition-colors hover:text-background">
+                                Help Center
+                            </a>
+                            <a href="/privacy" className="text-xs text-background/60 transition-colors hover:text-background">
                                 Privacy Policy
                             </a>
-                            <a href="#" className="text-xs text-background/60 transition-colors hover:text-background">
+                            <a href="/terms" className="text-xs text-background/60 transition-colors hover:text-background">
                                 Terms of Service
                             </a>
                         </div>

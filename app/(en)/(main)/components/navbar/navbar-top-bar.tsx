@@ -14,7 +14,6 @@ import { useTheme } from "next-themes";
 
 const LANGUAGES = [
   { label: "English", code: "en" },
-  { label: "العربية", code: "ar" },
   { label: "Français", code: "fr" },
 ];
 

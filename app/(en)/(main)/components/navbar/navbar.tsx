@@ -75,7 +75,7 @@ export function Navbar() {
               className="rounded-full h-10 lg:h-14 px-5 lg:px-8 text-sm lg:text-base font-semibold bg-foreground text-background hover:bg-foreground/90 shadow-none whitespace-nowrap transition-all duration-200"
               asChild
             >
-              <Link href="/doc">Explore API</Link>
+              <Link href="/docs">Explore API</Link>
             </Button>
           </div>
 

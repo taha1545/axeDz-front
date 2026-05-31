@@ -1,51 +1,25 @@
-import { Button } from "@/components/ui/button";
-import {
-	Empty,
-	EmptyContent,
-	EmptyDescription,
-	EmptyHeader,
-	EmptyTitle,
-} from "@/components/ui/empty";
-import { FullWidthDivider } from "@/components/full-width-divider";
-import { HomeIcon, CompassIcon } from "lucide-react";
+import { BookOpen, Home } from 'lucide-react';
+import { StatusAction, StatusScreen } from '@/components/status-screen';
 
 export function NotFoundPage() {
-	return (
-		<div className="flex w-full items-center justify-center overflow-hidden">
-			<div className="flex h-screen items-center border-x">
-				<div>
-					<FullWidthDivider />
-					<Empty>
-						<EmptyHeader>
-							<EmptyTitle className="font-black font-mono text-8xl">
-								404
-							</EmptyTitle>
-							<EmptyDescription className="text-nowrap">
-								The page you're looking for might have been <br />
-								moved or doesn't exist.
-							</EmptyDescription>
-						</EmptyHeader>
-						<EmptyContent>
-							<div className="flex gap-2">
-								<Button asChild>
-									<a href="#">
-										<HomeIcon data-icon="inline-start" />
-										Go Home
-									</a>
-								</Button>
-
-								<Button asChild variant="outline">
-									<a href="#">
-										<CompassIcon data-icon="inline-start" />
-										Explore
-									</a>
-								</Button>
-							</div>
-						</EmptyContent>
-					</Empty>
-					<FullWidthDivider />
-				</div>
-			</div>
-		</div>
-	);
+    return (
+        <StatusScreen
+            badge="Not found"
+            code="404"
+            title="Page not found"
+            description="The page you are looking for may have been moved, deleted, or never existed."
+            actions={
+                <>
+                    <StatusAction href="/">
+                        <Home className="h-4 w-4" />
+                        Go home
+                    </StatusAction>
+                    <StatusAction href="/docs" variant="outline">
+                        <BookOpen className="h-4 w-4" />
+                        View docs
+                    </StatusAction>
+                </>
+            }
+        />
+    );
 }

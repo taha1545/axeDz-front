@@ -7,9 +7,9 @@ export function useActiveSection(sectionIds: string[]) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200; // Offset for navbar + topbar height
+      const scrollPosition = window.scrollY + 200; 
 
-      // If at the very top of the page
+      // 
       if (window.scrollY < 100) {
         setActiveSection("about");
         return;

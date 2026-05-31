@@ -1,39 +1,38 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { AlertTriangle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useEffect } from 'react';
+import { AlertTriangle, Home, RotateCcw } from 'lucide-react';
+import { StatusAction, StatusScreen } from '@/components/status-screen';
 
 export default function Error({
-  error,
-  reset,
+    error,
+    reset,
 }: {
-  error: Error & { digest?: string };
-  reset: () => void;
+    error: Error & { digest?: string };
+    reset: () => void;
 }) {
-  useEffect(() => {
-    console.error(error);
-  }, [error]);
+    useEffect(() => {
+        console.error(error);
+    }, [error]);
 
-  return (
-    <div className="flex min-h-screen items-center justify-center px-6">
-      <div className="max-w-md text-center">
-        <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-destructive/10">
-          <AlertTriangle className="h-10 w-10 text-destructive" />
-        </div>
-
-        <h1 className="mb-2 text-3xl font-bold">
-          Something went wrong
-        </h1>
-
-        <p className="mb-8 text-muted-foreground">
-          An unexpected error occurred while loading this page.
-        </p>
-
-        <Button onClick={reset}>
-          Try Again
-        </Button>
-      </div>
-    </div>
-  );
+    return (
+        <StatusScreen
+            badge="Error"
+            title="Something went wrong"
+            description="An unexpected error occurred while loading this page. You can try again or return to the homepage."
+            icon={<AlertTriangle className="h-8 w-8" />}
+            actions={
+                <>
+                    <StatusAction onClick={reset}>
+                        <RotateCcw className="h-4 w-4" />
+                        Try again
+                    </StatusAction>
+                    <StatusAction href="/" variant="outline">
+                        <Home className="h-4 w-4" />
+                        Go home
+                    </StatusAction>
+                </>
+            }
+        />
+    );
 }

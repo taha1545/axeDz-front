@@ -1,8 +1,17 @@
+'use client';
+
+import { DashboardPageHeader } from '../components/dashboard-page-header';
+import { useDashboard } from '../components/dashboard-provider';
+
 export default function DashboardPage() {
-  return (
-    <main>
-      <h1>Dashboard</h1>
-      <p>Welcome to your dashboard.</p>
-    </main>
-  );
+    const { activeProject, wallet } = useDashboard();
+
+    return (
+        <>
+            <DashboardPageHeader
+                title="Home"
+                description={`Overview for ${activeProject.name} — ${activeProject.mode} mode`}
+            />
+        </>
+    );
 }
