@@ -18,12 +18,9 @@ export function SignupForm({
   return (
     <form className={cn("flex flex-col gap-6", className)} {...props}>
       <FieldGroup>
-        <div className="flex flex-col items-center gap-1 text-center">
-          <h1 className="text-2xl font-bold">Create your account</h1>
-          <p className="text-sm text-balance text-muted-foreground">
-            Fill in the form below to create your account
-          </p>
-        </div>
+        <h1 className="text-2xl w-fit font-bold text-background bg-foreground py-1 px-2">
+        Sign up
+      </h1>
         <Field>
           <FieldLabel htmlFor="name">Full Name</FieldLabel>
           <Input
@@ -43,11 +40,31 @@ export function SignupForm({
             required
             className="bg-background"
           />
-          <FieldDescription>
-            We&apos;ll use this to contact you. We will not share your email
-            with anyone else.
-          </FieldDescription>
         </Field>
+        <Field className="flex-row items-center gap-4">
+          <Field >
+          <FieldLabel htmlFor="phone">Phone Number</FieldLabel>
+          <Input
+            id="phone"
+            type="tel"
+            placeholder="+213 123 456 789"
+            required
+            className="bg-background"
+          />
+          
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="Code">Code</FieldLabel>
+          <Input
+            id="code"
+            type="number"
+            placeholder="123456"
+            required
+            className="bg-background"
+          />
+        </Field>
+        </Field>
+        
         <Field>
           <FieldLabel htmlFor="password">Password</FieldLabel>
           <Input
@@ -56,9 +73,6 @@ export function SignupForm({
             required
             className="bg-background"
           />
-          <FieldDescription>
-            Must be at least 8 characters long.
-          </FieldDescription>
         </Field>
         <Field>
           <FieldLabel htmlFor="confirm-password">Confirm Password</FieldLabel>
@@ -68,10 +82,9 @@ export function SignupForm({
             required
             className="bg-background"
           />
-          <FieldDescription>Please confirm your password.</FieldDescription>
         </Field>
         <Field>
-          <Button type="submit">Create Account</Button>
+          <Button type="submit">Sign up</Button>
         </Field>
         <div className="flex items-center gap-4 my-2 text-muted-foreground text-sm">
                 <div className="flex-1 border-t border-border"></div>

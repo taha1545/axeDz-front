@@ -18,7 +18,7 @@ export default function SignupAside() {
         <li>Seamlessly integrate and control your communication infrastructure — your way.</li>
       </ul>
 
-      <div className="mt-10 flex flex-col gap-3">
+      <div className="mt-3 flex flex-col gap-4">
         <a
           href="/login"
           className="text-sm text-muted-foreground hover:underline"

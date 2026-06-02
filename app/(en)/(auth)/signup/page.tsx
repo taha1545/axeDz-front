@@ -1,6 +1,6 @@
 "use client"
 
-import { SignupForm } from "@/components/signup-form"
+import { SignupForm } from "@/app/(en)/(auth)/signup/components/signup-form"
 import SignupAside from "./components/signup-aside"
 
 export default function SignupPage() {
@@ -10,8 +10,8 @@ export default function SignupPage() {
 
   {/* Right Side */}
   <div className="flex flex-col gap-4 md:p-10 p-6">
-    <div className="flex flex-1 items-center justify-center">
-      <div className="w-full max-w-xs">
+    <div className="flex flex-1 justify-center">
+      <div className="w-full max-w-md">
         <SignupForm />
       </div>
     </div>
