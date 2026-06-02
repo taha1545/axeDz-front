@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 export default function LoginAside() {
   return (<aside className="w-full lg:w-1/2 px-6 sm:px-10 lg:px-20 py-10 flex flex-col justify-arround gap-7">
         <h2 className="text-primary font-bold text-2xl">AxeDz</h2>
@@ -27,11 +28,12 @@ export default function LoginAside() {
           </li>
         </ul>
 
-        <button
-          className="bg-foreground text-muted rounded-4xl px-4 py-2"
+        <Button
           type="button"
+          size="lg"
+          className="rounded-4xl bg-foreground text-muted hover:bg-foreground/90"
         >
           Create Account
-        </button>
+        </Button>
       </aside>);
 }
