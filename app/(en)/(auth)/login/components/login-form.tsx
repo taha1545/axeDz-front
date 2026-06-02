@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 export default function LoginForm() {
   const [showPassword, setShowPassword] = React.useState(false);
   return (
-    <form className="w-full lg:w-1/2 flex flex-col gap-4 px-6 sm:px-10 lg:px-20 py-10 border-b-2 lg:border-b-0 lg:border-r-2 border-border bg-background">
+    <form className="w-full lg:w-1/2 flex flex-col gap-4 px-6 sm:px-10 lg:px-20 py-10 border-r-foreground border-b-2 lg:border-b-0 lg:border-r-2 border-border bg-background">
       <h1 className="text-2xl w-fit font-bold text-background bg-foreground py-1 px-2 rounded-md">
         Login
       </h1>

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 export default function LoginAside() {
   return (<aside className="w-full lg:w-1/2 px-6 sm:px-10 lg:px-20 py-10 flex flex-col justify-arround gap-7">
-        <h2 className="text-primary font-bold text-2xl">AxeDz</h2>
+        <h1 className="text-primary font-bold text-2xl">AxeDz</h1>
 
         <h2 className="text-3xl font-bold">Create an account</h2>
 
