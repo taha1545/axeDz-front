@@ -20,12 +20,8 @@ const VerifyPhonePage = () => {
         Please enter the verification code sent to your phone number.
       </p>
       <form className="w-full max-w-sm flex flex-col gap-6">
-        <InputOTP
-          className="flex justify-center items-center"
-          maxLength={4}
-          pattern={REGEXP_ONLY_DIGITS}
-        >
-          <InputOTPGroup>
+        <InputOTP maxLength={4} pattern={REGEXP_ONLY_DIGITS}>
+          <InputOTPGroup className="flex justify-center gap-15 ">
             <InputOTPSlot index={0} />
             <InputOTPSlot index={1} />
             <InputOTPSlot index={2} />
