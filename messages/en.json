@@ -1,0 +1,8 @@
+{
+    "landing": {
+        "description": "AxeDz is a unified CPaaS platform that lets you send SMS, Emails, and manage Cloud Storage using a single API billed locally in Algerian Dinars (DZD)."
+    },
+    "auth": {},
+    "dashboard": {},
+    "docs": {}
+}

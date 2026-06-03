@@ -118,6 +118,44 @@
   --warning: #92400E;
 }
 
+.grid-3d {
+  position: absolute;
+  inset: 0;
+  transform: perspective(900px) rotateX(60deg) scale(1.6);
+  transform-origin: top left;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+  animation: gridMove 10s linear infinite;
+}
+
+.grid-line-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(0, 115, 255, 0.12);
+  box-shadow: 0 0 10px rgba(0, 115, 255, 0.08);
+}
+
+.grid-line-h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(10, 110, 232, 0.12);
+  box-shadow: 0 0 10px rgba(0, 115, 255, 0.08);
+}
+
+@keyframes gridMove {
+  0% {
+    transform: perspective(900px) rotateX(60deg) translateY(0);
+  }
+
+  100% {
+    transform: perspective(900px) rotateX(60deg) translateY(40px);
+  }
+}
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
