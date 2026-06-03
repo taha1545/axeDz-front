@@ -35,7 +35,7 @@ export function NavbarTopBar() {
         {/* Docs Link */}
         <Link
           href="/docs"
-          className="text-muted-foreground hover:text-foreground font-medium transition-colors text-sm py-1.5"
+          className="text-foreground hover:text-foreground font-bold transition-colors text-sm py-1.5"
         >
           Docs
         </Link>

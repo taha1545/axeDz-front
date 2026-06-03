@@ -40,9 +40,9 @@ export function Navbar() {
         <div
           className={cn(
             "max-w-xl md:max-w-7xl mx-auto flex items-center justify-between gap-6",
-            "border border-foreground rounded-full pl-7 pr-2 py-2 bg-background/70 backdrop-blur-md",
+            "border border-foreground rounded-full pl-7 pr-2 py-1.5 bg-background/70 backdrop-blur-md",
             "transition-shadow duration-300",
-            isScrolled ? "shadow-md" : "shadow-sm"
+            isScrolled ? "shadow-md " : "shadow-sm"
           )}
         >
           {/* Logo */}

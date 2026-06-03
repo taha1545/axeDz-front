@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Pause, Maximize } from 'lucide-react';
+import { Play } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface VideoShowcaseProps {
@@ -11,9 +11,10 @@ interface VideoShowcaseProps {
 }
 
 export function VideoShowcase({ videoSrc, className }: VideoShowcaseProps) {
+    //
     const [isPlaying, setIsPlaying] = useState(false);
-    const iframeRef = useRef < HTMLIFrameElement > (null);
-
+    const iframeRef = useRef<HTMLIFrameElement>(null);
+    //
     const getEmbedUrl = (src: string) => {
         if (src.includes('youtube.com/embed')) return src;
         const match = src.match(/(?:v=|\/)([a-zA-Z0-9_-]{11})/);
@@ -34,12 +35,12 @@ export function VideoShowcase({ videoSrc, className }: VideoShowcaseProps) {
     return (
         <div
             className={cn(
-                ' relative w-full overflow-hidden rounded-[2rem] border border-border bg-card shadow-xl',
+                ' relative w-full overflow-hidden rounded-[2rem] border border-border bg-card shadow-2xl',
                 className
             )}
         >
             {/* Video Stage */}
-            <div className="relative aspect-video w-full bg-black max-h-120">
+            <div className="relative aspect-video w-full bg-foreground max-h-160 min-h-65">
                 <AnimatePresence mode="wait">
                     {!isPlaying ? (
                         <motion.div
@@ -76,29 +77,6 @@ export function VideoShowcase({ videoSrc, className }: VideoShowcaseProps) {
                         </motion.div>
                     )}
                 </AnimatePresence>
-            </div>
-
-            {/* Bottom Control Bar */}
-            <div className="flex h-12 items-center gap-4 bg-foreground px-5 md:h-14 md:px-6">
-                {!isPlaying ? (
-                    <Play className="h-4 w-4 fill-background text-background" />
-                ) : (
-                    <button
-                        onClick={handlePause}
-                        className="flex items-center justify-center"
-                    >
-                        <Pause className="h-4 w-4 fill-background text-background" />
-                    </button>
-                )}
-                <div className="h-px flex-1 bg-background/30" />
-                {isPlaying && (
-                    <button
-                        onClick={() => iframeRef.current?.requestFullscreen()}
-                        className="text-background/70 transition-colors hover:text-background"
-                    >
-                        <Maximize className="h-4 w-4" />
-                    </button>
-                )}
             </div>
         </div>
     );

@@ -4,17 +4,20 @@ import { useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { useContact } from "@/app/(en)/(main)/hooks/useContact";
 
 interface FormData {
     name: string;
+    phone?: string;
     email: string;
+    subject: string;
     message: string;
 }
 
 export function ContactSection() {
     //
-    const [form, setForm] = useState<FormData>({ name: '', email: '', message: '' });
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [form, setForm] = useState<FormData>({ name: '', email: '', message: '', subject: '' });
+    const { sendMessage, loading } = useContact();
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,19 +26,20 @@ export function ContactSection() {
         setForm((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        setIsSubmitting(true);
-
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setForm({ name: '', email: '', message: '' });
-        }, 1200);
+        await sendMessage(form);
+        setForm({
+            name: "",
+            email: "",
+            message: "",
+            subject: ""
+        });
     };
 
     return (
         <section id="contact" className="py-15 px-4 md:px-6 lg:px-8 bg-background scroll-mt-24">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto md:px-4">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -44,7 +48,7 @@ export function ContactSection() {
                     className="mb-10 md:mb-14"
                 >
                     <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:gap-6">
-                        <span className="inline-block w-fit rounded-lg bg-foreground px-4 py-4 text-medium md:text-2xl font-bold tracking-wide text-background">
+                        <span className="inline-block w-fit rounded-lg bg-foreground px-4 py-4 text-medium text-2xl font-bold tracking-wide text-background">
                             Contact US
                         </span>
                         <h2 className="max-w-xs text-center py-4 text-base font-semibold text-foreground sm:text-left sm:text-lg">
@@ -62,7 +66,7 @@ export function ContactSection() {
                     transition={{ delay: 0.15 }}
                     className={cn(
                         'relative overflow-hidden rounded-[2.5rem] border bg-card',
-                        'shadow-sm'
+                        'shadow-sm shadow-primary/40',
                     )}
                 >
                     <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -73,7 +77,7 @@ export function ContactSection() {
                                 <div className="space-y-2">
                                     <label
                                         htmlFor="name"
-                                        className="text-sm font-medium text-foreground"
+                                        className="text-sm font-medium text-foreground "
                                     >
                                         Name
                                     </label>
@@ -118,8 +122,32 @@ export function ContactSection() {
                                     />
                                 </div>
 
-                                {/* Message */}
                                 <div className="space-y-2">
+                                    <label
+                                        htmlFor="subject"
+                                        className="text-sm font-medium text-foreground"
+                                    >
+                                        Subject<span className="text-destructive">*</span>
+                                    </label>
+                                    <input
+                                        id="subject"
+                                        name="subject"
+                                        type="text"
+                                        required
+                                        value={form.subject}
+                                        onChange={handleChange}
+                                        placeholder="Subject"
+                                        className={cn(
+                                            'w-full px-6 py-3.5 rounded-full border bg-background text-foreground',
+                                            'placeholder:text-muted-foreground/60',
+                                            'focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary',
+                                            'transition-all duration-200'
+                                        )}
+                                    />
+                                </div>
+
+                                {/* Message */}
+                                <div className="space-y-4">
                                     <label
                                         htmlFor="message"
                                         className="text-sm font-medium text-foreground"
@@ -135,18 +163,17 @@ export function ContactSection() {
                                         placeholder="Message"
                                         rows={5}
                                         className={cn(
-                                            'w-full px-6 py-4 rounded-2xl border bg-background text-foreground resize-none',
+                                            'w-full max-h-30 px-6 py-4 rounded-2xl border bg-background text-foreground resize-none',
                                             'placeholder:text-muted-foreground/60',
                                             'focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary',
                                             'transition-all duration-200'
                                         )}
                                     />
                                 </div>
-
                                 {/* Submit */}
                                 <button
                                     type="submit"
-                                    disabled={isSubmitting}
+                                    disabled={loading}
                                     className={cn(
                                         'w-full py-4 rounded-full font-semibold text-sm',
                                         'bg-foreground text-background',
@@ -155,7 +182,7 @@ export function ContactSection() {
                                         'mt-2'
                                     )}
                                 >
-                                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                                    {loading ? 'Sending...' : 'Send Message'}
                                 </button>
                             </form>
                         </div>
@@ -167,7 +194,7 @@ export function ContactSection() {
                                     src="/contact-image.svg"
                                     alt="Contact decoration"
                                     fill
-                                    className="object-contain object-right"
+                                    className="object-contain object-right invert-0 dark:invert"
                                     priority={false}
                                 />
                             </div>

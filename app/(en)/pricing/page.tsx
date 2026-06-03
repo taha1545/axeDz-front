@@ -99,7 +99,7 @@ export default function PricingPage() {
                     transition={{ duration: 0.5 }}
                     className="mb-8 md:mb-14"
                 >
-                    <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
+                    <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5 ">
                         <span className="inline-block w-fit rounded-lg bg-foreground px-3 py-1.5 text-xs font-bold tracking-wide text-background sm:px-4 sm:py-4 sm:text-sm md:text-xl">
                             Pricing
                         </span>
@@ -119,7 +119,7 @@ export default function PricingPage() {
                     className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3"
                 >
                     {/* Free Tier */}
-                    <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:rounded-[1.5rem] sm:p-6">
+                    <div className="rounded-2xl border-1 border-primary bg-card p-5 shadow-sm sm:rounded-[1.5rem] sm:p-6">
                         <h3 className="mb-2 text-sm font-semibold text-foreground sm:text-base">
                             Free Tier
                         </h3>
@@ -131,7 +131,7 @@ export default function PricingPage() {
                     </div>
 
                     {/* Production */}
-                    <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:rounded-[1.5rem] sm:p-6">
+                    <div className="rounded-2xl border-1 border-primary bg-card p-5 shadow-sm sm:rounded-[1.5rem] sm:p-6">
                         <h3 className="mb-2 text-sm font-semibold text-foreground sm:text-base">
                             Production
                         </h3>
@@ -142,7 +142,7 @@ export default function PricingPage() {
                     </div>
 
                     {/* Wallet */}
-                    <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:rounded-[1.5rem] sm:p-6 sm:col-span-2 lg:col-span-1">
+                    <div className="rounded-2xl border-1 border-primary bg-card p-5 shadow-sm sm:rounded-[1.5rem] sm:p-6 sm:col-span-2 lg:col-span-1">
                         <h3 className="mb-2 text-sm font-semibold text-foreground sm:text-base">
                             Wallet System
                         </h3>
@@ -161,7 +161,7 @@ export default function PricingPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
-                        className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:rounded-[2rem] sm:p-8 md:p-10 lg:col-span-3"
+                        className="rounded-2xl border-border  bg-card p-5 shadow-sm sm:rounded-[2rem] sm:p-8 md:p-10 lg:col-span-3"
                     >
                         <div className="mb-2 flex items-center gap-3">
                             <CreditCard className="h-5 w-5 text-primary" />
@@ -196,7 +196,7 @@ export default function PricingPage() {
                                                 handleChange(item.id, Number(e.target.value))
                                             }
                                             className={cn(
-                                                'h-3 w-full cursor-pointer appearance-none rounded-full bg-muted accent-primary sm:h-2',
+                                                'h-3 w-full cursor-pointer appearance-none rounded-full bg-card-foreground/10 accent-primary sm:h-2',
                                                 '[&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary [&::-webkit-slider-thumb]:shadow-md sm:[&::-webkit-slider-thumb]:h-4 sm:[&::-webkit-slider-thumb]:w-4',
                                                 '[&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-primary [&::-moz-range-thumb]:shadow-md sm:[&::-moz-range-thumb]:h-4 sm:[&::-moz-range-thumb]:w-4'
                                             )}

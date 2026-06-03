@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.svg",
+        url: "/icon.svg",
         width: 1200,
         height: 630,
         alt: "AxeDz",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "AxeDz",
     description:
       "Unified SMS, Email, Wallet and Cloud APIs for Algerian developers.",
-    images: ["/logo.svg"],
+    images: ["/icon.svg"],
   },
 
   robots: {
@@ -84,9 +84,9 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/logo.svg",
-    shortcut: "/favicon.ico",
-    apple: "/logo.svg",
+    icon: "/icon.svg",
+    shortcut: "/icon.ico",
+    apple: "/icon.svg",
   },
 };
 
@@ -114,7 +114,6 @@ export default function RootLayout({
           enableSystem
         >
           <CookieConsent />
-
           {children}
         </ThemeProvider>
       </body>

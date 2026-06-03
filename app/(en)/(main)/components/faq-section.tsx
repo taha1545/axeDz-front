@@ -16,7 +16,7 @@ const faqs: FAQItem[] = [
         id: 'services',
         question: 'What services does AxeDz provide?',
         answer:
-            'AxeDz is built to serve developers and businesses across all Algerian wilayas, providing reliable access to communication infrastructure wherever they operate. By removing barriers related to payments, integrations, and scalability, the platform ensures that teams can build and deploy services efficiently at a national level.',
+            'AxeDz is built to serve developers and businesses , providing reliable access to communication infrastructure wherever they operate. By removing barriers related to payments, integrations, and scalability, the platform ensures that teams can build and deploy services efficiently at a higth level.',
     },
     {
         id: 'built-for',
@@ -47,7 +47,7 @@ export function FAQSection() {
 
     return (
         <section className="py-15 px-4 md:px-6 lg:px-8 bg-background">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto md:px-4">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export function FAQSection() {
                         <span className="inline-block w-fit rounded-lg bg-foreground px-4 py-4 text-medium md:text-2xl font-bold tracking-wide text-background">
                             Q&A
                         </span>
-                        <h2 className="max-w-xs text-center text-base font-semibold py-4 text-foreground sm:text-left sm:text-lg">
+                        <h2 className="max-w-xs text-center text-base font-semibold py-1 text-foreground sm:text-left sm:text-lg">
                             Solutions for frequently asked queries
                         </h2>
                     </div>

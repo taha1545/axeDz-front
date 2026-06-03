@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export interface ServiceItem {
     id: string;
@@ -11,6 +12,7 @@ export interface ServiceItem {
     image: string;
     href: string;
     variant: 'blue' | 'white';
+    mobilevariant: 'blue' | 'white';
 }
 
 interface ServiceCardProps {
@@ -19,8 +21,12 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, index }: ServiceCardProps) {
-    const isBlue = service.variant === 'blue';
-
+    //
+    const isMobile = useIsMobile();
+    const isBlue = isMobile
+        ? service.mobilevariant === 'blue'
+        : service.variant === 'blue';
+    //
     return (
         <motion.article
             initial={{ opacity: 0, y: 20 }}
@@ -29,13 +35,13 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ y: -4 }}
             className={cn(
-                'group relative cursor-pointer overflow-hidden rounded-[2rem] border p-5 transition-shadow duration-300 hover:shadow-xl sm:p-8',
+                'group relative cursor-pointer overflow-hidden rounded-[2rem] shadow-xl border p-5 transition-shadow duration-300 hover:shadow-xl sm:p-8',
                 isBlue
                     ? 'border-primary bg-primary text-primary-foreground'
                     : 'border-border bg-card text-card-foreground'
             )}
         >
-            <div className="flex flex-col items-center gap-5 min-h-[200px] sm:h-55 sm:min-h-0 sm:flex-row sm:items-center sm:gap-6">
+            <div className="flex flex-col items-center gap-5 min-h-50 sm:h-55 sm:min-h-0 sm:flex-row sm:items-center sm:gap-6">
                 {/* Text */}
                 <div className="flex h-full flex-1 flex-col justify-between self-stretch py-1 sm:py-2">
                     <span

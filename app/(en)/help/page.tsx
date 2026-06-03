@@ -122,7 +122,7 @@ export default function HelpCenterPage() {
         <section className="min-h-dvh bg-background px-4 py-6 md:px-6 md:py-12 lg:px-8">
             <div className="mx-auto w-full max-w-3xl">
 
-                <header className="mb-10 space-y-4 border-b border-border pb-8 md:mb-12">
+                <header className="mb-10 space-y-4 border-b-2  border-foreground pb-8 md:mb-12">
                     <span className="inline-block w-fit rounded-lg bg-foreground px-3 py-1.5 text-xs font-bold tracking-wide text-background sm:px-4 sm:py-2 sm:text-2xl">
                         Support
                     </span>

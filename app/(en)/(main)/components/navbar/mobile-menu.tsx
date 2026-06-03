@@ -49,7 +49,7 @@ export function NavbarMobileMenu() {
         </DialogTitle>
 
         {/* Logo */}
-        <div className="flex items-center justify-center gap-3 mb-8">
+        <div className="flex items-center justify-center gap-3 mb-8 dark:invert">
           <Image
             src="/logo.svg"
             alt="AxeDz Logo"
@@ -114,8 +114,8 @@ export function NavbarMobileMenu() {
               className="h-11 w-full rounded-full text-sm font-semibold bg-foreground text-background hover:bg-foreground/90 transition shadow-none"
               asChild
             >
-              <Link href="/contact" onClick={() => setOpen(false)}>
-                Contact Us
+              <Link href="/docs" onClick={() => setOpen(false)}>
+                Read Docs
               </Link>
             </Button>
           </div>

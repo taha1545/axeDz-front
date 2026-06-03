@@ -64,17 +64,17 @@ export function PricingSection() {
 
                             <div className="flex flex-wrap items-center gap-4 md:gap-5">
                                 <a
-                                    href="/doc/payment"
-                                    className="group inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                                    href="/docs/payment"
+                                    className="group inline-flex items-center gap-2  text-sm font-semibold text-foreground transition-colors hover:text-primary"
                                 >
-                                    ADD Funds
+                                 Pricing Details
                                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                                 </a>
                                 <a
                                     href="/pricing"
-                                    className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-md transition-colors hover:bg-secondary md:px-6 md:py-3"
+                                    className="inline-flex items-center gap-2 px-2 rounded-full bg-primary md:px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-md transition-colors hover:bg-secondary  md:py-3"
                                 >
-                                    More Details
+                                    Pricing Calculator
                                 </a>
                             </div>
                         </div>

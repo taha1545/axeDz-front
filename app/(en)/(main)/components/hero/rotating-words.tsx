@@ -15,7 +15,6 @@ export function RotatingWords({
     transitionDuration = 600,
     className = "",
 }: RotatingWordsProps) {
-    //
     const [currentIndex, setCurrentIndex] = useState(0);
     const [nextIndex, setNextIndex] = useState<number | null>(null);
     const [phase, setPhase] = useState<"idle" | "out" | "in">("idle");
@@ -55,44 +54,33 @@ export function RotatingWords({
         return () => {
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
         };
-    }, [phase]);
+    }, [phase, nextIndex, transitionDuration]);
 
     const currentWord = words[currentIndex];
 
+    const baseTransition = `opacity ${transitionDuration}ms cubic-bezier(0.4,0,0.2,1), transform ${transitionDuration}ms cubic-bezier(0.4,0,0.2,1), filter ${transitionDuration}ms cubic-bezier(0.4,0,0.2,1)`;
 
-    const getStyle = (): React.CSSProperties => {
-        const base: React.CSSProperties = {
-            position: "absolute",
-            inset: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            transition: `opacity ${transitionDuration}ms cubic-bezier(0.4,0,0.2,1),
-                   transform ${transitionDuration}ms cubic-bezier(0.4,0,0.2,1),
-                   filter ${transitionDuration}ms cubic-bezier(0.4,0,0.2,1)`,
-            willChange: "opacity, transform, filter",
-        };
-
-        if (phase === "idle") {
-            return { ...base, opacity: 1, transform: "translateY(0)", filter: "blur(0px)" };
-        }
-        if (phase === "out") {
-            return { ...base, opacity: 0, transform: "translateY(-6px)", filter: "blur(4px)" };
-        }
-        return { ...base, opacity: 1, transform: "translateY(0)", filter: "blur(0px)" };
-    };
+    const getCurrentStyle = (): React.CSSProperties => ({
+        position: "absolute",
+        inset: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "var(--rw-align)",
+        transition: baseTransition,
+        willChange: "opacity, transform, filter",
+        opacity: phase === "out" ? 0 : 1,
+        transform: phase === "out" ? "translateY(-6px)" : "translateY(0)",
+        filter: phase === "out" ? "blur(4px)" : "blur(0px)",
+    });
 
     const incomingStyle: React.CSSProperties = {
         position: "absolute",
         inset: 0,
         display: "flex",
         alignItems: "center",
-        justifyContent: "flex-start",
-        transition: `opacity ${transitionDuration}ms cubic-bezier(0.4,0,0.2,1),
-                 transform ${transitionDuration}ms cubic-bezier(0.4,0,0.2,1),
-                 filter ${transitionDuration}ms cubic-bezier(0.4,0,0.2,1)`,
+        justifyContent: "var(--rw-align)",
+        transition: baseTransition,
         willChange: "opacity, transform, filter",
-        // 
         opacity: phase === "in" ? 1 : 0,
         transform: phase === "in" ? "translateY(0)" : "translateY(6px)",
         filter: phase === "in" ? "blur(0px)" : "blur(4px)",
@@ -100,8 +88,11 @@ export function RotatingWords({
 
     return (
         <span
-            className={`relative inline-block align-bottom ${className}`}
-            style={{ height: "1.2em", verticalAlign: "bottom" }}
+            className={`relative inline-block align-bottom [--rw-align:center] md:[--rw-align:flex-start] ${className}`}
+            style={{
+                height: "1.2em",
+                verticalAlign: "bottom",
+            }}
             aria-live="polite"
             aria-atomic="true"
         >
@@ -115,11 +106,13 @@ export function RotatingWords({
             </span>
 
             {/* Current word */}
-            <span style={getStyle()}>
-                <span className="font-bold text-primary whitespace-nowrap">{currentWord}</span>
+            <span style={getCurrentStyle()}>
+                <span className="font-bold text-primary whitespace-nowrap">
+                    {currentWord}
+                </span>
             </span>
 
-            {/* Incoming word (only rendered during transition) */}
+            {/* Incoming word */}
             {nextIndex !== null && (
                 <span style={incomingStyle}>
                     <span className="font-bold text-primary whitespace-nowrap">
