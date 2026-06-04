@@ -129,18 +129,12 @@ export function HeroSection() {
                 filter: "drop-shadow(0 35px 50px rgba(0,0,0,0.45)) ",
                 zIndex: 2,
               }}
-              initial={{ opacity: 0, x: 60, y: 30, scale: 0.95, rotateY: 25 }}
-              animate={{ opacity: 1, x: 0, y: 0, scale: 1, rotateY: 12 }}
-              transition={{
-                duration: 0.7,
-                delay: 0.1,
-                ease: [0.25, 0.1, 0.25, 1],
-              }}
+           
             >
               <div
                 style={{
                   transform:
-                    "rotateY(10deg) rotateX(0deg) translateZ(0px) scale(0.99)",
+                    "rotateY(0deg) rotateX(5deg) translateZ(40px) scale(0.99)",
                 }}
               >
                 <HeroImage />
