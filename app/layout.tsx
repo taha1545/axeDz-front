@@ -85,11 +85,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <body className="min-h-screen bg-background text-foreground">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-        >
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>
       </body>

@@ -49,7 +49,8 @@
 }
 
 :root {
-  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans:
+    "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --background: #ffffff;
   --foreground: #292524;
@@ -57,32 +58,32 @@
   --card: rgb(227, 226, 233);
   --card-foreground: #292524;
 
-  --popover: #FAFAF9;
+  --popover: #fafaf9;
   --popover-foreground: #292524;
 
-  --primary: #0073FF;
+  --primary: #0073ff;
   --primary-foreground: #ffffff;
 
-  --secondary: #2D8CFF;
+  --secondary: #2d8cff;
   --secondary-foreground: #ffffff;
 
-  --muted: #F5F5F4;
-  --muted-foreground: #57534E;
+  --muted: #f5f5f4;
+  --muted-foreground: #57534e;
 
-  --accent: #2D8CFF;
+  --accent: #2d8cff;
   --accent-foreground: #ffffff;
 
-  --destructive: #F43F5E;
+  --destructive: #f43f5e;
 
-  --border: #F5F5F4;
-  --input: #F5F5F4;
+  --border: #f5f5f4;
+  --input: #f5f5f4;
 
-  --ring: #0073FF;
+  --ring: #0073ff;
 
-  --success: #22C55E;
-  --warning: #92400E;
+  --success: #22c55e;
+  --warning: #92400e;
 
-   --code: linear-gradient(180deg, #18182a 0%, #121222 100%);
+  --code: linear-gradient(180deg, #18182a 0%, #121222 100%);
 
   --radius: 0.625rem;
 }
@@ -92,34 +93,34 @@
   --foreground: #ececec;
 
   --card: #212a31;
-  --card-foreground: #FBFBFF;
+  --card-foreground: #fbfbff;
 
-  --popover: #33393D;
-  --popover-foreground: #FBFBFF;
+  --popover: #33393d;
+  --popover-foreground: #fbfbff;
 
-  --primary: #2D8CFF;
+  --primary: #2d8cff;
   --primary-foreground: #ffffff;
 
-  --secondary: #0073FF;
+  --secondary: #0073ff;
   --secondary-foreground: #ffffff;
 
   --muted: #3d4449;
   --muted-foreground: #a0a8b0;
 
-  --accent: #2D8CFF;
+  --accent: #2d8cff;
   --accent-foreground: #ffffff;
 
-  --destructive: #F43F5E;
+  --destructive: #f43f5e;
 
   --border: #4a5157;
   --input: #4a5157;
 
-  --ring: #2D8CFF;
+  --ring: #2d8cff;
 
   --code: linear-gradient(180deg, #080810 0%, #0a0a19 100%);
 
-  --success: #22C55E;
-  --warning: #92400E;
+  --success: #22c55e;
+  --warning: #92400e;
 }
 
 .grid-3d {
@@ -159,7 +160,6 @@
   }
 }
 
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -173,4 +173,3 @@
     @apply font-sans;
   }
 }
-
