@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { HeroImage } from "@/components/hero-image";
+import { HeroImage2 } from "@/components/hero-image-2";
 import { RotatingWords } from './rotating-words';
 import { HeroBgSquares } from './hero-bg-squares';
 import { HeroGridLines } from './hero-grid-lines';
@@ -91,21 +93,41 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Illustration */}
-          <motion.div
-            variants={{ hidden: { opacity: 0, scale: 0.92 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}
-            className="hidden md:flex md:justify-end w-full h-full"
+
+          <div
+            className="hidden md:flex w-full items-start justify-between relative min-h-150 "
+            style={{ perspective: 1400 }}
           >
-            <div className=" relative aspect-square w-full h-full  ">
-              <Image
-                src="/hero-image.svg"
-                alt="AxeDz platform illustration"
-                fill
-                priority
-                className="object-contain"
-              />
+            {/* back Card  */}
+            <div
+              className="absolute"
+              style={{
+                left: "1%",
+                bottom: "19%",
+                transform: "rotateY(0deg) rotateX(5deg) translateZ(40px) scale(0.91)",
+                transformStyle: "preserve-3d",
+                filter: "drop-shadow(0 25px 35px rgba(0,0,0,0.4))",
+                zIndex: 1,
+              }}
+            >
+              <HeroImage2 />
             </div>
-          </motion.div>
+
+            {/* Front Card */}
+            <div
+              className="absolute"
+              style={{
+                right: "1%",
+                bottom: "14%",
+                transform: "rotateY(15deg) rotateX(5deg) translateZ(40px) scale(0.92)",
+                transformStyle: "preserve-3d",
+                filter: "drop-shadow(0 35px 50px rgba(0,0,0,0.45))",
+                zIndex: 2,
+              }}
+            >
+              <HeroImage />
+            </div>
+          </div>
 
 
         </motion.div>
