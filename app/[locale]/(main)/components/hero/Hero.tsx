@@ -1,31 +1,30 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { HeroImage } from "@/components/hero-image";
 import { HeroImage2 } from "@/components/hero-image-2";
 import { RotatingWords } from './rotating-words';
-import { HeroBgSquares } from './hero-bg-squares';
 import { HeroGridLines } from './hero-grid-lines';
 
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
+
+//
 const WORDS = ['developers', 'businesses', 'startups', 'enterprises'];
+//
 
 
 
 export function HeroSection() {
 
   return (
-    <section className="relative flex min-h-[calc(100vh-var(--navbar-height))] w-full items-center overflow-hidden py-0 md:py-7">
+    <section className="relative flex min-h-[calc(100vh-var(--navbar-height))] w-full items-center overflow-hidden py-3 md:py-7">
 
-      <div className="hidden md:block ">
-        {/* <HeroBgSquares /> */}
-        <HeroGridLines />
-      </div>
 
+
+      {/* Content */}
       <div className="relative z-10 mx-auto w-full  md:max-w-7xl px-4 sm:px-10 ">
         <motion.div
           initial="hidden"
@@ -38,7 +37,6 @@ export function HeroSection() {
         >
           {/* Text */}
           <div className="flex flex-col text-center md:text-left">
-
             <motion.h1
               variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } } }}
               className="text-[2rem]  md:text-[2.75rem] lg:text-[3.5rem] 
@@ -50,7 +48,6 @@ export function HeroSection() {
                 <RotatingWords words={WORDS} />
               </span>
             </motion.h1>
-
             <motion.p
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } } }}
               className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-muted-foreground md:mx-0 md:mt-8 md:text-lg"
@@ -61,7 +58,6 @@ export function HeroSection() {
               billed locally in{' '}
               <span className="font-semibold text-foreground">Algerian Dinars (DZD).</span>
             </motion.p>
-
             <motion.div
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } } }}
               className="mt-8 flex flex-col items-center lg:gap-4 md:flex-row md:mt-10 md:items-start"
@@ -77,7 +73,6 @@ export function HeroSection() {
               >
                 Try for free
               </Link>
-
               <Link
                 href="/docs"
                 className={cn(
@@ -89,45 +84,70 @@ export function HeroSection() {
                 Discover
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
-
             </motion.div>
           </div>
 
-
+          {/* Images */}
           <div
-            className="hidden md:flex w-full items-start justify-between relative min-h-150 "
+            className="flex w-full items-start justify-between relative  md:min-h-130 lg:min-w-153"
             style={{ perspective: 1400 }}
           >
-            {/* back Card  */}
-            <div
-              className="absolute"
+            {/* back Card */}
+            <motion.div
+              className="absolute  hidden md:flex"
               style={{
-                left: "1%",
-                bottom: "19%",
-                transform: "rotateY(0deg) rotateX(5deg) translateZ(40px) scale(0.91)",
+                left: "0%",
+                bottom: "11%",
                 transformStyle: "preserve-3d",
                 filter: "drop-shadow(0 25px 35px rgba(0,0,0,0.4))",
                 zIndex: 1,
               }}
-            >
-              <HeroImage2 />
-            </div>
-
-            {/* Front Card */}
-            <div
-              className="absolute"
-              style={{
-                right: "1%",
-                bottom: "14%",
-                transform: "rotateY(15deg) rotateX(5deg) translateZ(40px) scale(0.92)",
-                transformStyle: "preserve-3d",
-                filter: "drop-shadow(0 35px 50px rgba(0,0,0,0.45))",
-                zIndex: 2,
+              initial={{ opacity: 0, x: -60, y: 30, scale: 0.95, rotateY: -25 }}
+              animate={{ opacity: 1, x: 0, y: 0, scale: 1, rotateY: -15 }}
+              transition={{
+                duration: 0.7,
+                ease: [0.25, 0.1, 0.25, 1],
               }}
             >
-              <HeroImage />
-            </div>
+              <div
+                style={{
+                  transform:
+                    "rotateY(-20deg) rotateX(20deg) translateZ(40px) scale(0.96)",
+                }}
+              >
+                <HeroImage2 />
+              </div>
+            </motion.div>
+
+            {/* Front Card */}
+            <motion.div
+              className="absolute  hidden md:flex "
+              style={{
+                right: "4%",
+                bottom: "4%",
+                transformStyle: "preserve-3d",
+                filter: "drop-shadow(0 35px 50px rgba(0,0,0,0.45)) ",
+                zIndex: 2,
+              }}
+              initial={{ opacity: 0, x: 60, y: 30, scale: 0.95, rotateY: 25 }}
+              animate={{ opacity: 1, x: 0, y: 0, scale: 1, rotateY: 12 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.1,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+            >
+              <div
+                style={{
+                  transform:
+                    "rotateY(10deg) rotateX(0deg) translateZ(0px) scale(0.99)",
+                }}
+              >
+                <HeroImage />
+              </div>
+            </motion.div>
           </div>
+
 
 
         </motion.div>

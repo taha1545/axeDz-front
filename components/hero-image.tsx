@@ -29,19 +29,17 @@ const CodeSpan: React.FC<{ style: React.CSSProperties; children: React.ReactNode
 
 export function HeroImage() {
     return (
+        //
         <div
             style={{
                 width: "100%",
                 maxWidth: 680,
-
                 minHeight: 450,
-
                 display: "flex",
                 flexDirection: "column",
-
                 borderRadius: 20,
                 background: "linear-gradient(180deg, #1a1a2e 0%, #16213e 100%)",
-                boxShadow: "0 12px 40px rgba(0,0,0,0.5)",
+                boxShadow: "20px 12px 40px rgba(0,0,0,0.5)",
                 border: "1.5px solid #2a2a40",
                 overflow: "hidden",
                 fontFamily:
@@ -52,7 +50,7 @@ export function HeroImage() {
             <div
                 style={{
                     height: 52,
-                    background: "#0f0f1a",
+                    background: "#141424",
                     display: "flex",
                     alignItems: "center",
                     padding: "0 20px",
@@ -65,7 +63,6 @@ export function HeroImage() {
                     <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#febc2e" }} />
                     <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#28c840" }} />
                 </div>
-
                 <div
                     style={{
                         position: "absolute",
@@ -79,7 +76,6 @@ export function HeroImage() {
                 >
                     Code your own solutions : node
                 </div>
-
                 <div
                     style={{
                         marginLeft: "auto",
@@ -98,11 +94,11 @@ export function HeroImage() {
             {/* Code Area */}
             <div
                 style={{
-                    background: "linear-gradient(180deg, #0f0f1a 0%, #0a0a12 100%)",
+                    background: "var(--code)",
                     padding: "36px 32px",
 
-                    flex: 1,          // ✅ THIS IS THE REAL FIX
-                    overflow: "auto", // scroll if content grows
+                    flex: 1,
+                    overflow: "auto",
                 }}
             >
                 <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -182,7 +178,7 @@ export function HeroImage() {
                     fontSize: 10,
                     color: "#c9d1d9",
                     gap: 20,
-                    flexShrink: 0, // ✅ FIX
+                    flexShrink: 0,
                 }}
             >
                 <span>Node.js</span>

@@ -48,17 +48,17 @@ export function HeroImage2() {
             <div
                 style={{
                     height: 52,
-                    background: "#0f0f1a",
+                    background: "#141424",
                     display: "flex",
                     alignItems: "center",
                     padding: "0 20px",
                     flexShrink: 0,
                 }}
             >
-                <div style={{ display: "flex", gap: 10 }}>
-                    <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#0073FF" }} />
-                    <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#0073FF" }} />
-                    <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#0073FF" }} />
+                <div style={{ display: "flex ", gap: 10, alignItems: "center" }}>
+                    <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#ff5f57" }} />
+                    <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#febc2e" }} />
+                    <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#28c840" }} />
                 </div>
 
                 <div
@@ -79,7 +79,7 @@ export function HeroImage2() {
             {/* Code Area */}
             <div
                 style={{
-                    background: "linear-gradient(180deg, #0f0f1a 0%, #0a0a12 100%)",
+                    background: "var(--code)",
                     padding: "36px 32px",
                     flex: 1,
                 }}
@@ -89,15 +89,15 @@ export function HeroImage2() {
                     <div>
                         <CodeSpan style={syntax.keyword}>import</CodeSpan>{" "}
                         <CodeSpan style={syntax.variable}>axedz</CodeSpan>{" "}
-                         <CodeSpan style={syntax.variable}>from</CodeSpan>{" "}
-                          <CodeSpan style={syntax.variable}>AxeDz</CodeSpan>
+                        <CodeSpan style={syntax.variable}>from</CodeSpan>{" "}
+                        <CodeSpan style={syntax.variable}>AxeDz</CodeSpan>
                     </div>
 
-                    <div style={{ height: 14}} />
+                    <div style={{ height: 14 }} />
 
                     <div>
                         <CodeSpan style={syntax.comment}>
-                            {`# Send SMS via AxeDz API`}
+                            {`# Send Email via AxeDz API`}
                         </CodeSpan>
                     </div>
 
@@ -106,19 +106,18 @@ export function HeroImage2() {
                     <div>
                         <CodeSpan style={syntax.variable}>response</CodeSpan>{" "}
                         <CodeSpan style={syntax.operator}>=</CodeSpan>{" "}
-                        <CodeSpan style={syntax.function}>requests.post</CodeSpan>
+                        <CodeSpan style={syntax.function}>axedz.mail.send</CodeSpan>
                         <CodeSpan style={syntax.punctuation}>(</CodeSpan>
                     </div>
 
                     <div style={{ paddingLeft: 28 }}>
-                        <CodeSpan style={syntax.variable}>json</CodeSpan>
-                        <CodeSpan style={syntax.punctuation}>={"{"}</CodeSpan>
+                        <CodeSpan style={syntax.punctuation}>{"{"}</CodeSpan>
                     </div>
 
                     <div style={{ paddingLeft: 56 }}>
                         <CodeSpan style={syntax.string}>{`"to"`}</CodeSpan>
                         <CodeSpan style={syntax.punctuation}>:</CodeSpan>{" "}
-                        <CodeSpan style={syntax.string}>{`"213XXXXXXXX"`}</CodeSpan>
+                        <CodeSpan style={syntax.string}>{`"client@gmail.com"`}</CodeSpan>
                         <CodeSpan style={syntax.punctuation}>,</CodeSpan>
                     </div>
 
@@ -126,12 +125,12 @@ export function HeroImage2() {
                         <CodeSpan style={syntax.string}>{`"message"`}</CodeSpan>
                         <CodeSpan style={syntax.punctuation}>:</CodeSpan>{" "}
                         <CodeSpan style={syntax.string}>
-                            {`"Your verification code is 1234"`}
+                            {`"Welcome To Client Service"`}
                         </CodeSpan>
                     </div>
 
                     <div style={{ paddingLeft: 28 }}>
-                        <CodeSpan style={syntax.punctuation}>{"}"})</CodeSpan>
+                        <CodeSpan style={syntax.punctuation}>{"}"}</CodeSpan>
                     </div>
 
                     <div>
@@ -165,7 +164,7 @@ export function HeroImage2() {
             >
                 <span>python</span>
                 <span>Pip</span>
-                <span>UTF-8</span>
+                <span>Json</span>
                 <span style={{ marginLeft: "auto" }}>Ln 13, Col 42</span>
             </div>
         </div>

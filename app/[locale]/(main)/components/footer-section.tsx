@@ -88,7 +88,7 @@ export function FooterSection() {
                                         alt={social.label}
                                         width={18}
                                         height={18}
-                                        className="invert"
+                                        className="dark:invert"
                                     />
                                 </Link>
                             ))}
@@ -129,7 +129,7 @@ export function FooterSection() {
                         {/* Newsletter */}
                         <div className="flex flex-col mt-4 items-start lg:text-left">
 
-                            <p className="mb-4 px-2 hidden text-sm text-card-foreground/60 lg:block">
+                            <p className="mb-4 px-2 hidden text-sm text-card-foreground lg:block">
                                 Subscribe to our newsletter for updates.
                             </p>
 

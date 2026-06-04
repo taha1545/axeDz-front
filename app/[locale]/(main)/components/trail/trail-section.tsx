@@ -31,7 +31,7 @@ export function TrailSection() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.15 }}
                 >
-                    <VideoShowcase videoSrc="https://www.youtube.com/watch?v=KmEsh9C4ZUo" />
+                    <VideoShowcase videoSrc="https://www.youtube.com/watch?v=gbA8uWJc9Nw" />
                 </motion.div>
             </div>
         </section>

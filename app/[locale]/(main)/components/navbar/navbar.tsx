@@ -52,6 +52,7 @@ export function Navbar() {
               alt="AxeDz Logo"
               width={32}
               height={32}
+              priority
               className="rounded-full md:w-full md:h-full w-[80%] h-[80%] dark:invert"
             />
           </Link>
