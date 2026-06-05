@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 
 import { CookieConsent } from "./(main)/components/cookie-consent";
+import { AuthProvider } from "../context/AuthContext";
 
 const locales = ["en", "fr"] as const;
 type Locale = (typeof locales)[number];
@@ -31,7 +32,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <CookieConsent />
-      {children}
+      <AuthProvider>{children}</AuthProvider>
     </NextIntlClientProvider>
   );
 }
