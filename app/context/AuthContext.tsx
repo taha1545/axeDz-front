@@ -27,21 +27,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     localStorage.removeItem("token");
   };
 
-  //   async function getUserInfo() {
-  //     const token = localStorage.getItem("token");
-  //     if (token) {
-  //       const data = await api.get("/auth/profile");
-  //       setUser(data.data);
-  //       setLoading(false);
-  //     } else {
-  //       setUser(null);
-  //       setLoading(false);
-  //     }
-  //   }
-
-  //   useEffect(() => {
-  //     getUserInfo();
-  //   }, []);
+  async function checkAuth() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        const response = await api.get("/auth/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUser(response.data);
+      } catch (err) {
+        console.error("Failed to fetch user:", err);
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      setLoading(false);
+    }
+  }
+  useEffect(() => {
+    checkAuth();
+  }, []);
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>

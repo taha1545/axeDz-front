@@ -51,6 +51,7 @@ export function SignupForm({
         email: data.email,
         phone: data.phone,
         password: data.password,
+        image: null,
       });
       await login(data.email, data.password);
       // 2. Only send OTP if signup succeeded
@@ -183,6 +184,9 @@ export function SignupForm({
           variant="outline"
           size="lg"
           className="rounded-4xl"
+          onClick={() =>
+            (window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/me`)
+          }
         >
           <FcGoogle size={20} />
           Continue with Google
@@ -192,6 +196,9 @@ export function SignupForm({
           type="button"
           size="lg"
           className="rounded-4xl bg-foreground text-muted hover:bg-foreground/90"
+          onClick={() =>
+            (window.location.href = `${process.env.NEXT_PUBLIC_API_URL}auth/github`)
+          }
         >
           <FaGithub size={20} />
           Continue with GitHub

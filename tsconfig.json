@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/[locale]/(auth)/forget-password/page.js", "app/[locale]/(auth)/login/page.tsx"  ],
+, "app/[locale]/(auth)/forget-password/page.js", "app/[locale]/(auth)/login/page.tsx", "app/[locale]/dashboard/components/RecentEmailsTable.jsx"  ],
   "exclude": ["node_modules"]
 }

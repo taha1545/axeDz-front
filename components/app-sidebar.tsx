@@ -2,7 +2,6 @@
 
 import * as React from "react";
 
-import { NavDocuments } from "@/components/nav-documents";
 import { NavMain } from "@/components/nav-main";
 import { NavSecondary } from "@/components/nav-secondary";
 import { NavUser } from "@/components/nav-user";
@@ -17,52 +16,55 @@ import {
 } from "@/components/ui/sidebar";
 import {
   LayoutDashboardIcon,
-  ListIcon,
   ChartBarIcon,
-  FolderIcon,
-  UsersIcon,
   CameraIcon,
   FileTextIcon,
   Settings2Icon,
   CircleHelpIcon,
-  SearchIcon,
-  DatabaseIcon,
-  FileChartColumnIcon,
-  FileIcon,
-  CommandIcon,
+  LogsIcon,
+  CreditCardIcon,
+  KeyRound,
+  MessageSquareMore,
+  Mail,
+  LogOut,
 } from "lucide-react";
 
 const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
-      title: "Dashboard",
-      url: "#",
+      title: "Overview",
+      url: "/dashboard",
       icon: <LayoutDashboardIcon />,
     },
     {
-      title: "Lifecycle",
-      url: "#",
-      icon: <ListIcon />,
-    },
-    {
       title: "Analytics",
-      url: "#",
+      url: "analytics",
       icon: <ChartBarIcon />,
     },
     {
-      title: "Projects",
-      url: "#",
-      icon: <FolderIcon />,
+      title: "Emails",
+      url: "emails",
+      icon: <Mail />,
     },
     {
-      title: "Team",
-      url: "#",
-      icon: <UsersIcon />,
+      title: "SMS",
+      url: "sms",
+      icon: <MessageSquareMore />,
+    },
+    {
+      title: "Logs",
+      url: "logs",
+      icon: <LogsIcon />,
+    },
+    {
+      title: "API Keys",
+      url: "/dashboard/apiKeys",
+      icon: <KeyRound />,
+    },
+    {
+      title: "Billing",
+      url: "/dashboard/billing",
+      icon: <CreditCardIcon />,
     },
   ],
   navClouds: [
@@ -116,35 +118,18 @@ const data = {
   navSecondary: [
     {
       title: "Settings",
-      url: "#",
+      url: "/settings",
       icon: <Settings2Icon />,
     },
     {
-      title: "Get Help",
-      url: "#",
+      title: "Help",
+      url: "/help",
       icon: <CircleHelpIcon />,
     },
     {
-      title: "Search",
+      title: "Logout",
       url: "#",
-      icon: <SearchIcon />,
-    },
-  ],
-  documents: [
-    {
-      name: "Data Library",
-      url: "#",
-      icon: <DatabaseIcon />,
-    },
-    {
-      name: "Reports",
-      url: "#",
-      icon: <FileChartColumnIcon />,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: <FileIcon />,
+      icon: <LogOut />,
     },
   ],
 };
@@ -160,8 +145,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:p-1.5!"
             >
               <a href="#">
-                <CommandIcon className="size-5!" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-2xl text-primary font-bold">AxeDz</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -169,11 +153,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarFooter>
     </Sidebar>
   );

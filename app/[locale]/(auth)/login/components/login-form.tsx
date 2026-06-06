@@ -124,7 +124,15 @@ export default function LoginForm() {
       </div>
 
       {/* SOCIAL */}
-      <Button type="button" variant="outline" size="lg" className="rounded-4xl">
+      <Button
+        type="button"
+        variant="outline"
+        size="lg"
+        className="rounded-4xl"
+        onClick={() =>
+          (window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/me`)
+        }
+      >
         <FcGoogle size={20} />
         Continue with Google
       </Button>
@@ -133,6 +141,9 @@ export default function LoginForm() {
         type="button"
         size="lg"
         className="rounded-4xl bg-foreground text-muted hover:bg-foreground/90"
+        onClick={() =>
+          (window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/github`)
+        }
       >
         <FaGithub size={20} />
         Continue with GitHub
