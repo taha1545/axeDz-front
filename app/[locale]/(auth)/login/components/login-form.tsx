@@ -130,7 +130,7 @@ export default function LoginForm() {
         size="lg"
         className="rounded-4xl"
         onClick={() =>
-          (window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/me`)
+          (window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/google`)
         }
       >
         <FcGoogle size={20} />
@@ -142,7 +142,7 @@ export default function LoginForm() {
         size="lg"
         className="rounded-4xl bg-foreground text-muted hover:bg-foreground/90"
         onClick={() =>
-          (window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/github`)
+          (window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/github`)
         }
       >
         <FaGithub size={20} />

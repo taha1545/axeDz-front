@@ -56,7 +56,7 @@ export function SignupForm({
       await login(data.email, data.password);
       // 2. Only send OTP if signup succeeded
       if (res.data?.success) {
-        localStorage.setItem("pendingPhone", data.phone);
+        localStorage.setItem("emailPhone", data.email);
         router.push("/verify-phone");
       }
     } catch (err: any) {

@@ -35,10 +35,8 @@ const VerifyPhonePage = () => {
 
       // 🔥 Replace with backend call
       // await api.post("/auth/verify-phone", { code: data.code });
-      const phone = localStorage.getItem("pendingPhone");
-
       await api.post("/auth/send-verify-sms-otp", {
-        phone,
+        email: localStorage.getItem("pendingEmail"),
         code: data.code,
       });
 
@@ -78,16 +76,18 @@ const VerifyPhonePage = () => {
           }}
           render={({ field }) => (
             <InputOTP
-              maxLength={4}
+              maxLength={6}
               pattern={REGEXP_ONLY_DIGITS}
               value={field.value}
               onChange={field.onChange}
             >
-              <InputOTPGroup className="flex justify-center gap-15">
+              <InputOTPGroup className="flex justify-between w-full gap-2">
                 <InputOTPSlot index={0} />
                 <InputOTPSlot index={1} />
                 <InputOTPSlot index={2} />
                 <InputOTPSlot index={3} />
+                <InputOTPSlot index={4} />
+                <InputOTPSlot index={5} />
               </InputOTPGroup>
             </InputOTP>
           )}
