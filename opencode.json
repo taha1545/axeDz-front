@@ -1,0 +1,29 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "model": "deepseek/deepseek-chat-v3-0324",
+    "small_model": "deepseek/deepseek-chat-v3-0324",
+    "watcher": {
+        "ignore": [
+            "node_modules/**",
+            ".next/**",
+            "dist/**",
+            ".git/**",
+            "out/**"
+        ]
+    },
+    "lsp": true,
+    "formatter": true,
+    "permission": {
+        "edit": "ask",
+        "bash": "ask"
+    },
+    "instructions": [
+        "AGENTS.md"
+    ],
+    "agent": {
+        "plan": {
+            "model": "deepseek/deepseek-chat-v3-0324"
+        }
+    },
+    "default_agent": "build"
+}

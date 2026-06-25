@@ -1,0 +1,629 @@
+{
+    "home": {
+        "navbar": {
+            "about": "À propos",
+            "services": "Services",
+            "useCases": "Cas d'usage",
+            "pricing": "Tarifs",
+            "contact": "Contact",
+            "startBuilding": "Commencer",
+            "exploreApi": "Explorer l'API",
+            "readDocs": "Documentation",
+            "docs": "Docs",
+            "login": "Connexion",
+            "appearance": "Apparence",
+            "light": "Clair",
+            "dark": "Sombre",
+            "menuTitle": "Menu de navigation"
+        },
+        "hero": {
+            "ariaLabel": "Section principale",
+            "title": {
+                "prefix": "Communication pour",
+                "highlight": "les Algériens"
+            },
+            "words": {
+                "developers": "développeurs",
+                "businesses": "entreprises",
+                "startups": "startups",
+                "enterprises": "grandes entreprises"
+            },
+            "description": "AxeDz est une plateforme CPaaS unifiée qui vous permet d'envoyer des SMS, des e-mails et de gérer le stockage cloud <strong>via une seule API</strong> facturée localement en <strong>Dinars Algériens (DZD).</strong>",
+            "cta": {
+                "primary": "Essayer gratuit",
+                "secondary": "Découvrir"
+            }
+        },
+        "trial": {
+            "badge": "Spécifique",
+            "title": "Conçu pour les développeurs",
+            "subtitle": "Une solution adaptée à vos besoins",
+            "playVideo": "Lire la vidéo",
+            "loading": "Chargement de la vidéo..."
+        },
+        "services": {
+            "badge": "Service",
+            "title": "Tout ce dont vous avez besoin ",
+            "subtitle": "Gérez vos outils développeur depuis une plateforme unique."
+        },
+        "codeExamples": {
+            "badge": " Exemple",
+            "title": "Intégrez nos APIs ",
+            "subtitle": "SMS, Email et Facturation en quelques minutes.",
+            "suite": "Suite de communication",
+            "panelTitle": "Créez vos propres solutions",
+            "docs": "Explorer la documentation",
+            "brandName": "AxeDz",
+            "tabs": {
+                "sms": {
+                    "label": "API SMS",
+                    "description": "Envoyez des messages transactionnels et OTP vers tout numéro algérien avec une haute délivrabilité et un suivi en temps réel."
+                },
+                "email": {
+                    "label": "API Email",
+                    "description": "Envoyez des e-mails transactionnels et marketing avec une haute délivrabilité. Suivez les ouvertures, clics et rebonds en temps réel."
+                },
+                "wallet": {
+                    "label": "Portefeuille",
+                    "description": "Gérez les soldes, créez des factures et traitez les paiements locaux en DZD. Automatisez vos flux de facturation."
+                }
+            },
+            "codeBlock": {
+                "node": "Node",
+                "python": "Python",
+                "copy": "Copier",
+                "copied": "Copié",
+                "copyTitle": "Copier le code"
+            }
+        },
+        "pricing": {
+            "badge": "Tarifs",
+            "title": "Des tarifs simples et transparents ",
+            "subtitle": "Choisissez une offre adaptée à vos besoins  du sandbox à la production.",
+            "card": {
+                "suite": "Suite de communication",
+                "heading": "Tarification et fonctionnalités API unifiées",
+                "calculatorTitle": "Calculateur de prix",
+                "calculatorDescription": "Estimez vos coûts mensuels selon le volume SMS, les envois d'e-mails et le stockage. Tous les prix sont en DZD, sans frais cachés.",
+                "cta": "Calculateur de tarifs"
+            }
+        },
+        "faq": {
+            "badge": "FAQ",
+            "title": "Questions fréquemment posées",
+            "subtitle": "Tout ce qu'il faut savoir pour intégrer et scaler avec AxeDz.",
+            "items": {
+                "services": {
+                    "question": "Quels services AxeDz propose-t-il ?",
+                    "answer": "AxeDz est conçu pour les développeurs et les entreprises, offrant un accès fiable à l'infrastructure de communication. En supprimant les barrières liées aux paiements, aux intégrations et à la scalabilité, la plateforme permet aux équipes de déployer leurs services efficacement."
+                },
+                "builtFor": {
+                    "question": "Pour qui AxeDz est-il conçu ?",
+                    "answer": "AxeDz s'adresse aux startups, PME et grandes entreprises qui ont besoin d'APIs SMS, e-mail, voix et facturation avec support en DZD. Que vous construisiez un système de notifications ou une suite complète, notre plateforme évolue avec vous."
+                },
+                "billing": {
+                    "question": "Comment fonctionne la facturation ?",
+                    "answer": "Nous utilisons un modèle pay-as-you-go avec des tarifs transparents en Dinars Algériens (DZD). Rechargez votre portefeuille via des moyens de paiement locaux, créez des factures et suivez chaque transaction en temps réel depuis le tableau de bord."
+                },
+                "test": {
+                    "question": "Puis-je tester la plateforme avant de scaler ?",
+                    "answer": "Absolument. Chaque nouveau compte inclut des crédits sandbox gratuits pour intégrer et tester toutes les APIs en environnement de staging avant la mise en production. Aucune carte bancaire requise pour commencer."
+                }
+            }
+        },
+        "contact": {
+            "badge": "Contact",
+            "title": "Discutons de vos besoins",
+            "subtitle": "Contactez-nous et notre équipe vous répondra sous 24 heures.",
+            "form": {
+                "name": "Nom",
+                "email": "E-mail",
+                "subject": "Sujet",
+                "message": "Message",
+                "required": "*",
+                "placeholders": {
+                    "name": "Votre nom",
+                    "email": "vous@entreprise.com",
+                    "subject": "Comment pouvons-nous vous aider ?",
+                    "message": "Parlez-nous de votre projet..."
+                },
+                "submit": "Envoyer le message",
+                "sending": "Envoi en cours...",
+                "success": "Merci. Nous vous répondrons sous 24 heures.",
+                "error": "Une erreur s'est produite. Veuillez réessayer."
+            },
+            "validation": {
+                "nameRequired": "Le nom est requis",
+                "nameMin": "Le nom doit contenir au moins 2 caractères",
+                "emailRequired": "L'e-mail est requis",
+                "emailInvalid": "Adresse e-mail invalide",
+                "subjectRequired": "Le sujet est requis",
+                "subjectMin": "Le sujet doit contenir au moins 3 caractères",
+                "messageRequired": "Le message est requis",
+                "messageMin": "Le message doit contenir au moins 10 caractères",
+                "messageMax": "Le message est trop long"
+            },
+            "imageAlt": "Illustration contact"
+        },
+        "footer": {
+            "emailLabel": "E-mail",
+            "phoneLabel": "Téléphone",
+            "newsletter": "Abonnez-vous à notre newsletter pour les mises à jour produit",
+            "emailPlaceholder": "Entrez votre e-mail",
+            "subscribe": "S'abonner",
+            "subscribed": "Abonné !",
+            "copyright": "© 2026 AxeDz. Tous droits réservés.",
+            "helpCenter": "Centre d'aide",
+            "privacy": "Politique de confidentialité",
+            "terms": "Conditions d'utilisation"
+        },
+        "caseStudies": {
+            "badge": "Cas d'usage",
+            "title": "workflows de communication réels",
+            "subtitle": "les équipes utilisent les APIs AxeDz pour les notifications, l'auth et la facturation.",
+            "learnMore": "En savoir plus",
+            "items": {
+                "ecommerce": {
+                    "title": "Plateformes e-commerce",
+                    "description": "Envoyez des confirmations de commande et des mises à jour de livraison par SMS et e-mail."
+                },
+                "saas": {
+                    "title": "Applications SaaS",
+                    "description": "Gérez l'authentification, les notifications et le stockage de manière fluide."
+                },
+                "fintech": {
+                    "title": "Fintech & Startups",
+                    "description": "Vérification OTP sécurisée et alertes en temps réel avec une fiabilité locale."
+                }
+            }
+        }
+    },
+    "auth": {
+        "login": {
+            "asideTitle": "Créer un compte",
+            "createAccount": "Créer un compte",
+            "features": {
+                "feature1": "Commencez à créer avec AxeDz en quelques minutes. Créez votre compte pour accéder à une plateforme unifiée regroupant les API SMS, E-mail et Stockage Cloud, le tout au même endroit.",
+                "feature2": "Configurez votre espace de travail, générez vos clés API et commencez à intégrer facilement de puissants outils de communication dans vos applications.",
+                "feature3": "Aucune configuration complexe, aucune contrainte de paiement externe : tout est conçu pour les développeurs avec une facturation locale en DZD.",
+                "feature4": "Rejoignez un écosystème grandissant de développeurs et d’équipes qui créent des produits numériques évolutifs et fiables à travers tout le pays."
+            },
+            "title": "Connexion",
+            "home": "Accueil",
+            "emailOrPhone": "E-mail ou Téléphone",
+            "emailOrPhonePlaceholder": "Entrez votre e-mail ou votre numéro de téléphone",
+            "password": "Mot de passe",
+            "passwordPlaceholder": "Entrez votre mot de passe",
+            "show": "Afficher",
+            "hide": "Masquer",
+            "resetPassword": "Réinitialiser le mot de passe",
+            "loginButton": "Se connecter",
+            "loggingIn": "Connexion en cours...",
+            "or": "OU",
+            "continueGoogle": "Continuer avec Google",
+            "continueGithub": "Continuer avec GitHub",
+            "privacyPolicy": "Politique de confidentialité",
+            "termsOfService": "Conditions d'utilisation",
+            "agreement": "En continuant, vous acceptez la",
+            "loginFailed": "Échec de la connexion. Veuillez réessayer."
+        },
+        "signup": {
+            "home": "Accueil",
+            "asideTitle": "Votre plateforme, votre communication, propulsées par AxeDz",
+            "features": {
+                "feature1": "Activez les services SMS, E-mail et Stockage Cloud grâce à une API unifiée conçue pour les développeurs en Algérie.",
+                "feature2": "Connectez-vous à vos utilisateurs via des canaux de communication fiables et évolutifs en seulement quelques étapes.",
+                "feature3": "Commencez à développer immédiatement grâce à une configuration simple et sans intégrations complexes.",
+                "feature4": "Intégrez et gérez facilement votre infrastructure de communication selon vos besoins."
+            },
+            "login": "Connexion",
+            "title": "Inscription",
+            "fullName": "Nom complet",
+            "fullNamePlaceholder": "John Doe",
+            "email": "E-mail",
+            "emailPlaceholder": "m@example.com",
+            "phone": "Numéro de téléphone",
+            "phonePlaceholder": "123 456 789",
+            "password": "Mot de passe",
+            "passwordPlaceholder": "••••••••",
+            "confirmPassword": "Confirmer le mot de passe",
+            "confirmPasswordPlaceholder": "••••••••",
+            "show": "Afficher",
+            "hide": "Masquer",
+            "agreement": "En continuant, vous acceptez les",
+            "privacyPolicy": "Politique de confidentialité",
+            "termsOfService": "Conditions d'utilisation",
+            "and": "et",
+            "signupButton": "S'inscrire",
+            "signingUp": "Création du compte...",
+            "signupFailed": "Échec de l'inscription. Veuillez réessayer.",
+            "or": "OU",
+            "continueGoogle": "Continuer avec Google",
+            "continueGithub": "Continuer avec GitHub"
+        },
+        "verifyPhone": {
+            "title": "Vérifier votre téléphone",
+            "description": "Entrez le code à 6 chiffres envoyé au",
+            "backToLogin": "Retour à la connexion",
+            "codeRequired": "Entrez le code à 6 chiffres",
+            "codeLength": "Le code doit contenir 6 chiffres",
+            "verify": "Vérifier",
+            "verifying": "Vérification...",
+            "resendCode": "Renvoyer le code",
+            "sending": "Envoi...",
+            "skip": "Passer pour l'instant",
+            "verifyFailed": "Code invalide ou expiré.",
+            "resendFailed": "Échec de l'envoi du code."
+        },
+        "callback": {
+            "signingIn": "Connexion en cours..."
+        },
+        "forgotPassword": {
+            "title": "Mot de passe oublié ?",
+            "description": "Entrez votre email et nous vous enverrons un code de réinitialisation.",
+            "email": "Email",
+            "emailPlaceholder": "m@exemple.com",
+            "sendCode": "Envoyer le code",
+            "sending": "Envoi...",
+            "rememberPassword": "Vous vous souvenez de votre mot de passe ?",
+            "login": "Connexion",
+            "sendFailed": "Échec de l'envoi du code. Veuillez réessayer."
+        },
+        "resetPassword": {
+            "title": "Réinitialiser le mot de passe",
+            "description": "Entrez le code à 6 chiffres envoyé à",
+            "code": "Code de vérification",
+            "password": "Nouveau mot de passe",
+            "passwordPlaceholder": "••••••••",
+            "confirmPassword": "Confirmer le mot de passe",
+            "confirmPasswordPlaceholder": "••••••••",
+            "show": "Afficher",
+            "hide": "Masquer",
+            "resetButton": "Réinitialiser",
+            "resetting": "Réinitialisation...",
+            "noCode": "Vous n'avez pas reçu de code ?",
+            "tryAgain": "Réessayer",
+            "resetFailed": "Échec de la réinitialisation. Veuillez réessayer."
+        }
+    },
+    "dashboard": {
+        "sidebar": {
+            "main": "Aperçu",
+            "sms": "SMS",
+            "emails": "Emails",
+            "storage": "Stockage",
+            "payment": "Paiement",
+            "settings": "Paramètres",
+            "docs": "Documentation",
+            "help": "Centre d'aide",
+            "project": "Projet actuel"
+        },
+        "navbar": {
+            "projects": "Projets",
+            "allProjects": "Tous les projets",
+            "selectProject": "Sélectionnez un projet pour changer de contexte",
+            "searchProjects": "Rechercher des projets...",
+            "noProjects": "Aucun projet trouvé",
+            "current": "Actuel",
+            "colName": "Projet",
+            "colStatus": "Statut",
+            "colEnv": "Env",
+            "colApiStatus": "Clé API",
+            "colCreated": "Créé",
+            "prev": "Préc",
+            "next": "Suiv",
+            "projectCount": "{count} projets au total",
+            "status": {
+                "active": "Actif",
+                "inactive": "Inactif",
+                "suspended": "Suspendu"
+            },
+            "environment": {
+                "production": "Production",
+                "development": "Développement",
+                "staging": "Staging"
+            },
+            "balance": {
+                "freePlan": "Plan Gratuit",
+                "wallet": "Portefeuille",
+                "currency": "DZD"
+            },
+            "notifications": {
+                "title": "Notifications",
+                "markAllRead": "Tout marquer comme lu",
+                "empty": "Aucune notification",
+                "viewAll": "Voir tout"
+            },
+            "user": {
+                "profile": "Profil",
+                "settings": "Paramètres",
+                "billing": "Facturation",
+                "logout": "Déconnexion"
+            }
+        },
+        "newProject": {
+            "button": "Créer Projet",
+            "title": "Créer un Nouveau Projet",
+            "description": "Configurez un nouveau projet pour commencer à envoyer des SMS, des emails et gérer le stockage cloud.",
+            "nameLabel": "Nom du Projet",
+            "namePlaceholder": "Mon Super App",
+            "nameRequired": "Le nom du projet est requis",
+            "nameMinLength": "Le nom doit contenir au moins 2 caractères",
+            "nameMaxLength": "Le nom doit contenir moins de 50 caractères",
+            "create": "Créer le Projet",
+            "creating": "Création..."
+        },
+        "overview": {
+            "title": "Aperçu",
+            "subtitle": "Gérez votre projet ici. Consultez le statut de la clé API et l'utilisation",
+            "lastActive": "dernière activité",
+            "justNow": "à l'instant",
+            "usage": {
+                "title": "Utilisation",
+                "description": "Votre consommation de ressources par service",
+                "of": "sur",
+                "used": "Utilisé",
+                "emails": "E-mails",
+                "sms": "SMS",
+                "storage": "Stockage",
+                "tokens": "Jetons IA"
+            },
+            "apiKey": {
+                "title": "Clé API",
+                "description": "Votre clé d'authentification active",
+                "created": "Créée",
+                "copy": "Copier",
+                "copied": "Copiée !",
+                "projectLabel": "Projet",
+                "keyLabel": "Clé secrète",
+                "updated": "Mise à jour",
+                "rotate": {
+                    "title": "Rotation de clé",
+                    "description": "Générer une nouvelle clé secrète. L'ancienne clé expirera dans 24 heures.",
+                    "action": "Rotation"
+                },
+                "suspend": {
+                    "title": "Suspendre la clé",
+                    "description": "Désactiver temporairement l'accès à l'API. Vous pouvez réactiver à tout moment.",
+                    "action": "Suspendre"
+                },
+                "activate": {
+                    "title": "Activer la clé",
+                    "description": "Reprendre l'accès à l'API immédiatement.",
+                    "action": "Activer"
+                }
+            },
+            "account": {
+                "title": "Compte",
+                "description": "Votre profil et aperçu de facturation",
+                "name": "Nom",
+                "email": "E-mail",
+                "plan": "Forfait",
+                "freePlan": "Gratuit",
+                "paidPlan": "Payant",
+                "balance": "Solde"
+            },
+            "recentActivity": {
+                "title": "Activité récente",
+                "description": "Derniers enregistrements d'utilisation sur vos services.",
+                "empty": "Aucune activité récente pour le moment."
+            },
+            "activity": {
+                "title": "Activité récente",
+                "description": "Derniers événements sur votre compte"
+            }
+        },
+        "sms": {
+            "title": "Messages SMS",
+            "description": "Consultez et gérez tous les messages SMS envoyés via votre compte.",
+            "searchPlaceholder": "Rechercher par numéro, message ou fournisseur...",
+            "allStatus": "Tous les statuts",
+            "clearFilter": "Effacer le filtre de statut",
+            "empty": "Aucun message SMS trouvé.",
+            "recipientCount": "{count} SMS",
+            "recipients": "Destinataires",
+            "resultCount": "{count, plural, one {# résultat} other {# résultats}}",
+            "table": {
+                "status": "Statut",
+                "to": "Destinataire",
+                "message": "Message",
+                "sentAt": "Envoyé le"
+            },
+            "pagination": {
+                "showing": "Affichage de {from}–{to} sur {total}",
+                "prev": "Page précédente",
+                "next": "Page suivante"
+            }
+        },
+        "emails": {
+            "title": "E-mails",
+            "description": "Consultez et gérez tous les e-mails envoyés via votre compte.",
+            "searchPlaceholder": "Rechercher par e-mail, sujet ou contenu...",
+            "allStatus": "Tous les statuts",
+            "clearFilter": "Effacer le filtre de statut",
+            "empty": "Aucun e-mail trouvé.",
+            "recipientCount": "{count} e-mails",
+            "recipients": "Destinataires",
+            "resultCount": "{count, plural, one {# résultat} other {# résultats}}",
+            "table": {
+                "status": "Statut",
+                "to": "Destinataire",
+                "subject": "Sujet",
+                "sentAt": "Envoyé le"
+            },
+            "pagination": {
+                "showing": "Affichage de {from}–{to} sur {total}",
+                "prev": "Page précédente",
+                "next": "Page suivante"
+            }
+        },
+        "payments": {
+            "title": "Paiements & Portefeuille",
+            "description": "Gérez le solde de votre portefeuille, consultez l'historique des transactions et configurez vos préférences de facturation.",
+            "sandboxBadge": "Mode Sandbox",
+            "productionBadge": "Mode Production",
+            "activationCard": {
+                "title": "Mode Sandbox Actif",
+                "description": "Votre compte est actuellement en mode sandbox. Les requêtes API sont simulées et aucun SMS ou e-mail réel n'est envoyé. Activez le mode production pour commencer à envoyer des messages en direct.",
+                "cta": "Activer le Mode Production",
+                "ctaLoading": "Activation..."
+            },
+            "infoCards": {
+                "walletBilling": "Facturation par portefeuille",
+                "walletBillingDesc": "Tous les frais sont déduits directement de votre portefeuille — pas de factures mensuelles.",
+                "payPerUsage": "Paiement à l'utilisation",
+                "payPerUsageDesc": "Pas de frais d'abonnement. Vous payez uniquement pour les SMS, e-mails et le stockage que vous utilisez.",
+                "noSubscription": "Aucun abonnement requis",
+                "noSubscriptionDesc": "Pas d'engagement récurrent. Rechargez votre portefeuille quand vous en avez besoin.",
+                "autoDeduction": "Déduction automatique",
+                "autoDeductionDesc": "Les coûts sont déduits automatiquement en temps réel lors de l'utilisation des API.",
+                "securePayments": "Paiements sécurisés",
+                "securePaymentsDesc": "Toutes les transactions sont traitées via SATIM, la passerelle de paiement sécurisée algérienne.",
+                "transactionHistory": "Historique des transactions",
+                "transactionHistoryDesc": "Chaque charge et dépôt est enregistré et visible dans votre historique pour une transparence totale."
+            },
+            "notesCard": {
+                "title": "Notes Importantes",
+                "productionNote": "Le mode production ne peut pas être désactivé une fois activé. Cette action est permanente.",
+                "balanceNote": "Un solde de portefeuille est requis pour utiliser les services en direct. Assurez-vous d'avoir des fonds suffisants avant de basculer.",
+                "refundNote": "Les fonds non utilisés du portefeuille ne sont pas remboursables mais restent disponibles pour une utilisation future.",
+                "supportTitle": "Besoin d'aide ?",
+                "supportDesc": "Contactez notre équipe de support pour obtenir de l'aide concernant l'activation de la production ou les questions de facturation."
+            },
+            "walletOverview": {
+                "title": "Aperçu du Portefeuille",
+                "currentBalance": "Solde Actuel",
+                "totalDeposits": "Dépôts Totaux",
+                "totalUsage": "Utilisation Totale",
+                "alertThreshold": "Seuil d'Alerte",
+                "noThreshold": "Non défini",
+                "zeroBalance": "Le solde de votre portefeuille est vide. Ajoutez des fonds pour commencer à utiliser les services en direct.",
+                "lowBalance": "Alerte de solde faible ! Votre solde actuel est égal ou inférieur au seuil d'alerte."
+            },
+            "quickActions": {
+                "title": "Actions Rapides",
+                "addFunds": "Ajouter des Fonds",
+                "addFundsDesc": "Déposez de l'argent dans votre portefeuille pour activer l'utilisation en direct de l'API.",
+                "setAlert": "Définir une Alerte de Solde",
+                "setAlertDesc": "Soyez notifié lorsque votre solde tombe en dessous d'un seuil.",
+                "thresholdLabel": "Seuil d'Alerte",
+                "thresholdPlaceholder": "Entrez le solde minimum",
+                "thresholdPositive": "Le seuil doit être positif",
+                "thresholdMax": "Le seuil maximum est de 100 000 DZD",
+                "save": "Enregistrer l'Alerte",
+                "saving": "Enregistrement...",
+                "billingInfo": "Informations de Facturation",
+                "billingInfoDesc": "Facturation basée sur le portefeuille avec déduction automatique de votre solde."
+            },
+            "billingInfo": {
+                "model": "Modèle de Facturation",
+                "modelValue": "Portefeuille Prépayé",
+                "lastPayment": "Dernier Paiement",
+                "lastPaymentNone": "Aucun paiement pour le moment",
+                "autoDeduction": "Déduction Automatique",
+                "autoDeductionEnabled": "Activée — les coûts sont déduits en temps réel"
+            },
+            "transactions": {
+                "title": "Historique des Transactions",
+                "description": "Un journal complet de toutes les transactions du portefeuille, y compris les dépôts, frais d'utilisation, remboursements et ajustements.",
+                "searchPlaceholder": "Rechercher par ID de transaction, type ou description...",
+                "empty": "Aucune transaction trouvée.",
+                "emptyDesc": "Les transactions apparaîtront ici une fois que vous commencerez à utiliser votre portefeuille.",
+                "table": {
+                    "id": "ID Transaction",
+                    "type": "Type",
+                    "amount": "Montant",
+                    "currency": "Devise",
+                    "status": "Statut",
+                    "description": "Description",
+                    "createdAt": "Date"
+                },
+                "pagination": {
+                    "showing": "Affichage de {from}–{to} sur {total}",
+                    "prev": "Page précédente",
+                    "next": "Page suivante"
+                }
+            },
+            "paymentHistory": {
+                "title": "Historique des Paiements",
+                "description": "Un enregistrement de tous les paiements effectués pour recharger votre portefeuille via la passerelle de paiement.",
+                "empty": "Aucun paiement trouvé.",
+                "emptyDesc": "Les paiements apparaîtront ici une fois que vous aurez rechargé votre portefeuille.",
+                "table": {
+                    "id": "ID Paiement",
+                    "provider": "Fournisseur",
+                    "amount": "Montant",
+                    "currency": "Devise",
+                    "status": "Statut",
+                    "paidAt": "Payé le"
+                },
+                "pagination": {
+                    "showing": "Affichage de {from}–{to} sur {total}",
+                    "prev": "Page précédente",
+                    "next": "Page suivante"
+                }
+            },
+            "status": {
+                "success": "Succès",
+                "pending": "En attente",
+                "failed": "Échoué",
+                "refunded": "Remboursé"
+            },
+            "type": {
+                "deposit": "Dépôt",
+                "usage": "Utilisation",
+                "refund": "Remboursement",
+                "adjustment": "Ajustement"
+            }
+        },
+        "settings": {
+            "title": "Paramètres du Projet",
+            "description": "Gérez les détails de votre projet, renommez ou supprimez des projets et configurez les préférences.",
+            "projectDetails": {
+                "title": "Détails du Projet",
+                "nameLabel": "Nom du Projet",
+                "idLabel": "ID du Projet",
+                "createdAtLabel": "Créé le",
+                "statusLabel": "Statut",
+                "environmentLabel": "Environnement"
+            },
+            "actions": {
+                "changeName": {
+                    "title": "Changer le Nom du Projet",
+                    "description": "Mettez à jour le nom de votre projet. Ce changement est répercuté sur tous les services.",
+                    "nameLabel": "Nouveau Nom du Projet",
+                    "namePlaceholder": "Entrez un nouveau nom",
+                    "validation": {
+                        "required": "Le nom du projet est requis",
+                        "minLength": "Le nom doit contenir au moins 2 caractères",
+                        "maxLength": "Le nom doit contenir moins de 50 caractères"
+                    },
+                    "save": "Enregistrer",
+                    "saving": "Enregistrement..."
+                },
+                "deleteProject": {
+                    "title": "Supprimer le Projet",
+                    "description": "Supprimez définitivement votre projet et toutes les données associées. Cette action est irréversible.",
+                    "confirmText": "Êtes-vous sûr de vouloir supprimer ce projet ? Cette action est irréversible.",
+                    "deleteButton": "Supprimer le Projet",
+                    "deleting": "Suppression..."
+                }
+            },
+            "contactSupport": {
+                "title": "Besoin d'aide supplémentaire ?",
+                "description": "Si vous rencontrez des problèmes ou avez besoin d'aide, veuillez contacter notre équipe de support à <support_email>.",
+                "email": "support@axedz.com"
+            },
+            "status": {
+                "active": "Actif",
+                "inactive": "Inactif",
+                "suspended": "Suspendu"
+            },
+            "environmentType": {
+                "production": "Production",
+                "development": "Développement",
+                "staging": "Test"
+            }
+        }
+    }
+}

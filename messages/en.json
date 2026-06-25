@@ -1,0 +1,627 @@
+{
+    "home": {
+        "navbar": {
+            "about": "About",
+            "services": "Services",
+            "useCases": "Use Cases",
+            "pricing": "Pricing",
+            "contact": "Contact",
+            "startBuilding": "Start Building",
+            "exploreApi": "Explore API",
+            "readDocs": "Read Docs",
+            "docs": "Docs",
+            "login": "Login",
+            "appearance": "Appearance",
+            "light": "Light",
+            "dark": "Dark",
+            "menuTitle": "Navigation Menu"
+        },
+        "hero": {
+            "ariaLabel": "Hero section",
+            "title": {
+                "prefix": "Powering communication for",
+                "highlight": "Algerian"
+            },
+            "words": {
+                "developers": "developers",
+                "businesses": "businesses",
+                "startups": "startups",
+                "enterprises": "enterprises"
+            },
+            "description": "AxeDz is a unified CPaaS platform that lets you send SMS, Emails, and manage Cloud Storage <strong>using a single API</strong> billed locally in <strong>Algerian Dinars (DZD).</strong> try for free now and dont miss our offers",
+            "cta": {
+                "primary": "Try for free",
+                "secondary": "Discover"
+            }
+        },
+        "trial": {
+            "badge": "Specific",
+            "title": "Built for Developers",
+            "subtitle": "A Tailored Solution for Your Needs",
+            "playVideo": "Play video",
+            "loading": "Loading video..."
+        },
+        "services": {
+            "badge": "Service",
+            "title": "Everything you need ",
+            "subtitle": "Manage your developer tools from a single platform."
+        },
+        "codeExamples": {
+            "badge": "Coding",
+            "title": "Built for Developers",
+            "subtitle": "Integrate in minutes with clean, well documented APIs",
+            "brandName": "AxeDz",
+            "suite": "Communication Suite",
+            "panelTitle": "Code your own solutions",
+            "docs": "Explore docs",
+            "tabs": {
+                "sms": {
+                    "label": "SMS",
+                    "description": "Send transactional and promotional SMS messages globally with high delivery rates. Our SMS API handles carrier routing, compliance, and delivery tracking automatically."
+                },
+                "email": {
+                    "label": "Email",
+                    "description": "Deliver transactional emails that land in the inbox, not the spam folder. Built-in templates, A/B testing, and analytics to optimize your email performance."
+                },
+                "wallet": {
+                    "label": "Wallet",
+                    "description": "Manage digital wallets, track balances, and process transactions securely. Built-in fraud detection and instant settlement for your financial workflows."
+                }
+            },
+            "codeBlock": {
+                "node": "Node.js",
+                "python": "Python",
+                "copy": "Copy",
+                "copied": "Copied!",
+                "copyTitle": "Copy code to clipboard"
+            }
+        },
+        "pricing": {
+            "badge": "Pricing",
+            "title": "Simple and transparent pricing",
+            "subtitle": "plan that fits your needs from sandbox testing to production scale deployments.",
+            "card": {
+                "suite": "Communication Suite",
+                "heading": "Unified API Pricing & Features",
+                "calculatorTitle": "Price Calculator",
+                "calculatorDescription": "Estimate your monthly costs based on SMS volume, email sends, and storage needs. All prices are in DZD with no hidden fees.",
+                "cta": "Pricing Calculator"
+            }
+        },
+        "faq": {
+            "badge": "Q&A",
+            "title": "Frequently asked questions",
+            "subtitle": "Everything you need to know about integrating and scaling with AxeDz.",
+            "items": {
+                "services": {
+                    "question": "What services does AxeDz provide?",
+                    "answer": "AxeDz is built to serve developers and businesses, providing reliable access to communication infrastructure wherever they operate. By removing barriers related to payments, integrations, and scalability, the platform ensures that teams can build and deploy services efficiently at a high level."
+                },
+                "builtFor": {
+                    "question": "Who is AxeDz built for?",
+                    "answer": "AxeDz is designed for startups, SMEs, and enterprise teams who need reliable SMS, email, voice, and billing APIs with local DZD currency support. Whether you are building a notification system or a full communication suite, our platform scales with you."
+                },
+                "billing": {
+                    "question": "How does billing work?",
+                    "answer": "We operate on a pay-as-you-go model with transparent pricing in Algerian Dinars (DZD). You can top up your wallet via local payment methods, create invoices, and track every transaction in real-time through the dashboard."
+                },
+                "test": {
+                    "question": "Can I test the platform before scaling?",
+                    "answer": "Absolutely. Every new account comes with free sandbox credits so you can integrate and test all APIs in a staging environment before going live. No credit card is required to start building."
+                }
+            }
+        },
+        "contact": {
+            "badge": "Contact",
+            "title": "Get in Touch",
+            "subtitle": "Have a question or want to work together? Drop us a message .",
+            "imageAlt": "Contact illustration",
+            "form": {
+                "name": "Name",
+                "email": "Email",
+                "phone": "Phone",
+                "subject": "Subject",
+                "message": "Message",
+                "required": "*",
+                "placeholders": {
+                    "name": "Your full name",
+                    "email": "you@example.com",
+                    "phone": "+1 234 567 890",
+                    "subject": "What's this about?",
+                    "message": "Tell us more about your project..."
+                },
+                "sending": "Sending...",
+                "submit": "Send Message",
+                "success": "Message sent successfully! We'll get back to you soon.",
+                "error": "Something went wrong. Please try again later."
+            }
+        },
+        "footer": {
+            "emailLabel": "Email",
+            "phoneLabel": "Phone",
+            "newsletter": "Subscribe to our newsletter for product updates and API news.",
+            "emailPlaceholder": "Enter your email",
+            "subscribe": "Subscribe",
+            "subscribed": "Subscribed!",
+            "copyright": "© 2026 AxeDz. All rights reserved.",
+            "helpCenter": "Help Center",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service"
+        },
+        "caseStudies": {
+            "badge": "Use-Cases",
+            "title": "real-world communication workflows",
+            "subtitle": "teams use AxeDz APIs to power notifications, auth, and billing at scale.",
+            "learnMore": "Learn more",
+            "items": {
+                "ecommerce": {
+                    "title": "E-commerce Platforms",
+                    "description": "Send order confirmations and delivery updates via SMS and Email."
+                },
+                "saas": {
+                    "title": "SaaS Applications",
+                    "description": "Manage user authentication, notifications, and storage seamlessly."
+                },
+                "fintech": {
+                    "title": "Fintech & Startups",
+                    "description": "Secure OTP verification and real-time alerts with local reliability."
+                }
+            }
+        }
+    },
+    "auth": {
+        "login": {
+            "asideTitle": "Create an account",
+            "createAccount": "Create Account",
+            "features": {
+                "feature1": "Start building with AxeDz in minutes. Create your account to access a unified platform for SMS, Email, and Cloud Storage APIs  all in one place.",
+                "feature2": "Set up your workspace, generate your API keys, and begin integrating powerful communication tools into your applications with ease.",
+                "feature3": "No complex setup, no external payment barriers  everything is designed for developers with local billing in DZD.",
+                "feature4": "Join a growing ecosystem of developers and teams building scalable, reliable digital products across the country."
+            },
+            "title": "Login",
+            "home": "Home",
+            "emailOrPhone": "Email or Phone",
+            "emailOrPhonePlaceholder": "Enter your email or phone",
+            "password": "Password",
+            "passwordPlaceholder": "Enter your password",
+            "show": "Show",
+            "hide": "Hide",
+            "resetPassword": "Reset Password",
+            "loginButton": "Login",
+            "loggingIn": "Logging in...",
+            "or": "OR",
+            "continueGoogle": "Continue with Google",
+            "continueGithub": "Continue with GitHub",
+            "privacyPolicy": "Privacy Policy",
+            "termsOfService": "Terms of Service",
+            "agreement": "By continuing, you agree to the",
+            "loginFailed": "Login failed. Please try again."
+        },
+        "signup": {
+            "home": "Home",
+            "asideTitle": "Your platform powered by AxeDz",
+            "features": {
+                "feature1": "Activate SMS, Email, and Cloud Storage through a single unified API designed for developers in Algeria.",
+                "feature2": "Connect with your users through reliable, scalable communication channels in just a few steps.",
+                "feature3": "Start building instantly with a simple setup and no complex integrations.",
+                "feature4": "Seamlessly integrate and control your communication infrastructure your way.",
+                "feature5": "Start building instantly with a simple setup and no complex integrations."
+            },
+            "login": "Login",
+            "title": "Signup",
+            "fullName": "Full Name",
+            "fullNamePlaceholder": "John Doe",
+            "email": "Email",
+            "emailPlaceholder": "m@example.com",
+            "phone": "Phone Number",
+            "phonePlaceholder": "123 456 789",
+            "password": "Password",
+            "passwordPlaceholder": "••••••••",
+            "confirmPassword": "Confirm Password",
+            "confirmPasswordPlaceholder": "••••••••",
+            "show": "Show",
+            "hide": "Hide",
+            "agreement": "By continuing, you agree to the",
+            "privacyPolicy": "Privacy Policy",
+            "termsOfService": "Terms of Service",
+            "and": "and",
+            "signupButton": "Sign up",
+            "signingUp": "Creating account...",
+            "signupFailed": "Signup failed. Please try again.",
+            "or": "OR",
+            "continueGoogle": "Continue with Google",
+            "continueGithub": "Continue with GitHub"
+        },
+        "verifyPhone": {
+            "title": "Verify Your Phone",
+            "description": "Enter the 6-digit code sent to",
+            "backToLogin": "Back to login",
+            "codeRequired": "Enter the 6-digit code",
+            "codeLength": "Code must be 6 digits",
+            "verify": "Verify",
+            "verifying": "Verifying...",
+            "resendCode": "Resend Code",
+            "sending": "Sending...",
+            "skip": "Skip for now",
+            "verifyFailed": "Invalid or expired code.",
+            "resendFailed": "Failed to resend code."
+        },
+        "callback": {
+            "signingIn": "Signing you in..."
+        },
+        "forgotPassword": {
+            "title": "Forgot Password?",
+            "description": "Enter your email and we will send you a reset code.",
+            "email": "Email",
+            "emailPlaceholder": "m@example.com",
+            "sendCode": "Send Reset Code",
+            "sending": "Sending...",
+            "rememberPassword": "Remember your password?",
+            "login": "Login",
+            "sendFailed": "Failed to send reset code. Please try again."
+        },
+        "resetPassword": {
+            "title": "Reset Password",
+            "description": "Enter the 6-digit code sent to",
+            "code": "Verification Code",
+            "password": "New Password",
+            "passwordPlaceholder": "••••••••",
+            "confirmPassword": "Confirm Password",
+            "confirmPasswordPlaceholder": "••••••••",
+            "show": "Show",
+            "hide": "Hide",
+            "resetButton": "Reset Password",
+            "resetting": "Resetting...",
+            "noCode": "Did not receive code?",
+            "tryAgain": "Try again",
+            "resetFailed": "Failed to reset password. Please try again."
+        }
+    },
+    "dashboard": {
+        "sidebar": {
+            "main": "Overview",
+            "sms": "SMS",
+            "emails": "Emails",
+            "storage": "Storage",
+            "payment": "Payment",
+            "settings": "Settings",
+            "docs": "Documentation",
+            "help": "Help Center",
+            "project": "Current Project"
+        },
+        "navbar": {
+            "projects": "No Projects",
+            "allProjects": "All Projects",
+            "selectProject": "Select a project to switch context",
+            "searchProjects": "Search projects...",
+            "noProjects": "No projects found",
+            "current": "Current",
+            "colName": "Project",
+            "colStatus": "Status",
+            "colEnv": "Env",
+            "colApiStatus": "API Key",
+            "colCreated": "Created",
+            "prev": "Prev",
+            "next": "Next",
+            "projectCount": "{count} projects total",
+            "tryDifferentSearch": "Try a different search term",
+            "status-active": "Active",
+            "status-inactive": "Inactive",
+            "status-suspended": "Suspended",
+            "showingResults": "Showing {from}–{to} of {total}",
+            "noResults": "No results",
+            "status": {
+                "active": "Active",
+                "inactive": "Inactive",
+                "suspended": "Suspended"
+            },
+            "environment": {
+                "production": "Production",
+                "development": "Development",
+                "staging": "Staging"
+            },
+            "balance": {
+                "freePlan": "Free Plan",
+                "wallet": "Wallet",
+                "currency": "DZD"
+            },
+            "notifications": {
+                "title": "Notifications",
+                "markAllRead": "Mark all as read",
+                "empty": "No notifications",
+                "viewAll": "View all"
+            },
+            "user": {
+                "profile": "Profile",
+                "settings": "Settings",
+                "billing": "Billing",
+                "logout": "Logout"
+            }
+        },
+        "newProject": {
+            "button": "Create  Project",
+            "title": "Create New Project",
+            "description": "Set up a new project to start sending SMS, emails, and managing cloud storage.",
+            "nameLabel": "Project Name",
+            "namePlaceholder": "My Awesome App",
+            "nameRequired": "Project name is required",
+            "nameMinLength": "Name must be at least 2 characters",
+            "nameMaxLength": "Name must be less than 50 characters",
+            "create": "Create Project",
+            "creating": "Creating..."
+        },
+        "overview": {
+            "title": "Overview",
+            "subtitle": "Manage Your Porject Here . see API key status and usage",
+            "lastActive": "last active",
+            "justNow": "just now",
+            "usage": {
+                "title": "Usage Overview",
+                "description": "Monitor your project consumption across all services",
+                "of": "of",
+                "used": "Used",
+                "emails": "Emails",
+                "sms": "SMS",
+                "storage": "Storage",
+                "tokens": "AI Tokens"
+            },
+            "apiKey": {
+                "title": "Api Key",
+                "description": "Your active authentication key",
+                "created": "Created",
+                "copy": "Copy",
+                "copied": "Copied!",
+                "projectLabel": "Project",
+                "keyLabel": "Secret Key",
+                "updated": "Updated",
+                "rotate": {
+                    "title": "Rotate Key",
+                    "description": "Generate a new secret key. The old key will expire in 24 hours.",
+                    "action": "Rotate"
+                },
+                "suspend": {
+                    "title": "Suspend Key",
+                    "description": "Temporarily disable API access. You can reactivate anytime.",
+                    "action": "Suspend"
+                },
+                "activate": {
+                    "title": "Activate Key",
+                    "description": "Resume API access immediately.",
+                    "action": "Activate"
+                }
+            },
+            "account": {
+                "title": "Account",
+                "description": "Your profile and billing overview",
+                "name": "Name",
+                "email": "Email",
+                "plan": "Plan",
+                "freePlan": "Free",
+                "paidPlan": "Paid",
+                "balance": "Balance"
+            },
+            "recentActivity": {
+                "title": "Recent Activity",
+                "description": "Latest usage records across your services.",
+                "empty": "No recent activity yet."
+            },
+            "activity": {
+                "title": "Recent Activity",
+                "description": "Latest events on your account"
+            }
+        },
+        "sms": {
+            "title": "SMS Messages",
+            "description": "View and manage all SMS messages sent through your account.",
+            "searchPlaceholder": "Search by number, message .....",
+            "allStatus": "All Status",
+            "clearFilter": "Clear status filter",
+            "empty": "No SMS messages found.",
+            "recipientCount": "{count} SMS",
+            "recipients": "Recipients",
+            "resultCount": "{count, plural, one {# result} other {# results}}",
+            "table": {
+                "status": "Status",
+                "to": "To",
+                "message": "Message",
+                "sentAt": "Sent At"
+            },
+            "pagination": {
+                "showing": "Showing {from}–{to} of {total}",
+                "prev": "Previous page",
+                "next": "Next page"
+            }
+        },
+        "emails": {
+            "title": "Emails",
+            "description": "View and manage all emails sent through your account.",
+            "searchPlaceholder": "Search by email, subject, or body...",
+            "allStatus": "All Status",
+            "clearFilter": "Clear status filter",
+            "empty": "No emails found.",
+            "recipientCount": "{count} emails",
+            "recipients": "Recipients",
+            "resultCount": "{count, plural, one {# result} other {# results}}",
+            "table": {
+                "status": "Status",
+                "to": "To",
+                "subject": "Subject",
+                "sentAt": "Sent At"
+            },
+            "pagination": {
+                "showing": "Showing {from}–{to} of {total}",
+                "prev": "Previous page",
+                "next": "Next page"
+            }
+        },
+        "settings": {
+            "title": "Project Settings",
+            "description": "Manage your project details, API keys, and account settings.",
+            "projectDetails": {
+                "title": "Project Details",
+                "nameLabel": "Project Name",
+                "idLabel": "Project ID",
+                "createdAtLabel": "Created At",
+                "statusLabel": "Status",
+                "environmentLabel": "Environment"
+            },
+            "actions": {
+                "changeName": {
+                    "title": "Change Project Name",
+                    "description": "Update your project's name. This change is reflected across all services.",
+                    "nameLabel": "New Project Name",
+                    "namePlaceholder": "Enter new name",
+                    "validation": {
+                        "required": "Project name is required",
+                        "minLength": "Name must be at least 2 characters",
+                        "maxLength": "Name must be less than 50 characters"
+                    },
+                    "save": "Save Changes",
+                    "saving": "Saving..."
+                },
+                "deleteProject": {
+                    "title": "Delete Project",
+                    "description": "Permanently delete your project and all associated data. This action cannot be undone.",
+                    "confirmText": "Are you sure you want to delete this project? This action cannot be undone.",
+                    "deleteButton": "Delete Project",
+                    "deleting": "Deleting..."
+                }
+            },
+            "contactSupport": {
+                "title": "Need further assistance?",
+                "description": "If you encounter any issues or need help, please contact our support team at <support_email>.",
+                "email": "support@axedz.com"
+            },
+            "status": {
+                "active": "Active",
+                "inactive": "Inactive",
+                "suspended": "Suspended"
+            },
+            "environmentType": {
+                "production": "Production",
+                "development": "Development",
+                "staging": "Staging"
+            }
+        },
+        "payments": {
+            "title": "Payments & Wallet",
+            "description": "Manage your wallet balance, view transaction history, and configure billing preferences.",
+            "sandboxBadge": "Sandbox Mode",
+            "productionBadge": "Production Mode",
+            "activationCard": {
+                "title": "Sandbox Mode Active",
+                "description": "Your account is currently in sandbox mode. API requests are simulated and no real SMS or email messages are sent. Activate production mode to start sending live messages.",
+                "cta": "Activate Production Mode",
+                "ctaLoading": "Activating..."
+            },
+            "infoCards": {
+                "walletBilling": "Wallet-based billing",
+                "walletBillingDesc": "All charges are deducted directly from your wallet balance — no monthly invoices.",
+                "payPerUsage": "Pay only for usage",
+                "payPerUsageDesc": "No subscription fees. You only pay for the SMS, emails, and storage you actually use.",
+                "noSubscription": "No subscription required",
+                "noSubscriptionDesc": "No recurring commitments. Top up your wallet when you need it, use it when you want.",
+                "autoDeduction": "Automatic balance deduction",
+                "autoDeductionDesc": "Costs are deducted automatically in real-time as you use the API services.",
+                "securePayments": "Secure payment processing",
+                "securePaymentsDesc": "All transactions are processed through SATIM, Algeria's secure payment gateway.",
+                "transactionHistory": "Transaction history",
+                "transactionHistoryDesc": "Every charge and deposit is logged and visible in your transaction history for full transparency."
+            },
+            "notesCard": {
+                "title": "Important Notes",
+                "productionNote": "Production mode cannot be disabled once activated. This action is permanent.",
+                "balanceNote": "A wallet balance is required to use live services. Ensure you have sufficient funds before switching.",
+                "refundNote": "Unused wallet funds are non-refundable but remain available for future usage.",
+                "supportTitle": "Need help?",
+                "supportDesc": "Contact our support team for assistance with production activation or billing questions."
+            },
+            "walletOverview": {
+                "title": "Wallet Overview",
+                "currentBalance": "Current Balance",
+                "totalDeposits": "Total Deposits",
+                "totalUsage": "Total Usage",
+                "alertThreshold": "Alert Threshold",
+                "noThreshold": "Not set",
+                "zeroBalance": "Your wallet balance is empty. Add funds to start using live services.",
+                "lowBalance": "Low balance alert! Your current balance is at or below the alert threshold."
+            },
+            "quickActions": {
+                "title": "Quick Actions",
+                "addFunds": "Add Funds",
+                "addFundsDesc": "Deposit money into your wallet to enable live API usage.",
+                "setAlert": "Set Low Balance Alert",
+                "setAlertDesc": "Get notified when your balance drops below a threshold.",
+                "thresholdLabel": "Alert Threshold",
+                "thresholdPlaceholder": "Enter minimum balance",
+                "thresholdPositive": "Threshold must be positive",
+                "thresholdMax": "Maximum threshold is 100,000 DZD",
+                "save": "Save Alert",
+                "saving": "Saving...",
+                "billingInfo": "Billing Information",
+                "billingInfoDesc": "Wallet-based billing with automatic deduction from your balance."
+            },
+            "billingInfo": {
+                "model": "Billing Model",
+                "modelValue": "Prepaid Wallet",
+                "lastPayment": "Last Payment",
+                "lastPaymentNone": "No payments yet",
+                "autoDeduction": "Auto Deduction",
+                "autoDeductionEnabled": "Enabled — costs deducted in real-time"
+            },
+            "transactions": {
+                "title": "Transaction History",
+                "description": "A complete log of all wallet transactions including deposits, usage charges, refunds, and adjustments.",
+                "searchPlaceholder": "Search by transaction ID, type, or description...",
+                "empty": "No transactions found.",
+                "emptyDesc": "Transactions will appear here once you start using your wallet.",
+                "table": {
+                    "id": "Transaction ID",
+                    "type": "Type",
+                    "amount": "Amount",
+                    "currency": "Currency",
+                    "status": "Status",
+                    "description": "Description",
+                    "createdAt": "Date"
+                },
+                "pagination": {
+                    "showing": "Showing {from}–{to} of {total}",
+                    "prev": "Previous page",
+                    "next": "Next page"
+                }
+            },
+            "paymentHistory": {
+                "title": "Payment History",
+                "description": "A record of all payments made to top up your wallet through the payment gateway.",
+                "empty": "No payments found.",
+                "emptyDesc": "Payments will appear here once you top up your wallet.",
+                "table": {
+                    "id": "Payment ID",
+                    "provider": "Provider",
+                    "amount": "Amount",
+                    "currency": "Currency",
+                    "status": "Status",
+                    "paidAt": "Paid At"
+                },
+                "pagination": {
+                    "showing": "Showing {from}–{to} of {total}",
+                    "prev": "Previous page",
+                    "next": "Next page"
+                }
+            },
+            "status": {
+                "success": "Success",
+                "pending": "Pending",
+                "failed": "Failed",
+                "refunded": "Refunded"
+            },
+            "type": {
+                "deposit": "Deposit",
+                "usage": "Usage",
+                "refund": "Refund",
+                "adjustment": "Adjustment"
+            }
+        }
+    }
+}

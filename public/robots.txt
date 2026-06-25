@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+Sitemap: https://axedz.com/sitemap.xml
+Host: axedz.com
