@@ -39,7 +39,7 @@ const cardVariants = {
     visible: {
         opacity: 1,
         y: 0,
-        transition: { type: 'spring', stiffness: 110, damping: 14 },
+        transition: { type: 'spring' as const, stiffness: 110, damping: 14 },
     },
 };
 

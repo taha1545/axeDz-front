@@ -25,7 +25,7 @@ export default function VerifyPhonePage() {
   const t = useTranslations('auth.verifyPhone');
   const router = useRouter();
 
-  const { user, loading: authLoading } = useAuth();
+  const { user, isLoading: authLoading } = useAuth();
   const verifyMutation = useVerifySms();
   const resendMutation = useResendVerifyOtp();
 
@@ -85,10 +85,11 @@ export default function VerifyPhonePage() {
 
   const onSubmit = async (data: VerifyPhoneInput) => {
     clearErrors('root');
+    if (!user?.email) return;
 
     try {
       await verifyMutation.mutateAsync({
-        email: user?.email,
+        email: user.email,
         otp_code: data.code,
       });
       router.replace('/dashboard');
@@ -99,9 +100,10 @@ export default function VerifyPhonePage() {
 
   const onResend = async () => {
     clearErrors('root');
+    if (!user?.email) return;
 
     try {
-      await resendMutation.mutateAsync({ email: user?.email });
+      await resendMutation.mutateAsync({ email: user.email });
       reset();
     } catch (err: unknown) {
       setError('root', { message: getMessage(err) || t('resendFailed') });
