@@ -106,9 +106,21 @@ export function useDeleteApiKey() {
 
     return useMutation({
         mutationFn: deleteApiKey,
+
         onSuccess: (_, id) => {
-            queryClient.removeQueries({ queryKey: apiKeyDetailKey(id) });
-            queryClient.invalidateQueries({ queryKey: API_KEYS_KEY });
+            queryClient.removeQueries({
+                queryKey: apiKeyDetailKey(id),
+            });
+
+            queryClient.setQueriesData<ApiKey[]>(
+                { queryKey: API_KEYS_KEY },
+                (old) =>
+                    old ? old.filter((key) => key.id !== id) : old
+            );
+
+            queryClient.invalidateQueries({
+                queryKey: API_KEYS_KEY,
+            });
         },
     });
 }
