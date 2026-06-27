@@ -11,8 +11,9 @@ interface ProjectSelectTriggerProps {
 }
 
 export function ProjectSelectTrigger({ currentProject, onClick }: ProjectSelectTriggerProps) {
+    //
     const t = useTranslations('dashboard.navbar');
-
+    //
     return (
         <button
             onClick={onClick}

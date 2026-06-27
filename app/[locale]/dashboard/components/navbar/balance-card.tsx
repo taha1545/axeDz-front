@@ -13,18 +13,16 @@ export function BalanceCard({
     currency,
     isProduction,
 }: BalanceCardProps) {
+    //
     const t = useTranslations('dashboard.navbar.balance');
+    const safeBalance = isNaN(balance) ? 0 : balance;
 
     return (
-        <div className="rounded-xl  bg-foreground/95  px-5 py-3 shadow-md transition-all duration-200 hover:shadow-xl">
+        <div className="rounded-xl bg-foreground/95 px-5 py-3 shadow-md transition-all duration-200 hover:shadow-xl">
             {isProduction ? (
-                <div className="gap-2 flex flex-row justify-between items-center ">
-                    <p className="text-base font-medium text-background">
-                        {t('wallet')}
-                    </p>
-
+                <div className="gap-2 flex flex-row justify-between items-center">
                     <p className="text-base font-bold tabular-nums text-background">
-                        {balance.toLocaleString()} {currency}
+                        {safeBalance.toLocaleString()} {currency}
                     </p>
                 </div>
             ) : (

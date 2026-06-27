@@ -33,7 +33,7 @@ const STATUS_CONFIG = {
         dot: 'bg-emerald-500',
         text: 'text-emerald-700 dark:text-emerald-400',
     },
-    inactive: {
+    blocked: {
         dot: 'bg-amber-500',
         text: 'text-amber-700 dark:text-amber-400',
     },
@@ -131,7 +131,7 @@ export function ProjectSelectModal({
                 </div>
 
                 {/* Search */}
-                <div className="p-4 pb-2 shrink-0">
+                <div className="p-4 pb-2 shrink-0 px-8 ">
                     <div className="relative">
                         <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                         <Input
@@ -207,7 +207,9 @@ export function ProjectSelectModal({
                                                         </span>
                                                     </span>
                                                     <span className="opacity-40">|</span>
-                                                    <span>{project.createdAt}</span>
+                                                    <span>
+                                                        {new Date(project.createdAt).toLocaleDateString()}
+                                                    </span>
                                                 </div>
                                             </div>
 

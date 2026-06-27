@@ -25,7 +25,6 @@ export function useUser() {
 }
 
 //  Mutations 
-
 export function useLogin() {
     const queryClient = useQueryClient();
 
@@ -67,7 +66,7 @@ export function useLogout() {
         mutationFn: logout,
         onSuccess: () => {
             clearAuthTokens();
-            queryClient.removeQueries({ queryKey: AUTH_ME_KEY });
+            queryClient.clear(); 
         },
     });
 }

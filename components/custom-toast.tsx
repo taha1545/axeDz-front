@@ -84,7 +84,7 @@ export function CustomToaster({ className, ...props }: ToasterProps) {
                 classNames: {
                     // 1. Parent Toast Container
                     toast: cn(
-                        'group relative flex w-full items-start gap-3.5 overflow-hidden rounded-2xl p-4 pr-11',
+                        'group relative flex w-full mt-0 items-start  gap-3.5 overflow-hidden rounded-2xl p-4 pr-11',
                         'border border-border/60 bg-popover/95 backdrop-blur-md shadow-xl dark:shadow-black/30',
                         'sm:max-w-[380px] lg:max-w-[450px] max-h-[180px]'
                     ),

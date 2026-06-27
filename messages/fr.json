@@ -420,6 +420,7 @@
             "allStatus": "Tous les statuts",
             "clearFilter": "Effacer le filtre de statut",
             "empty": "Aucun message SMS trouvé.",
+            "loadError": "Échec du chargement des messages SMS. Veuillez réessayer.",
             "recipientCount": "{count} SMS",
             "recipients": "Destinataires",
             "resultCount": "{count, plural, one {# résultat} other {# résultats}}",
@@ -427,7 +428,8 @@
                 "status": "Statut",
                 "to": "Destinataire",
                 "message": "Message",
-                "sentAt": "Envoyé le"
+                "sentAt": "Envoyé le",
+                "createdAt": "Créé le"
             },
             "pagination": {
                 "showing": "Affichage de {from}–{to} sur {total}",
@@ -442,6 +444,7 @@
             "allStatus": "Tous les statuts",
             "clearFilter": "Effacer le filtre de statut",
             "empty": "Aucun e-mail trouvé.",
+            "loadError": "Échec du chargement des e-mails. Veuillez réessayer.",
             "recipientCount": "{count} e-mails",
             "recipients": "Destinataires",
             "resultCount": "{count, plural, one {# résultat} other {# résultats}}",
@@ -449,7 +452,8 @@
                 "status": "Statut",
                 "to": "Destinataire",
                 "subject": "Sujet",
-                "sentAt": "Envoyé le"
+                "sentAt": "Envoyé le",
+                "createdAt": "Créé le"
             },
             "pagination": {
                 "showing": "Affichage de {from}–{to} sur {total}",
@@ -462,6 +466,21 @@
             "description": "Gérez le solde de votre portefeuille, consultez l'historique des transactions et configurez vos préférences de facturation.",
             "sandboxBadge": "Mode Sandbox",
             "productionBadge": "Mode Production",
+            "loadError": "Échec du chargement des données de paiement. Veuillez réessayer.",
+            "addFundsAmount": "Montant",
+            "addFundsPlaceholder": "Entrez le montant",
+            "addFundsMin": "Le montant minimum est de 100 {currency}",
+            "addFundsCancel": "Annuler",
+            "addFundsProceed": "Procéder au Paiement",
+            "addFundsProcessing": "Traitement...",
+            "toasts": {
+                "activateSuccess": "Mode production activé avec succès !",
+                "activateError": "Échec de l'activation du mode production. Veuillez réessayer.",
+                "thresholdSuccess": "Seuil d'alerte enregistré avec succès !",
+                "thresholdError": "Échec de l'enregistrement du seuil d'alerte.",
+                "paymentInitiated": "Paiement initié avec succès !",
+                "paymentError": "Échec de l'initiation du paiement."
+            },
             "activationCard": {
                 "title": "Mode Sandbox Actif",
                 "description": "Votre compte est actuellement en mode sandbox. Les requêtes API sont simulées et aucun SMS ou e-mail réel n'est envoyé. Activez le mode production pour commencer à envoyer des messages en direct.",

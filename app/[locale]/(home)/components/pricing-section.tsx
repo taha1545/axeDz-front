@@ -15,7 +15,7 @@ export function PricingSection() {
     return (
         <section
             id="pricing"
-            className="scroll-mt-24 px-4 py-12 md:px-6 md:py-24 lg:px-8"
+            className="scroll-mt-24 px-4 py-10 md:px-6 md:py-24 lg:px-8"
         >
             <div className="mx-auto max-w-7xl">
                 <SectionHeader
@@ -30,8 +30,8 @@ export function PricingSection() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
                     className={cn(
-                        'relative overflow-hidden rounded-4xl border border-primary bg-card shadow-lg shadow-primary/15',
-                        'p-6 sm:p-10 md:p-14 '
+                        'relative overflow-hidden rounded-4xl border  border-border dark:border-border bg-card shadow-lg shadow-primary/15',
+                        'p-6 sm:p-10 md:px-14 md:py-15 '
                     )}
                 >
                     <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl md:h-96 md:w-96" />
@@ -52,7 +52,7 @@ export function PricingSection() {
 
                         <div className="space-y-6 lg:border-l lg:border-foreground lg:pl-12">
                             <div className="space-y-2">
-                                <h4 className="text-base font-semibold text-foreground md:text-lg">
+                                <h4 className="text-lg font-semibold text-foreground md:text-xl">
                                     {t('card.calculatorTitle')}
                                 </h4>
                                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">

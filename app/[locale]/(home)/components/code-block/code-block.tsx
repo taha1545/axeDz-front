@@ -145,7 +145,7 @@ export function CodeBlock({
                 <div className=" hidden md:flex items-center gap-3">
                     {/* Language Toggle */}
                     {onLanguageChange && (
-                        <div className="flex items-center rounded-lg border border-[#30363d] bg-[#0d1117] p-0.5">
+                        <div className="flex items-center rounded-lg  bg-[#0d1117] p-0.5">
                             <button
                                 onClick={() => onLanguageChange('node')}
                                 className={cn(
@@ -156,17 +156,6 @@ export function CodeBlock({
                                 )}
                             >
                                 {labels.node}
-                            </button>
-                            <button
-                                onClick={() => onLanguageChange('python')}
-                                className={cn(
-                                    'rounded-md px-3 py-1 text-xs font-medium transition-all',
-                                    language === 'python'
-                                        ? 'bg-[#862384] text-white'
-                                        : 'text-[#8b949e] hover:text-[#c9d1d9]'
-                                )}
-                            >
-                                {labels.python}
                             </button>
                         </div>
                     )}

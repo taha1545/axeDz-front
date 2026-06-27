@@ -48,7 +48,7 @@ export function NavbarMobileMenu() {
       </SheetTrigger>
 
       {/* Content */}
-      <SheetContent className="flex flex-col z-100 w-[80%] max-w-2xl px-6 pt-8 pb-6 bg-background border-l border-border">
+      <SheetContent className="flex flex-col z-100 w-[90%] max-w-2xl px-6 pt-8 pb-6 bg-background border-l border-border">
         <DialogTitle className="sr-only">{t("menuTitle")}</DialogTitle>
 
         {/* Logo */}

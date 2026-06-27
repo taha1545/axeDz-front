@@ -47,7 +47,7 @@ export function NavbarTopBar() {
   };
 
   return (
-    <div className="w-full  bg-background/30 backdrop-blur-md transition-colors duration-300 pointer-events-auto">
+    <div className="w-full  bg-background/80  transition-colors duration-300 pointer-events-auto">
       <div className="max-w-7xl mx-auto flex items-center justify-end gap-2 md:gap-4 py-2 px-4 sm:px-6 lg:px-8 text-sm relative">
         {/* Left: Email */}
         <div className=" absolute hidden md:flex items-center gap-2 text-muted-foreground  left-7">

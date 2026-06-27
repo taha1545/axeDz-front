@@ -149,7 +149,7 @@
             "terms": "Terms of Service"
         },
         "caseStudies": {
-            "badge": "Use-Cases",
+            "badge": "Cases",
             "title": "real-world communication workflows",
             "subtitle": "teams use AxeDz APIs to power notifications, auth, and billing at scale.",
             "learnMore": "Learn more",
@@ -279,8 +279,18 @@
         }
     },
     "dashboard": {
+        "empty": {
+            "title": "No Projects Selected",
+            "description": "Select your  project to start sending emails and SMS with AxeDz.",
+            "verify": {
+                "title": "Account Verification Required",
+                "description": "You need a verified account before you can create projects.",
+                "link": "Go to Profile to Verify"
+            }
+        },
         "sidebar": {
             "main": "Overview",
+            "projects": "Projects",
             "sms": "SMS",
             "emails": "Emails",
             "storage": "Storage",
@@ -349,13 +359,19 @@
             "nameMinLength": "Name must be at least 2 characters",
             "nameMaxLength": "Name must be less than 50 characters",
             "create": "Create Project",
-            "creating": "Creating..."
+            "creating": "Creating...",
+            "verifyRequired": "Account Verification Required",
+            "verifyDescription": "You need to verify your account before creating projects.",
+            "verifyLink": "Go to Profile"
         },
         "overview": {
             "title": "Overview",
             "subtitle": "Manage Your Porject Here . see API key status and usage",
             "lastActive": "last active",
             "justNow": "just now",
+            "emailMarketing": "Email Marketing",
+            "smsMarketing": "SMS Marketing",
+            "totalCost": "Total Cost",
             "usage": {
                 "title": "Usage Overview",
                 "description": "Monitor your project consumption across all services",
@@ -367,13 +383,12 @@
                 "tokens": "AI Tokens"
             },
             "apiKey": {
-                "title": "Api Key",
-                "description": "Your active authentication key",
-                "created": "Created",
-                "copy": "Copy",
-                "copied": "Copied!",
+                "title": "API Key",
+                "description": "Manage your project API key and access controls.",
                 "projectLabel": "Project",
                 "keyLabel": "Secret Key",
+                "copied": "Copied!",
+                "created": "Created",
                 "updated": "Updated",
                 "rotate": {
                     "title": "Rotate Key",
@@ -418,6 +433,7 @@
             "allStatus": "All Status",
             "clearFilter": "Clear status filter",
             "empty": "No SMS messages found.",
+            "loadError": "Failed to load SMS messages. Please try again.",
             "recipientCount": "{count} SMS",
             "recipients": "Recipients",
             "resultCount": "{count, plural, one {# result} other {# results}}",
@@ -425,7 +441,8 @@
                 "status": "Status",
                 "to": "To",
                 "message": "Message",
-                "sentAt": "Sent At"
+                "sentAt": "Sent At",
+                "createdAt": "Created At"
             },
             "pagination": {
                 "showing": "Showing {from}–{to} of {total}",
@@ -440,6 +457,7 @@
             "allStatus": "All Status",
             "clearFilter": "Clear status filter",
             "empty": "No emails found.",
+            "loadError": "Failed to load emails. Please try again.",
             "recipientCount": "{count} emails",
             "recipients": "Recipients",
             "resultCount": "{count, plural, one {# result} other {# results}}",
@@ -447,7 +465,8 @@
                 "status": "Status",
                 "to": "To",
                 "subject": "Subject",
-                "sentAt": "Sent At"
+                "sentAt": "Sent At",
+                "createdAt": "Created At"
             },
             "pagination": {
                 "showing": "Showing {from}–{to} of {total}",
@@ -509,6 +528,21 @@
             "description": "Manage your wallet balance, view transaction history, and configure billing preferences.",
             "sandboxBadge": "Sandbox Mode",
             "productionBadge": "Production Mode",
+            "loadError": "Failed to load payment data. Please try again.",
+            "addFundsAmount": "Amount",
+            "addFundsPlaceholder": "Enter amount",
+            "addFundsMin": "Minimum amount is 100 {currency}",
+            "addFundsCancel": "Cancel",
+            "addFundsProceed": "Proceed to Payment",
+            "addFundsProcessing": "Processing...",
+            "toasts": {
+                "activateSuccess": "Production mode activated successfully!",
+                "activateError": "Failed to activate production mode. Please try again.",
+                "thresholdSuccess": "Alert threshold saved successfully!",
+                "thresholdError": "Failed to save alert threshold.",
+                "paymentInitiated": "Payment initiated successfully!",
+                "paymentError": "Failed to initiate payment."
+            },
             "activationCard": {
                 "title": "Sandbox Mode Active",
                 "description": "Your account is currently in sandbox mode. API requests are simulated and no real SMS or email messages are sent. Activate production mode to start sending live messages.",

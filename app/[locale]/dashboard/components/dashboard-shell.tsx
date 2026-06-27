@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Sidebar } from './sidebar';
 import { Navbar } from './navbar/navbar';
 import { ProjectSelectModal } from './navbar/project-select-modal';
+import { useDashboardContext } from '@/providers/dashboard-provider';
 import type { Project, DashboardUser } from '@/types/dashboard';
 
 interface DashboardShellProps {
@@ -19,10 +20,19 @@ export function DashboardShell({
     projects,
     initialProject,
 }: DashboardShellProps) {
-    const [currentProject, setCurrentProject] = useState<Project | undefined>(initialProject);
+    const { setCurrentProject } = useDashboardContext();
+
+    const [currentProject, setCurrentProjectLocal] = useState<Project | undefined>(initialProject);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
+
+    useEffect(() => {
+        const mount = () => {
+            setCurrentProjectLocal(initialProject);
+        }
+        mount();
+    }, [initialProject]);
 
     const openModal = useCallback(() => {
         setIsModalOpen(true);
@@ -40,8 +50,10 @@ export function DashboardShell({
     }, []);
 
     const handleSelect = useCallback((project: Project) => {
+        setCurrentProjectLocal(project);
         setCurrentProject(project);
-    }, []);
+        setIsModalOpen(false);
+    }, [setCurrentProject]);
 
     return (
         <div className="flex relative h-screen w-full overflow-hidden bg-background">
@@ -60,7 +72,6 @@ export function DashboardShell({
                 </main>
             </div>
 
-            {/* Modal rendered at layout level — no z-index issues */}
             <ProjectSelectModal
                 open={isModalOpen}
                 onClose={closeModal}

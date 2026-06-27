@@ -13,13 +13,10 @@ interface NavbarProps {
     onOpenProjectModal: () => void;
 }
 
-export function Navbar({
-    user,
-    currentProject,
-    onOpenProjectModal,
-}: NavbarProps) {
+export function Navbar({ user, currentProject, onOpenProjectModal, }: NavbarProps) {
+    //
     const t = useTranslations('dashboard.navbar');
-
+    //
     const isFree = !user?.wallet || user.wallet.is_free;
     const balance = user?.wallet ? parseFloat(user.wallet.balance) : 0;
     const currency = user?.wallet?.currency ?? 'DZD';

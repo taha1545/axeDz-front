@@ -99,7 +99,7 @@ export default function LoginForm() {
           <Input
             type="text"
             placeholder={t('emailOrPhonePlaceholder')}
-            className="h-11 rounded-4xl border-foreground/80 px-6 text-muted-foreground"
+            className="h-12 rounded-4xl border-foreground/80 px-6 text-muted-foreground"
             {...register('identifier')}
           />
 
@@ -129,7 +129,7 @@ export default function LoginForm() {
           <Input
             type={showPassword ? 'text' : 'password'}
             placeholder={t('passwordPlaceholder')}
-            className="h-11 rounded-4xl border-foreground/80 px-6 text-muted-foreground"
+            className="h-12 rounded-4xl border-foreground/80 px-6 text-muted-foreground"
             {...register('password')}
           />
 

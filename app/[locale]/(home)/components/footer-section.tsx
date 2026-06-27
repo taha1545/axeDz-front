@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-
 import { Logo } from "@/components/logo";
 import { cn } from '@/lib/utils';
 
@@ -41,7 +40,7 @@ export function FooterSection() {
     };
     //
     return (
-        <footer className="mt-10  p-10 rounded-t-3xl w-full md:w-[90%] mx-auto  bg-foreground dark:bg-card text-background dark:text-foreground shadow-lg shadow-primary/10">
+        <footer className="mt-10  p-10 rounded-t-[2.75rem] w-full md:w-[90%] mx-auto  bg-foreground dark:bg-card text-background dark:text-foreground shadow-lg shadow-primary/10">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

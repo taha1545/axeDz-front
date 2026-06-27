@@ -1,4 +1,4 @@
-//middleware.ts
+//middleware.ts i have config / and /fr
 
 import createMiddleware from 'next-intl/middleware';
 import { routing } from '@/i18n/routing';

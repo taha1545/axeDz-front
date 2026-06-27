@@ -40,7 +40,7 @@ export function CodeExampleSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-50px' }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="overflow-hidden rounded-2xl border border-border bg-card shadow-lg shadow-primary/15"
+                    className="overflow-hidden rounded-4xl border border-foreground/20  bg-card shadow-lg shadow-primary/15"
                 >
                     {/* Top Bar */}
                     <div className="flex flex-col gap-4 border-b border-card-foreground/60 bg-muted/30 px-5 py-4 sm:px-6 md:flex-row md:items-center md:justify-between md:px-8 md:py-4">

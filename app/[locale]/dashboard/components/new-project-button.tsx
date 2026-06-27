@@ -4,32 +4,36 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Plus } from 'lucide-react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
+import { useDashboardContext } from '@/providers/dashboard-provider';
+import { InfoDialog } from '@/components/custom-dialog';
 
 interface NewProjectForm {
     name: string;
 }
 
 export function NewProjectButton() {
-    //
     const t = useTranslations('dashboard.newProject');
-    //
+    const { createProject, isCreatingProject, canCreateProject } = useDashboardContext();
+
     const [open, setOpen] = useState(false);
+    const [verifyOpen, setVerifyOpen] = useState(false);
     const modalRef = useRef<HTMLDivElement>(null);
-    //
+
     const {
         register,
         handleSubmit,
-        formState: { errors, isSubmitting },
+        formState: { errors },
         reset,
     } = useForm<NewProjectForm>({
         defaultValues: { name: '' },
     });
-    // 
+
     useEffect(() => {
         if (open) {
             document.body.style.overflow = 'hidden';
@@ -41,11 +45,22 @@ export function NewProjectButton() {
         };
     }, [open]);
 
+    const handleOpen = () => {
+        if (!canCreateProject) {
+            setVerifyOpen(true);
+            return;
+        }
+        setOpen(true);
+    };
+
     const onSubmit = async (data: NewProjectForm) => {
-        // TODO: API call
-        console.log(data);
-        reset();
-        setOpen(false);
+        try {
+            await createProject({ name: data.name.trim() });
+            reset();
+            setOpen(false);
+        } catch (err) {
+            toast.error(t('error'));
+        }
     };
 
     const handleClose = () => {
@@ -63,11 +78,11 @@ export function NewProjectButton() {
         <div className='pb-3 border-b border-foreground/20'>
             {/* Trigger Button */}
             <button
-                onClick={() => setOpen(true)}
+                onClick={handleOpen}
                 className={cn(
                     'flex w-full items-center justify-center gap-2 rounded-xl',
-                    'h-11.5 px-4  text-[16px] font-semibold text-background',
-                    'bg-foreground  transition-all duration-200',
+                    'h-11.5 px-4 text-[16px] font-semibold text-background',
+                    'bg-foreground transition-all duration-200',
                     'hover:bg-foreground/90 hover:shadow-md hover:shadow-primary/20',
                     'active:scale-[0.98]',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2'
@@ -77,7 +92,26 @@ export function NewProjectButton() {
                 <span>{t('button')}</span>
             </button>
 
-            {/* Modal */}
+            {/* Verify Info Dialog */}
+            <InfoDialog
+                open={verifyOpen}
+                onOpenChange={setVerifyOpen}
+                title={
+                    <div className="flex flex-col items-center gap-3">
+                        <Logo size="lg" priority />
+                        <span className="text-xl font-bold text-primary">{t('verifyRequired')}</span>
+                    </div>
+                }
+                description={t('verifyDescription')}
+                confirmText={t('verifyLink')}
+                onConfirm={() => {
+                    setVerifyOpen(false);
+                    window.location.href = '/setting';
+                }}
+                hideCancel
+            />
+
+            {/* Create Project Modal */}
             {open && (
                 <div
                     className="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -128,7 +162,7 @@ export function NewProjectButton() {
                                         'text-foreground placeholder:text-muted-foreground/60',
                                         'transition-colors focus-visible:bg-background focus-visible:ring-2 focus-visible:ring-primary/20'
                                     )}
-                                    disabled={isSubmitting}
+                                    disabled={isCreatingProject}
                                     {...register('name', {
                                         required: t('nameRequired'),
                                         minLength: { value: 2, message: t('nameMinLength') },
@@ -145,7 +179,7 @@ export function NewProjectButton() {
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                disabled={isSubmitting}
+                                disabled={isCreatingProject}
                                 className={cn(
                                     'flex h-12 w-full items-center justify-center gap-2 rounded-2xl',
                                     'text-sm font-semibold text-background',
@@ -155,7 +189,7 @@ export function NewProjectButton() {
                                     'active:scale-[0.98]'
                                 )}
                             >
-                                {isSubmitting ? (
+                                {isCreatingProject ? (
                                     <>
                                         <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
                                         <span>{t('creating')}</span>

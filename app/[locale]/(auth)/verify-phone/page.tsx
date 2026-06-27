@@ -22,6 +22,7 @@ import { verifyPhoneSchema, type VerifyPhoneInput } from '@/schemas/auth';
 import { Logo } from '@/components/logo';
 
 export default function VerifyPhonePage() {
+  //
   const t = useTranslations('auth.verifyPhone');
   const router = useRouter();
 
@@ -62,9 +63,8 @@ export default function VerifyPhonePage() {
         typeof err.response.data === 'object'
         ? err.response.data
         : null;
-
+    //
     if (!res) return undefined;
-
     if (
       'errors' in res &&
       Array.isArray(res.errors) &&
@@ -75,18 +75,16 @@ export default function VerifyPhonePage() {
     ) {
       return res.errors[0].message;
     }
-
     if ('message' in res && typeof res.message === 'string') {
       return res.message;
     }
-
     return undefined;
   };
 
   const onSubmit = async (data: VerifyPhoneInput) => {
     clearErrors('root');
     if (!user?.email) return;
-
+    //
     try {
       await verifyMutation.mutateAsync({
         email: user.email,
@@ -101,7 +99,7 @@ export default function VerifyPhonePage() {
   const onResend = async () => {
     clearErrors('root');
     if (!user?.email) return;
-
+    //
     try {
       await resendMutation.mutateAsync({ email: user.email });
       reset();
@@ -191,7 +189,7 @@ export default function VerifyPhonePage() {
             <Button
               type="submit"
               size="lg"
-              className="rounded-4xl w-full sm:py-6 sm:text-lg"
+              className="rounded-4xl w-full sm:py-5 sm:text-lg"
               disabled={verifyMutation.isPending}
             >
               {verifyMutation.isPending ? (
@@ -208,7 +206,7 @@ export default function VerifyPhonePage() {
               type="button"
               variant="outline"
               size="lg"
-              className="rounded-4xl w-full sm:py-6 sm:text-lg"
+              className="rounded-4xl w-full sm:py-5 sm:text-lg"
               onClick={onResend}
               disabled={resendMutation.isPending}
             >

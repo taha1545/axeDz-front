@@ -17,11 +17,11 @@ export function HeroSection() {
   return (
     <section
       aria-label={t("ariaLabel")}
-      className="relative flex min-h-[calc(100vh-var(--navbar-height))] w-full items-center overflow-hidden py-10 sm:py-12 md:py-16 lg:py-16"
+      className="relative flex   w-full  items-center overflow-hidden py-10 sm:py-12 md:py-16 lg:py-20"
     >
       <HeroGridLines />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-12">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-12 ">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-8 lg:gap-12 ">
 
           {/*  Text Content */}

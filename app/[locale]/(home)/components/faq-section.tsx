@@ -17,7 +17,7 @@ export function FAQSection() {
     const [openId, setOpenId] = useState<FaqId>('services');
 
     return (
-        <section className="bg-background px-4 py-20 md:px-6 md:py-24 lg:px-8">
+        <section className="bg-background px-4 py-16 md:px-6 md:py-24 lg:px-8">
             <div className="mx-auto max-w-7xl">
                 <SectionHeader
                     badge={t('badge')}
@@ -45,7 +45,7 @@ export function FAQSection() {
                                     className={cn(
                                         'flex w-full items-center justify-between gap-4 rounded-full px-6 py-5 text-left transition-all duration-300 md:px-8',
                                         isOpen
-                                            ? 'bg-foreground text-background shadow-lg'
+                                            ? 'bg-foreground text-background shadow-lg '
                                             : 'bg-primary/90 text-primary-foreground hover:brightness-110'
                                     )}
                                 >

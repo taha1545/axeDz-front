@@ -14,10 +14,10 @@ import { cn } from '@/lib/utils';
 import { customToast } from '@/components/custom-toast';
 
 export function ContactSection() {
+    //
     const t = useTranslations('home.contact');
+    //
     const { mutateAsync, isPending } = useContact();
-    const [isSuccess, setIsSuccess] = useState(false);
-
     const {
         register,
         handleSubmit,
@@ -34,22 +34,17 @@ export function ContactSection() {
             message: '',
         },
     });
-
+    //
     const onSubmit = async (data: ContactInput) => {
         clearErrors();
-        setIsSuccess(false);
-
         try {
             await mutateAsync(data);
             reset();
-            setIsSuccess(true);
             customToast.success({
                 title: "succses",
                 description: t('form.success'),
             });
         } catch (err: unknown) {
-            setIsSuccess(false);
-
             const message =
                 err &&
                     typeof err === 'object' &&
@@ -73,7 +68,7 @@ export function ContactSection() {
     };
 
     const inputBase = cn(
-        'w-full px-5 py-3 md:my-1',
+        'w-full px-5 py-2.5 md:my-1',
         'bg-background',
         'text-foreground',
         'border border-border',
@@ -112,9 +107,9 @@ export function ContactSection() {
                     <div className="grid grid-cols-1 lg:grid-cols-2">
                         {/* Form Side */}
                         <div className="px-6 py-6 md:px-10 lg:px-12">
-                            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2">
+                            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 " >
                                 {/* Name */}
-                                <div className="space-y-3">
+                                <div className="space-y-2">
                                     <label
                                         htmlFor="name"
                                         className="text-sm font-medium text-foreground"
@@ -141,7 +136,7 @@ export function ContactSection() {
                                 </div>
 
                                 {/* Email */}
-                                <div className="space-y-3">
+                                <div className="space-y-2">
                                     <label
                                         htmlFor="email"
                                         className="text-sm font-medium text-foreground"
@@ -168,7 +163,7 @@ export function ContactSection() {
                                 </div>
 
                                 {/* Subject */}
-                                <div className="space-y-3">
+                                <div className="space-y-2">
                                     <label
                                         htmlFor="subject"
                                         className="text-sm font-medium text-foreground"
@@ -195,7 +190,7 @@ export function ContactSection() {
                                 </div>
 
                                 {/* Message */}
-                                <div className="space-y-4">
+                                <div className="space-y-3">
                                     <label
                                         htmlFor="message"
                                         className="text-sm font-medium text-foreground"
@@ -240,7 +235,7 @@ export function ContactSection() {
                         </div>
 
                         {/* Image Side */}
-                        <div className="relative hidden h-full w-full items-center justify-center max-h-145 lg:flex">
+                        <div className="relative hidden h-full w-full items-center   justify-center max-h-145 lg:flex">
                             <div className="relative aspect-square w-full h-full">
                                 <Image
                                     src="/contact-image.svg"

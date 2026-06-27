@@ -61,7 +61,7 @@ export function ServicesSection() {
     return (
         <section
             id="services"
-            className="bg-background px-4 py-24 md:px-6 lg:px-8 scroll-mt-24 "
+            className="bg-background px-4 py-16 md:py-24 md:px-6 lg:px-8 scroll-mt-24 "
         >
             <div className="mx-auto max-w-7xl sm:px-6">
 

@@ -7,7 +7,6 @@ import {
 import type { EmailRecord, ListParams, ListResponse, SmsRecord, UsageRecord } from '@/types';
 
 //  Query Keys 
-
 const COMM_KEY = ['communication'] as const;
 const usageKey = (apiKey: string, params?: ListParams) =>
     [...COMM_KEY, 'usage', apiKey, params ?? {}] as const;
@@ -18,7 +17,6 @@ const smsKey = (apiKey: string, params?: ListParams) =>
 
 
 //  Queries
-
 export function useUsage(apiKey: string, params?: ListParams) {
     return useQuery<ListResponse<UsageRecord>>({
         queryKey: usageKey(apiKey, params),

@@ -7,6 +7,7 @@ import { LogOut, Settings, User, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/use-auth';
+import { useDashboardContext } from '@/providers/dashboard-provider';
 import type { DashboardUser } from '@/types/dashboard';
 
 interface UserMenuProps {
@@ -14,12 +15,11 @@ interface UserMenuProps {
 }
 
 export function UserMenu({ user }: UserMenuProps) {
-    //
     const t = useTranslations('dashboard.navbar.user');
     const router = useRouter();
     const { logout } = useAuth();
+    const { currentProject } = useDashboardContext();
     const [open, setOpen] = useState(false);
-    //
 
     const initials = user?.name
         ?.split(' ')
@@ -28,10 +28,20 @@ export function UserMenu({ user }: UserMenuProps) {
         .toUpperCase()
         .slice(0, 2) || 'U';
 
+    const settingsHref = currentProject
+        ? `/dashboard/projects/${currentProject.id}/settings`
+        : '/dashboard/settings';
+
     const menuItems = [
         { icon: User, label: t('profile'), href: '/setting' },
-        { icon: Settings, label: t('settings'), href: '/dashboard/settings' },
+        ...(currentProject ? [{ icon: Settings, label: t('settings'), href: settingsHref }] : []),
     ];
+
+    const handleLogout = async () => {
+        await logout();
+        router.push('/');
+        router.refresh();
+    };
 
     return (
         <div className="relative">
@@ -65,8 +75,7 @@ export function UserMenu({ user }: UserMenuProps) {
             {open && (
                 <>
                     <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
-                    <div className="absolute right-0 top-16 z-50 w-64 rounded-xl border border-foreground/40  p-2 shadow-xl bg-card">
-                        {/* User info */}
+                    <div className="absolute right-0 top-16 z-50 w-64 rounded-xl border border-foreground/40 p-2 shadow-xl bg-card">
                         <div className="px-3 py-2.5">
                             <p className="text-sm font-semibold text-foreground truncate">
                                 {user?.name}
@@ -78,7 +87,6 @@ export function UserMenu({ user }: UserMenuProps) {
 
                         <div className="h-px bg-foreground/50 my-1" />
 
-                        {/* Menu items */}
                         <div className="space-y-0.5">
                             {menuItems.map((item) => (
                                 <button
@@ -97,13 +105,9 @@ export function UserMenu({ user }: UserMenuProps) {
 
                         <div className="h-px bg-foreground/50 my-1" />
 
-                        {/* Logout */}
                         <button
                             className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-sm text-destructive transition-colors hover:bg-destructive/10"
-                            onClick={() => {
-                                logout();
-                                setOpen(false);
-                            }}
+                            onClick={handleLogout}
                         >
                             <LogOut className="h-4 w-4" />
                             {t('logout')}

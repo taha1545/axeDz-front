@@ -5,7 +5,7 @@ import { getPageMetadata, type Locale } from "@/lib/metadata";
 import { TrailSection } from "./components/trail/trail-section";
 import { ServicesSection } from "./components/services/services-section";
 import { CodeExampleSection } from "./components/code-block/code-example-section";
-import { CaseStudiesSection } from "./case-exmple/case-studies-section";
+import { CaseStudiesSection } from "./components/case-exmple/case-studies-section";
 import { PricingSection } from "./components/pricing-section";
 import { FAQSection } from "./components/faq-section";
 import { ContactSection } from "./components/contact-section";

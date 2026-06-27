@@ -1,4 +1,4 @@
-export type ApiKeyStatus = 'active' | 'blocked';
+export type ApiKeyStatus = 'active' | 'blocked' | 'suspended';
 
 export interface ApiKey {
     id: number;

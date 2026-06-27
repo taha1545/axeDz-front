@@ -42,10 +42,10 @@ export function Navbar() {
       <NavbarTopBar />
 
       {/* Main Floating Pill */}
-      <div className="w-full py-0 px-2 sm:px-6 lg:px-10 pointer-events-auto ">
+      <div className="w-full  py-0 px-2 sm:px-6 lg:px-10 pointer-events-auto ">
         <div
           className={cn(
-            " bg-card/40 max-w-xl md:max-w-7xl mx-auto flex items-center justify-between gap-6 overflow-hidden",
+            " bg-card/50 max-w-xl md:max-w-7xl mx-auto flex items-center justify-between gap-6 overflow-hidden",
             "border  border-foreground rounded-full px-2.5  md:pl-7 md:pr-2 py-1.5  backdrop-blur-md",
             "transition-shadow duration-300",
             isScrolled ? "shadow-md " : "shadow-sm"

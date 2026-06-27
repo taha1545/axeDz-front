@@ -1,5 +1,4 @@
 
-
 export interface Payment {
     id: number;
     user_id: number;
@@ -31,6 +30,7 @@ export interface Wallet {
     currency: string;
     is_free: boolean;
     free_expires_at: string;
+    low_balance_alert?: string | null;
 }
 
 export interface PaymentHistory {

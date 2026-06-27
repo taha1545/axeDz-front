@@ -12,8 +12,14 @@ import type { PaymentHistory, Wallet } from '@/types';
 
 //  Query Keys 
 const PAYMENT_KEY = ['payments'] as const;
+const DASHBOARD_WALLET_KEY = ['dashboard', 'wallet'] as const;
 const historyKey = () => [...PAYMENT_KEY, 'history'] as const;
 const walletKey = () => [...PAYMENT_KEY, 'wallet'] as const;
+
+function invalidateWalletQueries(queryClient: ReturnType<typeof useQueryClient>) {
+    queryClient.invalidateQueries({ queryKey: walletKey() });
+    queryClient.invalidateQueries({ queryKey: DASHBOARD_WALLET_KEY });
+}
 
 
 // Queries 
@@ -43,7 +49,7 @@ export function useInitiatePayment() {
             initiatePayment(amount, currency),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: historyKey() });
-            queryClient.invalidateQueries({ queryKey: walletKey() });
+            invalidateWalletQueries(queryClient);
         },
     });
 }
@@ -54,7 +60,7 @@ export function useSyncStatus() {
         mutationFn: syncStatus,
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: historyKey() });
-            queryClient.invalidateQueries({ queryKey: walletKey() });
+            invalidateWalletQueries(queryClient);
         },
     });
 }
@@ -64,7 +70,7 @@ export function useSwitchToProduction() {
     return useMutation({
         mutationFn: switchToProduction,
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: walletKey() });
+            invalidateWalletQueries(queryClient);
         },
     });
 }
@@ -74,7 +80,7 @@ export function useSetAlert() {
     return useMutation({
         mutationFn: setAlert,
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: walletKey() });
+            invalidateWalletQueries(queryClient);
         },
     });
 }

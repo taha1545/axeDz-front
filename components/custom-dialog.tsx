@@ -103,8 +103,8 @@ export function CustomDialog({
                     className
                 )}
             >
-                <div className="grid gap-6 p-5 sm:p-6">
-                    <DialogHeader className="gap-2 pr-8 text-left">
+                <div className="grid gap-6 p-5 sm:p-6 ">
+                    <DialogHeader className="gap-2 pr-8 text-center">
                         <DialogTitle className="text-balance text-xl font-semibold tracking-normal text-popover-foreground sm:text-2xl">
                             {title}
                         </DialogTitle>

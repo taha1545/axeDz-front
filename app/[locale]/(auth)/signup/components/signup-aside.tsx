@@ -1,6 +1,5 @@
 'use client';
 
-import { FaArrowLeft } from 'react-icons/fa';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
@@ -15,15 +14,17 @@ export default function SignupAside() {
   ] as const;
 
   return (
-    <aside className="hidden lg:flex flex-col h-[90vh] my-auto relative md:py-12 justify-center items-center border-r-foreground border-b-2 lg:border-b-0 lg:border-r-2 border-border bg-background">
-      <div className="max-w-2xl w-full px-12 space-y-8">
-        <h1 className="text-2xl font-bold text-primary">AxeDz</h1>
+    <aside className="hidden lg:flex lg:w-1/2 border-l-2 h-[90vh] my-auto border-foreground bg-background">
+      <div className="flex w-full flex-col justify-center px-20">
+        <h1 className="text-2xl font-bold text-primary">
+          AxeDz
+        </h1>
 
-        <h2 className="text-3xl font-bold tracking-tight">
+        <h2 className="mt-7 text-3xl font-bold tracking-tight">
           {t('asideTitle')}
         </h2>
 
-        <ul className="list-disc list-inside text-muted-foreground space-y-10">
+        <ul className="mt-12 list-inside list-disc space-y-8 text-muted-foreground">
           {features.map((key) => (
             <li key={key}>{t(`features.${key}`)}</li>
           ))}
@@ -31,7 +32,7 @@ export default function SignupAside() {
 
         <Link
           href="/login"
-          className="block rounded-3xl bg-foreground py-3 text-center text-base font-bold text-background transition-colors hover:bg-foreground/90"
+          className="mt-7 rounded-3xl bg-foreground py-3 text-center text-base font-bold text-background transition-colors hover:bg-foreground/90"
         >
           {t('login')}
         </Link>

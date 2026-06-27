@@ -48,9 +48,6 @@ export default function ResetPasswordPage() {
             confirmPassword: '',
         },
     });
-
-    const password = watch('password');
-
     // Guard: no email param
     useEffect(() => {
         if (!email) {

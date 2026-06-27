@@ -20,7 +20,7 @@ export function SectionHeader({
             viewport={{ once: true }}
             className="mb-12 flex flex-col gap-5 md:mb-16 md:flex-row md:items-center"
         >
-            <div className="mx-auto flex rounded-xl bg-foreground px-6 py-4 text-xl font-bold text-background md:mx-0 md:px-6 md:py-4 md:text-3xl">
+            <div className="mx-auto flex rounded-xl bg-foreground px-6 py-4 text-2xl font-bold text-background md:mx-0 md:px-6 md:py-4 md:text-4xl">
                 {badge}
             </div>
 

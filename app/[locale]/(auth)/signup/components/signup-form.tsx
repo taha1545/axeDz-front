@@ -43,14 +43,12 @@ export function SignupForm() {
 
   const onSubmit = async (data: SignupInput) => {
     clearErrors('root');
-
     try {
       await signup(data);
       router.push('/verify-phone');
       router.refresh();
     } catch (err: unknown) {
       let message = t('signupFailed');
-
       if (
         err &&
         typeof err === 'object' &&

@@ -35,10 +35,10 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ y: -4 }}
             className={cn(
-                'group relative cursor-pointer overflow-hidden rounded-[2rem] shadow-xl border  p-5 transition-shadow duration-300 hover:shadow-base sm:p-8',
+                'group relative cursor-pointer overflow-hidden rounded-[2rem] hover:scale-none shadow-xs shadow-foreground/60 hover:shadow-none border  p-5 transition-shadow duration-300  sm:p-8',
                 isBlue
-                    ? 'border-primary bg-primary text-primary-foreground hover:shadow-foreground'
-                    : 'border-border bg-card text-card-foreground hover:shadow-primary'
+                    ? 'border-primary bg-primary text-primary-foreground shadow-sm '
+                    : 'border-border bg-card text-card-foreground '
             )}
         >
             <div className="flex flex-col items-center gap-5 min-h-30 sm:h-55 sm:min-h-0 sm:flex-row sm:items-center sm:gap-6">
