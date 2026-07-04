@@ -6,8 +6,9 @@ import Link from 'next/link';
 import { FolderOpen, ArrowRight } from 'lucide-react';
 
 export default function DashboardPage() {
+    //
     const t = useTranslations('dashboard.empty');
-
+    //
     return (
         <div className="flex h-full items-center justify-center p-6">
             <motion.div

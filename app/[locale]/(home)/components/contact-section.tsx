@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
+import axios from 'axios';
 
 import { SectionHeader } from '@/components/section-header';
 import { useContact } from '@/hooks/use-contact';
@@ -18,14 +18,7 @@ export function ContactSection() {
     const t = useTranslations('home.contact');
     //
     const { mutateAsync, isPending } = useContact();
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-        setError: setFormError,
-        clearErrors,
-    } = useForm<ContactInput>({
+    const { register, handleSubmit, reset, formState: { errors }, setError: setFormError, clearErrors, } = useForm<ContactInput>({
         resolver: zodResolver(contactSchema),
         defaultValues: {
             name: '',
@@ -45,20 +38,10 @@ export function ContactSection() {
                 description: t('form.success'),
             });
         } catch (err: unknown) {
-            const message =
-                err &&
-                    typeof err === 'object' &&
-                    'response' in err &&
-                    err.response &&
-                    typeof err.response === 'object' &&
-                    'data' in err.response &&
-                    err.response.data &&
-                    typeof err.response.data === 'object' &&
-                    'message' in err.response.data &&
-                    typeof err.response.data.message === 'string'
-                    ? err.response.data.message
-                    : t('form.error');
-
+            const message = axios.isAxiosError(err)
+                ? err.response?.data?.message ?? t('form.error')
+                : t('form.error');
+            //
             setFormError('root', { message });
             customToast.error({
                 title: t('form.error'),
@@ -72,7 +55,7 @@ export function ContactSection() {
         'bg-background',
         'text-foreground',
         'border border-border',
-        'placeholder:text-muted-foreground',
+        'placeholder:text-muted-foreground/80',
         'focus:outline-none',
         'focus:ring-2 focus:ring-primary/20',
         'focus:border-primary',

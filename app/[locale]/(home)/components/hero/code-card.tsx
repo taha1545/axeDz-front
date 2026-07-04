@@ -142,7 +142,7 @@ export function CodeCard({
             style={style}
         >
             {/* Top accent line */}
-            <div className="h-0.75 w-full bg-gradient-to-r from-transparent via-blue-800 to-transparent dark:via-blue-500/70" />
+            <div className="h-0.75 w-full bg-linear-to-r from-transparent via-blue-800 to-transparent dark:via-blue-500/70" />
 
             {/* Header */}
             <div
@@ -179,8 +179,8 @@ export function CodeCard({
                 className={cn(
                     s.padding,
                     "overflow-auto",
-                    "min-h-[340px]",
-                    "max-h-[450px]"
+                    "min-h-85",
+                    "max-h-112"
                 )}
             >
                 <pre

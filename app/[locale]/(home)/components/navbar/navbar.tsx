@@ -36,6 +36,7 @@ export function Navbar() {
     //
     <header
       ref={headerRef}
+      id="Navbar"
       className="w-full sticky top-0 z-50 bg-transparent transition-all duration-300 pointer-events-none"
     >
       {/* top navbar */}
@@ -74,7 +75,11 @@ export function Navbar() {
             <NormalButton
               text={t("exploreApi")}
               asChild
-              className="rounded-full h-10 lg:h-14  md:px-2 lg:px-5 xl:px-7 md:text-sm lg:text-base border-2 border-foreground/50 text-foreground hover:bg-foreground/20 shadow-none whitespace-nowrap transition-all duration-200"
+              className={cn("rounded-full h-10 lg:h-14  md:px-2 lg:px-5 xl:px-7 md:text-sm lg:text-base",
+                "border-foreground/50 shadow-none border  whitespace-nowrap ",
+                "transition-all duration-200",
+                isScrolled ? "bg-card/50  shadow-md hover:bg-transparent" : " text-foreground  hover:bg-foreground/20"
+              )}
             >
               <Link href="/docs" />
             </NormalButton>

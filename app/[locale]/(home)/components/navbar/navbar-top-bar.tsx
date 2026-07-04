@@ -48,17 +48,7 @@ export function NavbarTopBar() {
 
   return (
     <div className="w-full  bg-background/80  transition-colors duration-300 pointer-events-auto">
-      <div className="max-w-7xl mx-auto flex items-center justify-end gap-2 md:gap-4 py-2 px-4 sm:px-6 lg:px-8 text-sm relative">
-        {/* Left: Email */}
-        <div className=" absolute hidden md:flex items-center gap-2 text-muted-foreground  left-7">
-          <a
-            href="mailto:support@axedz.com"
-            className="hover:text-foreground transition-colors font-medium"
-          >
-            support@axedz.com
-          </a>
-        </div>
-
+      <div className="max-w-7xl mx-auto flex items-center justify-end gap-2 md:gap-4 py-1.5 px-4 sm:px-6 lg:px-8 text-sm relative">
         <Link
           href="/docs"
           className="text-foreground hover:text-foreground font-bold transition-colors text-sm py-1.5"

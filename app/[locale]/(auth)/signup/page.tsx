@@ -14,14 +14,9 @@ export async function generateMetadata({
 
 export default function SignupPage() {
   return (
-    <main className="flex min-h-screen flex-col lg:flex-row">
-      {/* Left Side */}
-      <div className="flex w-full items-center justify-center px-[8%] lg:w-1/2">
-        <SignupForm />
-      </div>
-
-      {/* Right Side */}
+    <main className="flex flex-col lg:flex-row min-h-screen justify-center items-center">
       <SignupAside />
+      <SignupForm />
     </main>
   );
 }

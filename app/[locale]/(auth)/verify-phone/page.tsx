@@ -13,16 +13,15 @@ import {
   InputOTPSlot,
 } from '@/components/ui/input-otp';
 import { Button } from '@/components/ui/button';
-import { Loader2, ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import { Loader2, AlertCircle } from 'lucide-react';
 
 import { useAuth } from '@/hooks/use-auth';
 import { useVerifySms, useResendVerifyOtp } from '@/hooks/use-otp';
 import { verifyPhoneSchema, type VerifyPhoneInput } from '@/schemas/auth';
+import { getErrorMessage } from '@/lib/get-error-message';
 import { Logo } from '@/components/logo';
 
 export default function VerifyPhonePage() {
-  //
   const t = useTranslations('auth.verifyPhone');
   const router = useRouter();
 
@@ -51,40 +50,10 @@ export default function VerifyPhonePage() {
     if (user?.is_verified) router.replace('/dashboard');
   }, [user, router]);
 
-  const getMessage = (err: unknown): string | undefined => {
-    const res =
-      err &&
-        typeof err === 'object' &&
-        'response' in err &&
-        err.response &&
-        typeof err.response === 'object' &&
-        'data' in err.response &&
-        err.response.data &&
-        typeof err.response.data === 'object'
-        ? err.response.data
-        : null;
-    //
-    if (!res) return undefined;
-    if (
-      'errors' in res &&
-      Array.isArray(res.errors) &&
-      res.errors[0] &&
-      typeof res.errors[0] === 'object' &&
-      'message' in res.errors[0] &&
-      typeof res.errors[0].message === 'string'
-    ) {
-      return res.errors[0].message;
-    }
-    if ('message' in res && typeof res.message === 'string') {
-      return res.message;
-    }
-    return undefined;
-  };
-
   const onSubmit = async (data: VerifyPhoneInput) => {
     clearErrors('root');
     if (!user?.email) return;
-    //
+
     try {
       await verifyMutation.mutateAsync({
         email: user.email,
@@ -92,19 +61,23 @@ export default function VerifyPhonePage() {
       });
       router.replace('/dashboard');
     } catch (err: unknown) {
-      setError('root', { message: getMessage(err) || t('verifyFailed') });
+      setError('root', {
+        message: getErrorMessage(err, t('verifyFailed')),
+      });
     }
   };
 
   const onResend = async () => {
     clearErrors('root');
     if (!user?.email) return;
-    //
+
     try {
       await resendMutation.mutateAsync({ email: user.email });
       reset();
     } catch (err: unknown) {
-      setError('root', { message: getMessage(err) || t('resendFailed') });
+      setError('root', {
+        message: getErrorMessage(err, t('resendFailed')),
+      });
     }
   };
 
@@ -113,35 +86,30 @@ export default function VerifyPhonePage() {
   if (authLoading) return null;
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
-      {/* Back link */}
-      <Link
-        href="/login"
-        className="absolute top-4 left-4 flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors sm:top-6 sm:left-6"
-      >
-        <ArrowLeft size={16} />
-        {t('backToLogin')}
-      </Link>
+    <main className="flex min-h-screen flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
 
-      {/* Logo */}
       <div className="mb-8 sm:mb-10 lg:mb-12">
         <Logo size="lg" priority withLink />
       </div>
 
       <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg flex flex-col gap-6 sm:gap-8">
-        {/* Header */}
-        <div className="text-center space-y-2 sm:space-y-3">
-          <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
+        <div className="text-center space-y-3 sm:space-y-4">
+          <h1 className="text-2xl font-bold sm:text-3xl ">
             {t('title')}
           </h1>
           <p className="text-sm text-muted-foreground sm:text-base">
             {t('description')}{' '}
-            <span className="font-medium text-foreground">{user?.email}</span>
+            <span className="inline-flex items-center rounded-md bg-primary/10 px-2 py-0.5 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20">
+              {user?.email}
+            </span>
           </p>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6 sm:gap-8">
-          {/* OTP */}
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col gap-6 sm:gap-8"
+          noValidate
+        >
           <Controller
             name="code"
             control={control}
@@ -157,19 +125,22 @@ export default function VerifyPhonePage() {
                   value={field.value}
                   onChange={field.onChange}
                   disabled={verifyMutation.isPending}
+                  aria-label={t('codeRequired')}
+                  aria-invalid={fieldState.invalid ? 'true' : 'false'}
                 >
                   <InputOTPGroup className="gap-2 sm:gap-3">
                     {[0, 1, 2, 3, 4, 5].map((i) => (
                       <InputOTPSlot
                         key={i}
                         index={i}
-                        className="h-12 w-12 text-lg border-foreground/80 sm:h-14 sm:w-14 sm:text-xl lg:h-16 lg:w-16 lg:text-2xl"
+                        aria-label={`Digit ${i + 1}`}
+                        className="h-12 w-12 rounded-lg text-lg border border-foreground/20 bg-background shadow-sm transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 sm:h-14 sm:w-14 sm:text-xl lg:h-16 lg:w-16 lg:text-2xl"
                       />
                     ))}
                   </InputOTPGroup>
                 </InputOTP>
                 {fieldState.error && (
-                  <p className="text-sm text-destructive sm:text-base">
+                  <p className="text-sm text-destructive sm:text-base" role="alert">
                     {fieldState.error.message}
                   </p>
                 )}
@@ -177,24 +148,23 @@ export default function VerifyPhonePage() {
             )}
           />
 
-          {/* Alerts */}
           {errors.root && (
-            <p className="text-sm text-center text-destructive bg-destructive/10 px-4 py-3 rounded-lg sm:text-base">
-              {errors.root.message}
-            </p>
+            <div className="flex items-start gap-3 rounded-xl justify-center bg-destructive/10 border border-destructive/20 px-4 py-3 text-sm text-destructive">
+              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+              <p>{errors.root.message}</p>
+            </div>
           )}
 
-          {/* Actions */}
           <div className="flex flex-col gap-3 sm:gap-4 max-w-sm mx-auto w-full">
             <Button
               type="submit"
               size="lg"
-              className="rounded-4xl w-full sm:py-5 sm:text-lg"
+              className="rounded-4xl w-full sm:py-5 sm:text-lg transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
               disabled={verifyMutation.isPending}
             >
               {verifyMutation.isPending ? (
                 <span className="flex items-center gap-2">
-                  <Loader2 className="h-4 w-4 animate-spin sm:h-5 sm:w-5" />
+                  <Loader2 className="h-4 w-4 animate-spin sm:h-5 sm:w-5" aria-hidden="true" />
                   {t('verifying')}
                 </span>
               ) : (
@@ -206,13 +176,13 @@ export default function VerifyPhonePage() {
               type="button"
               variant="outline"
               size="lg"
-              className="rounded-4xl w-full sm:py-5 sm:text-lg"
+              className="rounded-4xl w-full sm:py-5 sm:text-base transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
               onClick={onResend}
               disabled={resendMutation.isPending}
             >
               {resendMutation.isPending ? (
                 <span className="flex items-center gap-2">
-                  <Loader2 className="h-4 w-4 animate-spin sm:h-5 sm:w-5" />
+                  <Loader2 className="h-4 w-4 animate-spin sm:h-5 sm:w-5" aria-hidden="true" />
                   {t('sending')}
                 </span>
               ) : (
@@ -224,7 +194,7 @@ export default function VerifyPhonePage() {
               type="button"
               variant="ghost"
               size="sm"
-              className="w-full text-muted-foreground hover:bg-background sm:text-base"
+              className="w-full text-muted-foreground hover:bg-background sm:text-base transition-colors"
               onClick={onSkip}
             >
               {t('skip')}
@@ -232,6 +202,6 @@ export default function VerifyPhonePage() {
           </div>
         </form>
       </div>
-    </div>
+    </main>
   );
 }

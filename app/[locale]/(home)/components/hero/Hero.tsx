@@ -17,7 +17,7 @@ export function HeroSection() {
   return (
     <section
       aria-label={t("ariaLabel")}
-      className="relative flex   w-full  items-center overflow-hidden py-10 sm:py-12 md:py-16 lg:py-20"
+      className="relative flex   w-full h-[calc(100vh-100px)]  items-center overflow-hidden py-10 sm:py-12 md:py-16 lg:py-20"
     >
       <HeroGridLines />
 
@@ -50,7 +50,7 @@ export function HeroSection() {
               <PrimaryButton
                 text={t("cta.primary")}
                 asChild
-                className="h-11 w-full justify-center rounded-full px-6 text-sm font-semibold shadow-lg shadow-primary/20 transition-all duration-200 hover:scale-[1.02] hover:shadow-primary/30 active:scale-[0.98] sm:h-12 sm:w-auto sm:px-8 md:h-12 md:px-7 lg:h-14 lg:px-10 lg:text-base"
+                className="h-11 w-full justify-center  border border-card rounded-full px-6 text-sm font-semibold shadow-lg shadow-primary/20 transition-all duration-200 hover:scale-[1.02] hover:shadow-primary/30 active:scale-[0.98] sm:h-12 sm:w-auto sm:px-8 md:h-12 md:px-7 lg:h-14 lg:px-10 lg:text-base"
               >
                 <Link href="/dashboard" />
               </PrimaryButton>
@@ -61,7 +61,7 @@ export function HeroSection() {
                 iconEnd={
                   <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
                 }
-                className="group h-11 w-full justify-center rounded-full px-6 text-sm font-semibold text-foreground transition-colors hover:text-primary sm:h-12 sm:w-auto md:h-12 md:px-7 lg:h-14 lg:px-8 lg:text-base"
+                className="group h-11  w-full justify-center rounded-full px-6 text-sm font-semibold text-foreground transition-colors hover:text-primary sm:h-12 sm:w-auto md:h-12 md:px-7 lg:h-14 lg:px-8 lg:text-base"
               >
                 <Link href="/docs" />
               </NormalButton>

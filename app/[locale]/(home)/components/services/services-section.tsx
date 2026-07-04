@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 const services: ServiceItem[] = [
     {
         id: "sms-api",
-        title: "SMS API optimization",
+        title: "SMS  optimization",
         image: "/services/sms.svg",
         href: "/docs?search=sms%20api",
         variant: "white",
@@ -39,7 +39,7 @@ const services: ServiceItem[] = [
     },
     {
         id: "local-billing",
-        title: "Local Billing (DZD)",
+        title: "Local Billing system",
         image: "/services/billing.svg",
         href: "/docs?search=local%20billing",
         variant: "white",

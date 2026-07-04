@@ -9,22 +9,23 @@ import {
 } from '@/services';
 import type { LoginPayload, SignupPayload } from '@/types';
 
-
 const AUTH_ME_KEY = ['auth', 'me'] as const;
 
-
-//  Queries 
+// Queries
 export function useUser() {
     return useQuery({
         queryKey: AUTH_ME_KEY,
         queryFn: fetchMe,
         staleTime: Infinity,
         retry: false,
+        refetchOnWindowFocus: false,
+        refetchOnReconnect: false,
         enabled: typeof window !== 'undefined',
     });
 }
 
-//  Mutations 
+// Mutations
+
 export function useLogin() {
     const queryClient = useQueryClient();
 
@@ -54,6 +55,8 @@ export function useSignup() {
             }
             if (data.user) {
                 queryClient.setQueryData(AUTH_ME_KEY, data.user);
+            } else {
+                queryClient.invalidateQueries({ queryKey: AUTH_ME_KEY });
             }
         },
     });
@@ -64,9 +67,9 @@ export function useLogout() {
 
     return useMutation({
         mutationFn: logout,
-        onSuccess: () => {
+        onSettled: () => {
             clearAuthTokens();
-            queryClient.clear(); 
+            queryClient.removeQueries({ queryKey: AUTH_ME_KEY });
         },
     });
 }
@@ -87,14 +90,15 @@ export function useLoginWithToken() {
         },
     });
 }
-//  Convenience Hook 
 
+// Convenience Hook
 export function useAuth() {
     const { data: user, isLoading } = useUser();
+    const queryClient = useQueryClient();
+
     const loginMutation = useLogin();
     const signupMutation = useSignup();
     const logoutMutation = useLogout();
-    const queryClient = useQueryClient();
     const loginWithTokenMutation = useLoginWithToken();
 
     return {

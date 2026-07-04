@@ -1,4 +1,5 @@
 export function getPageNumbers(totalPages: number, safePage: number): (number | 'ellipsis')[] {
+    //
     if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1);
 
     const pages: (number | 'ellipsis')[] = [1];

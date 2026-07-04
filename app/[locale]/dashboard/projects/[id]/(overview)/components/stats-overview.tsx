@@ -5,9 +5,7 @@ import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import type { ApiKeyStats } from '@/types';
-import { CostIllustration } from './illustrations/CostIllustration';
-import { EmailIllustration } from './illustrations/EmailIllustration';
-import { SmsIllustration } from './illustrations/SmsIllustration';
+import Image from 'next/image';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -45,7 +43,7 @@ export function StatsOverview({ stats }: StatsOverviewProps) {
         {
             id: 'cost',
             title: t('totalCost'),
-            illustration: <CostIllustration />,
+            image: '/services/api.svg',
             value: stats?.totalCost?.toFixed(2) ?? '0.00',
             label: 'DZD',
             percent: stats ? Math.min((stats.totalCost / 1000) * 100, 100) : 0,
@@ -56,7 +54,7 @@ export function StatsOverview({ stats }: StatsOverviewProps) {
         {
             id: 'email',
             title: t('emailMarketing'),
-            illustration: <EmailIllustration />,
+            image: '/services/storage.svg',
             value: stats?.emailCount?.toLocaleString() ?? '0',
             label: 'mail',
             percent: stats ? Math.min((stats.emailCount / 50000) * 100, 100) : 0,
@@ -67,7 +65,7 @@ export function StatsOverview({ stats }: StatsOverviewProps) {
         {
             id: 'sms',
             title: t('smsMarketing'),
-            illustration: <SmsIllustration />,
+            image: '/services/sms.svg',
             value: stats?.smsCount?.toLocaleString() ?? '0',
             label: 'sms',
             percent: stats ? Math.min((stats.smsCount / 20000) * 100, 100) : 0,
@@ -112,7 +110,18 @@ export function StatsOverview({ stats }: StatsOverviewProps) {
                                     : 'border border-primary/30 bg-card text-card-foreground shadow-md shadow-primary/15 hover:shadow-primary/40'
                             )}
                         >
-                            {card.illustration}
+                            <div className="absolute inset-y-0 right-0  w-[95%] z-0 overflow-hidden">
+                                <Image
+                                    src={card.image}
+                                    alt={card.title}
+                                    fill
+                                    className={cn(
+                                        "object-cover object-right transition-transform duration-500 group-hover:scale-105",
+                                        isBlue ? "opacity-10" : "opacity-5"
+                                    )}
+                                    sizes="(max-width: 640px) 50vw, 25vw"
+                                />
+                            </div>
 
                             {/* Badge label */}
                             <div className="relative z-10">
@@ -120,8 +129,8 @@ export function StatsOverview({ stats }: StatsOverviewProps) {
                                     className={cn(
                                         'inline-block rounded-xl px-3.5 py-1.5 text-xs font-bold tracking-wide mb-5 uppercase',
                                         isBlue
-                                            ? 'bg-white/20 text-black text-base'
-                                            : 'bg-blue-50 text-black  text-base'
+                                            ? 'bg-white/80 text-black text-base font-semibold'
+                                            : 'bg-blue-200  text-black  text-base font-semibold'
                                     )}
                                 >
                                     {card.title}

@@ -200,13 +200,12 @@
         },
         "signup": {
             "home": "Home",
-            "asideTitle": "Your platform powered by AxeDz",
+            "asideTitle": "Powered By AxeDz",
             "features": {
-                "feature1": "Activate SMS, Email, and Cloud Storage through a single unified API designed for developers in Algeria.",
-                "feature2": "Connect with your users through reliable, scalable communication channels in just a few steps.",
-                "feature3": "Start building instantly with a simple setup and no complex integrations.",
-                "feature4": "Seamlessly integrate and control your communication infrastructure your way.",
-                "feature5": "Start building instantly with a simple setup and no complex integrations."
+                "feature1": "One unified platform for SMS, Email, and Cloud Storage APIs built for Algerian developers.",
+                "feature2": "Set up your workspace, generate API keys, and start integrating in minutes with zero complexity.",
+                "feature3": "Local billing in DZD with no external payment barriers or complex setup required.",
+                "feature4": "Join a growing ecosystem of teams building scalable, reliable digital products across the country."
             },
             "login": "Login",
             "title": "Signup",

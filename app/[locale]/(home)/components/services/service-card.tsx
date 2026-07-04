@@ -37,7 +37,7 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
             className={cn(
                 'group relative cursor-pointer overflow-hidden rounded-[2rem] hover:scale-none shadow-xs shadow-foreground/60 hover:shadow-none border  p-5 transition-shadow duration-300  sm:p-8',
                 isBlue
-                    ? 'border-primary bg-primary text-primary-foreground shadow-sm '
+                    ? 'border-primary bg-primary text-primary-foreground shadow-sm'
                     : 'border-border bg-card text-card-foreground '
             )}
         >
@@ -46,10 +46,10 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
                 <div className="flex h-full flex-1 flex-col justify-between self-stretch py-1 sm:py-2">
                     <span
                         className={cn(
-                            'inline-flex w-fit self-start rounded-lg px-3 py-1.5 font-semibold',
-                            'text-xl sm:text-2xl md:text-3xl',
+                            'inline-flex w-fit self-start rounded-lg px-3 py-2 font-semibold',
+                            'text-xl sm:text-2xl md:text-3xl lg:w-52 lg:h-25',
                             isBlue
-                                ? 'bg-primary-foreground/20 text-primary-foreground backdrop-blur-sm'
+                                ? 'bg-foreground/20 text-background backdrop-blur-sm'
                                 : 'bg-muted text-foreground'
                         )}
                     >

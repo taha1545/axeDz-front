@@ -40,7 +40,6 @@ export function UserMenu({ user }: UserMenuProps) {
     const handleLogout = async () => {
         await logout();
         router.push('/');
-        router.refresh();
     };
 
     return (

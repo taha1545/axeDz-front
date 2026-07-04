@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { FcGoogle } from 'react-icons/fc';
-import { FaGithub, FaArrowLeft } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import { EyeOff, Eye, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -15,23 +15,17 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/hooks/use-auth';
+import { getErrorMessage } from '@/lib/get-error-message';
 import { signupSchema, type SignupInput } from '@/schemas/auth';
 
 export function SignupForm() {
+  //
   const t = useTranslations('auth.signup');
-
   const [showPassword, setShowPassword] = useState(false);
-
   const router = useRouter();
   const { signup, isSigningUp } = useAuth();
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    setError,
-    clearErrors,
-  } = useForm<SignupInput>({
+  //
+  const { register, handleSubmit, formState: { errors }, setError, clearErrors, } = useForm<SignupInput>({
     resolver: zodResolver(signupSchema),
     defaultValues: {
       name: '',
@@ -40,73 +34,30 @@ export function SignupForm() {
       password: '',
     },
   });
-
+  //
   const onSubmit = async (data: SignupInput) => {
     clearErrors('root');
     try {
       await signup(data);
       router.push('/verify-phone');
-      router.refresh();
     } catch (err: unknown) {
-      let message = t('signupFailed');
-      if (
-        err &&
-        typeof err === 'object' &&
-        'response' in err &&
-        err.response &&
-        typeof err.response === 'object' &&
-        'data' in err.response &&
-        err.response.data &&
-        typeof err.response.data === 'object'
-      ) {
-        const res = err.response.data;
-        //
-        if (
-          'errors' in res &&
-          Array.isArray(res.errors) &&
-          res.errors.length > 0 &&
-          res.errors[0] &&
-          typeof res.errors[0] === 'object' &&
-          'message' in res.errors[0] &&
-          typeof res.errors[0].message === 'string'
-        ) {
-          message = res.errors[0].message;
-        }
-        // 
-        else if (
-          'message' in res &&
-          typeof res.message === 'string'
-        ) {
-          message = res.message;
-        }
-      }
-
-      setError('root', { message });
+      setError('root', {
+        message: getErrorMessage(err, t('signupFailed')),
+      });
     }
   };
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex w-full flex-col gap-4 sm:gap-5"
+      className="flex md:h-[80vh]  w-full flex-col justify-center gap-4 sm:gap-3 border-t-2 border-l-foreground border-border  px-6 py-10 md:py-2 sm:px-10 lg:w-1/2 lg:border-l-2 lg:border-t-0 lg:px-20"
     >
-      <div className="lg:hidden flex items-center justify-between mb-2">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-sm text-foreground/80 hover:text-foreground transition-colors"
-        >
-          <FaArrowLeft />
-          {t('home')}
-        </Link>
-        <span className="text-xl font-bold text-primary">AxeDz</span>
-      </div>
-
-      <h1 className="mx-auto mb-2 rounded-xl bg-foreground px-5 py-3 text-xl sm:text-2xl font-bold text-background">
+      <h1 className="mx-auto mb-1 rounded-xl bg-foreground px-6 py-2 text-3xl font-semibold text-background">
         {t('title')}
       </h1>
 
       {errors.root && (
-        <p className="rounded-lg  text-center bg-destructive/10 px-3 py-2 text-sm text-destructive">
+        <p className="rounded-lg text-center bg-destructive/10 px-3 py-2 text-sm text-destructive">
           {errors.root.message}
         </p>
       )}
@@ -203,7 +154,7 @@ export function SignupForm() {
       <Button
         type="submit"
         size="lg"
-        className="rounded-3xl py-5 sm:py-6 text-base"
+        className="rounded-3xl h-12 text-base"
         disabled={isSigningUp}
       >
         {isSigningUp ? (
@@ -216,7 +167,7 @@ export function SignupForm() {
         )}
       </Button>
 
-      <div className="my-1 sm:my-2 flex items-center gap-1 text-sm text-muted-foreground">
+      <div className="my-2 flex items-center gap-1 text-sm text-muted-foreground">
         <div className="flex-1 border-t border-border" />
         {t('or')}
         <div className="flex-1 border-t border-border" />
@@ -226,8 +177,7 @@ export function SignupForm() {
         type="button"
         variant="outline"
         size="lg"
-        className="rounded-3xl py-4 sm:py-5 text-base"
-        disabled={isSigningUp}
+        className="rounded-3xl h-12 text-base"
         onClick={() =>
           (window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/google`)
         }
@@ -239,8 +189,7 @@ export function SignupForm() {
       <Button
         type="button"
         size="lg"
-        className="rounded-3xl bg-foreground py-4 sm:py-5 text-base text-muted hover:bg-foreground/90"
-        disabled={isSigningUp}
+        className="rounded-3xl bg-foreground h-12 flex items-center justify-center font-bold text-base text-background transition-colors hover:bg-foreground/90 dark:bg-foreground dark:text-background dark:hover:bg-foreground/90"
         onClick={() =>
           (window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/github`)
         }

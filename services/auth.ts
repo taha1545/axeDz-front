@@ -1,9 +1,12 @@
 import api from './api';
+import { getAccessToken } from './token';
 import type {
-    LoginPayload, LoginResponse,
-    SignupPayload, SignupResponse, User
+    LoginPayload,
+    LoginResponse,
+    SignupPayload,
+    SignupResponse,
+    User,
 } from '@/types';
-
 
 export async function signup(data: SignupPayload): Promise<SignupResponse> {
     const { data: res } = await api.post('/auth/signup', data);
@@ -20,6 +23,9 @@ export async function logout(): Promise<void> {
 }
 
 export async function fetchMe(): Promise<User | null> {
+    const token = getAccessToken();
+    if (!token) return null;
+
     try {
         const { data } = await api.get('/auth/me');
         return data.user ?? null;

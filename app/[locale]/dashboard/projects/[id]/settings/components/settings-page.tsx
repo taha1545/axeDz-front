@@ -156,15 +156,15 @@ export function SettingsPage({
                 <motion.div
                     variants={cardVariants}
                     className={cn(
-                        'relative overflow-hidden rounded-[2rem] border border-primary-foreground/10',
+                        'relative overflow-hidden rounded-[2rem] border border-foreground',
                         'bg-primary text-primary-foreground shadow-lg shadow-primary/30',
                         'p-6 sm:p-10'
                     )}
                 >
                     <div className="relative z-10 flex flex-col gap-6">
-                        <div className="flex items-start justify-between gap-4">
+                        <div className="flex items-start justify-between gap-4 ">
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50 mb-1">
+                                <p className="text-xs font-semibold uppercase tracking-wider text-black mb-1">
                                     {t('projectDetails.nameLabel')}
                                 </p>
                                 <h2 className="text-2xl font-bold">{apiKey.project_name}</h2>
@@ -176,8 +176,8 @@ export function SettingsPage({
                         </div>
 
                         <div className="grid gap-4 sm:grid-cols-2">
-                            <div className="rounded-2xl bg-primary-foreground/5 p-5 ring-1 ring-primary-foreground/5">
-                                <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50 mb-2">
+                            <div className="rounded-2xl border border-foreground/20  bg-primary-foreground/5 p-5 ring-1 ring-primary-foreground/5">
+                                <p className="text-xs font-medium  uppercase tracking-wider text-black mb-2">
                                     API Key
                                 </p>
                                 <div className="flex items-center gap-3">
@@ -193,8 +193,8 @@ export function SettingsPage({
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl bg-primary-foreground/5 p-5 ring-1 ring-primary-foreground/5">
-                                <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50 mb-1">
+                            <div className="rounded-2xl border border-foreground/20 bg-primary-foreground/5 p-5 ring-1 ring-primary-foreground/5">
+                                <p className="text-xs font-medium  uppercase tracking-wider text-black mb-1">
                                     {t('projectDetails.statusLabel')}
                                 </p>
                                 <Badge
@@ -205,15 +205,15 @@ export function SettingsPage({
                                 </Badge>
                             </div>
 
-                            <div className="rounded-2xl bg-primary-foreground/5 p-5 ring-1 ring-primary-foreground/5">
-                                <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50 mb-1">
+                            <div className="rounded-2xl border border-foreground/20 bg-primary-foreground/5 p-5 ring-1 ring-primary-foreground/5">
+                                <p className="text-xs font-medium  uppercase tracking-wider text-black mb-1">
                                     {t('projectDetails.createdAtLabel')}
                                 </p>
                                 <p className="text-sm font-medium">{formatDate(apiKey.created_at)}</p>
                             </div>
 
-                            <div className="rounded-2xl bg-primary-foreground/5 p-5 ring-1 ring-primary-foreground/5">
-                                <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50 mb-1">
+                            <div className="rounded-2xl border border-foreground/20 bg-primary-foreground/5 p-5 ring-1 ring-primary-foreground/5">
+                                <p className="text-xs font-medium  uppercase tracking-wider text-black  mb-1">
                                     Last Updated
                                 </p>
                                 <p className="text-sm font-medium">{formatDate(apiKey.updated_at)}</p>

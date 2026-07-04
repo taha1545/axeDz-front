@@ -7,86 +7,57 @@ import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { FcGoogle } from 'react-icons/fc';
-import { FaGithub, FaArrowLeft } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import { EyeOff, Eye } from 'lucide-react';
 import Link from 'next/link';
 
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
+
 import { useAuth } from '@/hooks/use-auth';
+import { getErrorMessage } from '@/lib/get-error-message';
 import { loginSchema, type LoginInput } from '@/schemas/auth';
 
 export default function LoginForm() {
+  //
   const t = useTranslations('auth.login');
-
   const [showPassword, setShowPassword] = useState(false);
-
   const router = useRouter();
-
+  //
   const { login, isLoggingIn } = useAuth();
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    setError,
-    clearErrors,
-  } = useForm<LoginInput>({
+  const { register, handleSubmit, formState: { errors }, setError, clearErrors, } = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       identifier: '',
       password: '',
     },
   });
-
+  //
   const onSubmit = async (data: LoginInput) => {
     clearErrors('root');
-
     try {
       await login(data);
-
       router.push('/dashboard');
-      router.refresh();
-    } catch (err: unknown) {
-      const message =
-        err &&
-          typeof err === 'object' &&
-          'response' in err &&
-          err.response &&
-          typeof err.response === 'object' &&
-          'data' in err.response &&
-          err.response.data &&
-          typeof err.response.data === 'object' &&
-          'message' in err.response.data &&
-          typeof err.response.data.message === 'string'
-          ? err.response.data.message
-          : t('loginFailed');
-
-      setError('root', { message });
+    } catch (err) {
+      setError('root', {
+        message: getErrorMessage(err, t('loginFailed')),
+      });
     }
   };
 
   return (
     <>
-      <Link
-        href="/"
-        className="absolute top-0 left-0 flex items-center gap-2 p-3 text-sm text-foreground/80"
-      >
-        <FaArrowLeft />
-        {t('home')}
-      </Link>
-
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex w-full flex-col gap-5 border-b-2 h-[90vh] justify-center border-r-foreground border-border bg-background px-6 py-10 md:py-2 sm:px-10 lg:w-1/2 lg:border-b-0 lg:border-r-2 lg:px-20"
+        className="flex md:h-[80vh]  w-full flex-col justify-center gap-3 border-b-2 border-r-foreground border-border  px-6 py-10 md:py-2 sm:px-10 lg:w-1/2 lg:border-r-2 lg:border-b-0 lg:px-20"
       >
-        <h1 className="mx-auto  mb-2 rounded-xl bg-foreground px-5 py-3 text-2xl font-bold text-background">
+        <h1 className="mx-auto mb-2 rounded-xl bg-foreground px-6 py-2  text-3xl font-semibold text-background">
           {t('title')}
         </h1>
 
         {errors.root && (
-          <p className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">
+          <p className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive text-center">
             {errors.root.message}
           </p>
         )}
@@ -99,7 +70,7 @@ export default function LoginForm() {
           <Input
             type="text"
             placeholder={t('emailOrPhonePlaceholder')}
-            className="h-12 rounded-4xl border-foreground/80 px-6 text-muted-foreground"
+            className="h-11 rounded-4xl border-foreground/80 px-6 text-muted-foreground"
             {...register('identifier')}
           />
 
@@ -119,7 +90,7 @@ export default function LoginForm() {
             <button
               type="button"
               className="flex items-center gap-1 text-sm text-muted-foreground"
-              onClick={() => setShowPassword((p) => !p)}
+              onClick={() => setShowPassword((prev) => !prev)}
             >
               {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
               {showPassword ? t('hide') : t('show')}
@@ -129,7 +100,7 @@ export default function LoginForm() {
           <Input
             type={showPassword ? 'text' : 'password'}
             placeholder={t('passwordPlaceholder')}
-            className="h-12 rounded-4xl border-foreground/80 px-6 text-muted-foreground"
+            className="h-11 rounded-4xl border-foreground/80 px-6 text-muted-foreground"
             {...register('password')}
           />
 
@@ -150,7 +121,7 @@ export default function LoginForm() {
         <Button
           type="submit"
           size="lg"
-          className="rounded-3xl py-6 text-base"
+          className="rounded-3xl h-12.5 text-base font-semibold"
           disabled={isLoggingIn}
         >
           {isLoggingIn ? t('loggingIn') : t('loginButton')}
@@ -166,11 +137,10 @@ export default function LoginForm() {
           type="button"
           variant="outline"
           size="lg"
-          className="rounded-3xl py-5 text-base"
-          onClick={() =>
-          (window.location.href =
-            `${process.env.NEXT_PUBLIC_API_URL}/google`)
-          }
+          className="rounded-3xl h-12 text-base"
+          onClick={() => {
+            window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/google`;
+          }}
         >
           <FcGoogle size={20} />
           {t('continueGoogle')}
@@ -179,11 +149,10 @@ export default function LoginForm() {
         <Button
           type="button"
           size="lg"
-          className="rounded-3xl bg-foreground py-5 text-base text-muted hover:bg-foreground/90"
-          onClick={() =>
-          (window.location.href =
-            `${process.env.NEXT_PUBLIC_API_URL}/github`)
-          }
+          className="rounded-3xl bg-foreground h-12 flex items-center justify-center font-bold text-base text-background transition-colors hover:bg-foreground/90 dark:bg-foreground dark:text-background dark:hover:bg-foreground/90"
+          onClick={() => {
+            window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/github`;
+          }}
         >
           <FaGithub size={20} />
           {t('continueGithub')}
