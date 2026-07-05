@@ -58,13 +58,6 @@ export function NavbarTopBar() {
 
         <span className="h-4 w-px bg-card dark:bg-border/40" />
 
-        <Link
-          href="/login"
-          className="text-muted-foreground hover:text-foreground font-medium transition-colors text-sm py-1.5"
-        >
-          {t("login")}
-        </Link>
-
         <span className="h-4 w-px bg-card dark:bg-border/40" />
 
         <DropdownMenu>
