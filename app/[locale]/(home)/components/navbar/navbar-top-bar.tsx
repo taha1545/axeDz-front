@@ -55,9 +55,7 @@ export function NavbarTopBar() {
         >
           Docs
         </Link>
-
-        <span className="h-4 w-px bg-card dark:bg-border/40" />
-
+        
         <span className="h-4 w-px bg-card dark:bg-border/40" />
 
         <DropdownMenu>
